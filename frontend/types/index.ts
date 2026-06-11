@@ -53,6 +53,7 @@ export interface VehicleData {
   has_esp: boolean;
   has_abs: boolean;
   gross_vehicle_weight_kg: number;
+  max_rear_axle_load_kg?: number | null;
 }
 
 export interface Gutachten {
@@ -106,4 +107,95 @@ export interface TestPlanResult {
   levels: LevelResult[];
   final_verdict: FinalVerdict;
   executed_at: string;
+}
+
+export interface HighlightRegion {
+  page: number;
+  top: number;
+  left: number;
+  width: number;
+  height: number;
+  label?: string | null;
+}
+
+export interface RegulatoryLink {
+  label: string;
+  url: string;
+}
+
+export interface RuleAnnotation {
+  rule_id: string;
+  paragraph_ref?: string;
+  highlight_section_id: string;
+  highlight_text: string;
+  ai_explanation: string;
+  regulatory_references?: string[];
+  regulatory_links?: RegulatoryLink[];
+  remediation_hint?: string;
+  regions?: HighlightRegion[];
+}
+
+export interface DocumentSection {
+  id: string;
+  label: string;
+  content: string;
+  page?: number | null;
+}
+
+export interface UploadedDocument {
+  upload_id: string;
+  filename: string;
+  pdf_url: string;
+  page_count: number;
+  page_urls: string[];
+  sections: DocumentSection[];
+  annotations: RuleAnnotation[];
+}
+
+export interface WhiteBoxStep {
+  step: number;
+  check_id: string;
+  level: number;
+  check_name: string;
+  citation: string;
+  /** error = Beanstandung; advisory = nur Hinweis (z. B. EV, ESP) */
+  severity?: "error" | "advisory";
+  applicable: boolean;
+  applicability_reason: string;
+  executed: boolean;
+  passed?: boolean | null;
+  flagged: boolean;
+  skipped_reason?: string | null;
+  evidence: string;
+  reason: string;
+  remediation_hint: string;
+  exemplar_reference: string;
+}
+
+export interface ChecklistExecution {
+  gutachten_id: string;
+  checklist_version: string;
+  total_checks: number;
+  applicable_checks: number;
+  executed_checks: number;
+  steps: WhiteBoxStep[];
+  levels: LevelResult[];
+  final_verdict: FinalVerdict;
+  executed_at: string;
+}
+
+export interface CorpusCase {
+  case_id: string;
+  filename: string;
+  path: string;
+  expected_verdict: string;
+  expected_gap?: string | null;
+}
+
+export interface UploadResponse {
+  upload_id: string;
+  gutachten: Gutachten;
+  test_plan: TestPlanResult;
+  checklist_execution?: ChecklistExecution | null;
+  document: UploadedDocument;
 }

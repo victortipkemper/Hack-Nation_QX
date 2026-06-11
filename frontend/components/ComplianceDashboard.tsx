@@ -3,16 +3,20 @@
 import { Clock, Fingerprint, Shield, Zap } from "lucide-react";
 import { LevelChecklist } from "./LevelChecklist";
 import { VerdictBadge } from "./VerdictBadge";
-import type { TestPlanResult } from "@/types";
+import type { RuleResult, TestPlanResult } from "@/types";
 
 interface ComplianceDashboardProps {
   result: TestPlanResult;
   loading?: boolean;
+  selectedRuleId?: string | null;
+  onInspectRule?: (rule: RuleResult) => void;
 }
 
 export function ComplianceDashboard({
   result,
   loading,
+  selectedRuleId,
+  onInspectRule,
 }: ComplianceDashboardProps) {
   if (loading) {
     return (
@@ -24,6 +28,16 @@ export function ComplianceDashboard({
   }
 
   const { final_verdict: verdict } = result;
+  const inspectableRules = result.levels.flatMap((l) =>
+    l.rules.filter((r) => r.flagged || !r.passed)
+  );
+  const hasInspectable = inspectableRules.length > 0;
+
+  const handleSummaryClick = () => {
+    if (hasInspectable && onInspectRule) {
+      onInspectRule(inspectableRules[0]);
+    }
+  };
 
   return (
     <div className="space-y-5">
@@ -43,7 +57,27 @@ export function ComplianceDashboard({
             <VerdictBadge status={verdict.status} />
           </div>
           <div className="space-y-2 text-sm">
-            <p className="text-slate-700 leading-relaxed max-w-lg">
+            <p
+              className={`text-slate-700 leading-relaxed max-w-lg ${
+                hasInspectable
+                  ? "cursor-pointer hover:text-amber-800 hover:underline decoration-amber-400 decoration-2 underline-offset-2 transition-colors"
+                  : ""
+              }`}
+              onClick={handleSummaryClick}
+              onKeyDown={(e) => {
+                if (hasInspectable && (e.key === "Enter" || e.key === " ")) {
+                  e.preventDefault();
+                  handleSummaryClick();
+                }
+              }}
+              role={hasInspectable ? "button" : undefined}
+              tabIndex={hasInspectable ? 0 : undefined}
+              title={
+                hasInspectable
+                  ? "Klicken, um erste Fehlerstelle im Gutachten zu öffnen"
+                  : undefined
+              }
+            >
               {verdict.summary}
             </p>
             <div className="flex flex-wrap gap-3 text-xs text-slate-500">
@@ -64,6 +98,13 @@ export function ComplianceDashboard({
             </div>
           </div>
         </div>
+
+        {hasInspectable && (
+          <p className="mt-3 text-xs text-amber-700 bg-amber-50 border border-amber-100 rounded-lg px-3 py-2">
+            Klicke auf eine markierte oder fehlgeschlagene Regel, um die
+            betroffene Stelle im Gutachten-Dokument mit AI-Erläuterung zu sehen.
+          </p>
+        )}
       </div>
 
       <div>
@@ -71,7 +112,11 @@ export function ComplianceDashboard({
           <span className="w-1.5 h-1.5 rounded-full bg-brand-500" />
           4-Level Regulatory Test Plan
         </h3>
-        <LevelChecklist levels={result.levels} />
+        <LevelChecklist
+          levels={result.levels}
+          selectedRuleId={selectedRuleId}
+          onInspectRule={onInspectRule}
+        />
       </div>
     </div>
   );

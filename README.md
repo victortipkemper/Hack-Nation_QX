@@ -1,23 +1,54 @@
-# Hack-Nation_QX
+# Autocomply
 
-AutoComply – KI-gestützte Compliance-Prüfung für Gutachten (FastAPI + Next.js).
+RegTech-Plattform für Einzelabnahme (Fahrzeug-Gutachten).
 
-## Setup
+## Schnellstart (Windows)
 
-### Backend (API)
+**Doppelklick auf `start.bat`** im Ordner `autocomply`.
 
-```bash
-cd api
-pip install -r requirements.txt
-uvicorn main:app --reload
+Das öffnet zwei Fenster (API + Frontend) und den Browser.
+
+## Manuell starten
+
+### Terminal 1 — API
+```powershell
+cd C:\Users\morit\autocomply\api
+python -m pip install -r requirements.txt
+python -m uvicorn main:app --reload --host 127.0.0.1 --port 8010
 ```
 
-### Frontend
-
-```bash
-cd frontend
+### Terminal 2 — Frontend
+```powershell
+cd C:\Users\morit\autocomply\frontend
 npm install
 npm run dev
 ```
 
-API: http://localhost:8000 · Frontend: http://localhost:3000
+### Browser öffnen
+**http://localhost:3000**
+
+## Nutzung
+
+1. **PDF hochladen** — Drag & Drop in der linken Sidebar
+2. **White-Box-Checkliste** (rechts) — jeder Prüfschritt mit Anwendbarkeit, Nachweis, Korrekturhinweis
+3. **Beanstandete Prüfung anklicken** — PDF-Markierung + verlinkte Gesetzestexte
+4. Tabs: **White-Box** | **Gutachten-Daten** | **PDF-Dokument**
+
+## Deterministische Checkliste
+
+- Feste Prüfliste nach VdTÜV Merkblatt 751 I.5.1.x + StVZO (kein Hardcoding pro Datei-ID)
+- Anwendbarkeit wird aus extrahierten Dokumentmerkmalen abgeleitet
+- Korrekturhinweise basieren auf GREEN-Exemplar-Mustern (`api/data/exemplar_patterns.py`)
+- Golden-Corpus-Evaluation: `POST /api/evaluate-corpus` (nur zur Bewertung, nicht in der Prüflogik)
+
+## Probleme?
+
+| Problem | Lösung |
+|---------|--------|
+| Seite lädt nicht | `start.bat` erneut ausführen |
+| Port 3000 belegt | http://localhost:3001 probieren |
+| API-Fehler | Prüfen ob Terminal 1 läuft (Port 8000) |
+| Leere Seite | Hard-Refresh: `Ctrl+Shift+R` |
+
+## API-Dokumentation
+http://localhost:8000/docs

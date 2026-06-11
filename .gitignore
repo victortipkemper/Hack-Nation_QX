@@ -9,3 +9,10 @@ venv/
 dist/
 *.egg-info/
 .DS_Store
+api/uploads/
+api/data/training_corpus/
+api/data/reference_docs/
+api/data/reference_renders/
+hackathon-data/
+_push.ps1
+_push_log.txt

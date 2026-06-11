@@ -1,0 +1,288 @@
+===== C:\Users\morit\autocomply\hackathon-data\Hackathon\Gutachten - Reports\XSOC01AT-0\XSOC01AT-0_NW (Prüfplan _ Testplan).pdf =====
+--- page 1 ---
+TÜV Rheinland Berlin Brandenburg Pfalz e.V.
+Technische Prüfstelle für den Kraftfahrzeugverkehr
+Merkurstr. 45, 67663 Kaiserslautern
+Aufstellung der technischen Vorschriften, auf deren Grundlage die
+Betriebserlaubnis für das Fahrzeug erteilt werden soll
+(Aufstellung in Bezug auf die vorhandene(-n) technische(-n) Änderung(-en))
+Gutachten nach §21 StVZO nach technischen Änderungen (§19 (2) StVZO) 
+mit Nr. XSOC01AT-0 vom 14.04.2026
+Fahrzeug-Ident.-Nr. W0L000019J1124084
+EZ: 19.02.1988
+Seite 1 v
+on 2
+Erläuterung(en)/Begründung(en) für das Erlöschen der Betriebserlaubnis:
+Am Fz ist eine/ sind Änderung(en) durch willentliches Hinzufügen, Entfernen, Austauschen und/ oder
+Verändern von T eilenvorhanden, die
+- eine Gefährdung von Verkehrsteilnehmer erwarten lässt/ lassen
+Die frühere Betriebserlaubnis des Fahrzeuges ist erloschen, weil
+- mehrere Änderungen zeitgleich bzw. zeitlich versetzt vorgenommen worden sind, die sich in ihrer
+Kombination gemäß Beispielkatalog (Matrix in T eilB) gegenseitig beeinflussen, und deren
+Kombination über die vorgelegten Genehmigungen nicht freigegeben wurden
+Es wurden folgende Änderungen begutachtet:
+Rad/Reifen und Fahrwerk
+Bau- und Betriebsvorschriften BewertungParagraph (§) Kurztext
+§30 Beschaffenheit der Fahrzeuge Vorschriftsmäßig
+§30a Durch die Bauart bestimmte Höchstgeschwindigkeit sowie maximales
+Drehmoment und maximale Nutzleistung des Motors N/A*
+§30b Berechnung des Hubraums N/A*
+§30c Vorstehende Außenkanten, Frontschutzsysteme Vorschriftsmäßig
+§§32, 32d, 34, 42,
+44
+Abmessungen von Fahrzeugen und Fahrzeugkombinationen,
+Kurvenlaufeigenschaften, Achslast und Gesamtgewicht Anhängelast
+hinter Kraftfahrzeugen und Leergewicht, Stützlast
+N/A*
+§32b Unterfahrschutz N/A*
+§35a Sitze, Sicherheitsgurte, Rückhaltesysteme, Rückhalteeinrichtungen
+für Kinder N/A*
+§§35b, 40 Sicht aus Kraftfahrzeugen (und Einrichtungen zum sicheren Führen);
+Scheiben N/A*
+§35c Heizung und Lüftung N/A*
+§§35d, 35e Einrichtungen zum Auf- und Absteigen an Fahrzeugen und
+Betätigungseinrichtungen/Türen N/A*
+§36 Bereifung und Laufflächen N/A*
+§36a Radabdeckungen, Ersatzräder Vorschriftsmäßig
+§38 Lenkeinrichtung Vorschriftsmäßig
+§§38a, 38b Sicherungseinrichtungen gegen unbefugte Benutzung von
+Kraftfahrzeugen, Fahrzeug-Alarmsysteme N/A*
+§39 Rückwärtsgang N/A*
+§§41, 41a, 41b Bremsen und Unterlegkeile, Automatischer Blockierverhinderer ,
+Druckbehälter für Bremsanlagen N/A*
+§§41a, 45, 46 Druckgasanlagen, Druckbehälter ,Kraftstoffbehälter ,
+Kraftstoffleitungen N/A*
+§§42, 43, 44 Einrichtungen zur Verbindung von Fahrzeugen, Stützeinrichtungen,
+Abschleppeinrichtung N/A*
+§§47, 47c, 47d, 48 Abgase, Ableitung von Abgasen, Kohlendioxidemissionen und
+Kraftstoffverbrauch, Emissionsklassen für Kraftfahrzeuge N/A*
+§47e Klimaanlagen N/A*
+§49 Geräuschentwicklung und Schalldämpferanlage N/A*
+§§49a, 50ff i. Verb.
+m. §39a
+Scheinwerfer ,Leuchten, Rückstrahler ,Betätigungseinrichtungen,
+Kontrollleuchten und Anzeiger Vorschriftsmäßig
+§55 Einrichtungen für Schallzeichen N/A*
+§55a Funkentstörung/ Elektromagnetische Verträglichkeit N/A*
+P:4.8.1 D:2026.02.10
+Zweitschrift
+--- page 2 ---
+TÜV Rheinland Berlin Brandenburg Pfalz e.V.
+Technische Prüfstelle für den Kraftfahrzeugverkehr
+Merkurstr. 45, 67663 Kaiserslautern
+' -  Marlon.Andres@de.tuv.com
+Aufstellung der technischen Vorschriften, auf deren Grundlage die
+Betriebserlaubnis für das Fahrzeug erteilt werden soll
+(Aufstellung in Bezug auf die vorhandene(-n) technische(-n) Änderung(-en))
+Gutachten nach §21 StVZO nach technischen Änderungen (§19 (2) StVZO)
+mit Nr. XSOC01AT-0 vom 14.04.2026
+Fahrzeug-Ident.-Nr. W0L000019J1124084
+EZ: 19.02.1988
+Seite 2 von 2
+Bau- und Betriebsvorschriften Bewertung
+Paragraph (§) Kurztext
+§56 Spiegel und andere Einrichtungen für indirekte Sicht N/A*
+§57, §57a Geschwindigkeitsmessgerät und Wegstreckenzähler ,Fahrtschreiber
+und Kontrollgerät N/A*
+§58 Geschwindigkeitsschilder N/A*
+§59 Fabrikschilder ,sonstige Schilder ,Fahrzeug-Identifizierungsnummer N/A*
+§60 Flüssiggasanlagen in Fahrzeugen N/A*
+§62 Elektrische Einrichtungen von elektrisch angetriebenen
+Kraftfahrzeugen N/A*
+* N/A: Die Bau- oder Betriebsvorschrift ist nicht anwendbar (z.B. System Baugruppe oder Bauteil nicht verbaut) oder sie bleibt von einer technischen Änderung
+unberührt und/oder ist über die bisherige Fahrzeuggenehmigung nachgewiesen
+P:4.8.1 D:2026.02.10
+Zweitschrift
+===== C:\Users\morit\autocomply\hackathon-data\Hackathon\Gutachten - Reports\XSOC01AT-0\XSOC01AT-0_GAK (Report).pdf =====
+--- page 1 ---
+TÜV Rheinland Berlin Brandenburg Pfalz e.V. 
+Technische Prüfstelle für den Kraftfahrzeugverkehr 
+Merkurstr. 45, 67663 Kaiserslautern
+Amtliches Kennzeichen: ohne
+Fahrzeughersteller: OPEL / 0039
+Fahrzeugtyp: OMEGA-A / 695 004 8
+Fahrzeug-Ident.-Nr.: W0L000019J1124084
+Seite 1 v
+on 1 zum Untersuchungsbericht mit Nr. XSOC01AT-0 vom 14.04.2026
+Gutachten zur Erlangung der Betriebserlaubnis gemäß §21 StVZO (§19 (2) StVZO)
+mit Nr.: XSOC01AT-0 vom 14.04.2026
+Daten für die Zulassungsbescheinigung (nur gültig mit zugehörigem Untersuchungsbericht)
+B 19.02.1988 2.1 0039 2.2 695 004 8 L - 9 - P.2/P.4 - / - T -
+J 01 4 0200 18 - 19 -
+E W0L000019J1124084 3 2 20 1375 G -
+D.1 - 12 - 13 - Q -
+D.2
+OMEGA-A V.7 - F.1 - F.2 -
+CH3G 7.1 - 7.2 - 7.3 -
+- 8.1 - 8.2 - 8.3 -
+- U.1 - U.2 - U.3 -
+D.3 OMEGA 3000 O.1 - O.2 - S.1 - S.2 -
+2 OPEL 15.1 -
+5
+PERSONENKRAFTWAGEN 15.2 -
+GESCHLOSSEN 15.3 -
+V.9 - R - 11 - / -
+14 - K -
+P.3 - 6 - 17 - 16 -
+10 - 14.1 - P.1 - 21 -
+22
+Zu 20:Höhe m. K.A.W.-Tieferlegungsfed. VuH;Kennz.,Drahtdurchm.,Wz li.-re.,Federfarbe Haup
+tfed. V/H:KAW Omega A VA,13.5mm,6.5-7.0.rot/KAW Omega A HA,15mm,7.7,rot*zu 15.1/2:auch ge
+nehm. 225/45R17 90V a. Steinmetz-Opel-Tuning-Lm-Sonderrad,7.5Jx17H2,Typ:31011030,ET:38mm
+ww. i.Verb.m. SCC-Distanzscheib. VuH,Kennz.:12180,TH.:10mm;Verw. v. Schneek. n. zul.* ***
+Zusätzliche Angaben:
+Die Vorschriftsmäßigkeit bezieht sich ausschließlich auf die begutachteten Teile* **
+Vorausgegangene zulässige Änderungen, die berücksichtigt wurden: keine
+Eine Berichtigung der Fahrzeugpapiere ist unverzüglich erforderlich.
+Dieses Gutachten ist nur gültig mit Original-Stempel und -Unterschrift und auf andere Fahrzeuge nicht
+übertragbar.
+Bescheinigung der/des amtlich anerkannten Sachverständigen:
+Es wird bescheinigt, dass die vorstehend aufgeführten Angaben zur Fahrzeugbeschreibung zutreffen und das Fahrzeug den
+geltenden Vorschriften entspricht.
+aaSmT Marlon Andres Stempel
+Kaiserslautern, den 14.04.2026 Unterschrift der/des amtlich anerkannten
+Sachverständigen
+P:4.8.1 D:2026.02.10
+Zweitschrift
+===== C:\Users\morit\autocomply\hackathon-data\Hackathon\Gutachten - Reports\H7WY002O-0\H7WY002O-0_Protokoll.pdf =====
+--- page 1 ---
+PrüfberichtzuGA-Nr:H7WY002O-0-FIN:W
+AUZZZFY3S2059692 Seite1von4
+C1PrüfberichtzuLenkanlagen
+AllgemeineDaten
+ZuGANr.: H7WY002O-0
+Prüfstelle: Technische Prüfstelle für den Kraftfahrzeugverkehr
+Prüfort: Kaiserslautern Prüfdatum: 05.01.2026
+Prüfer: ZusätzlichePersonen:
+Prüfmittel:
+Fahrzeughersteller: AUDI Typ: FY
+FIN: WAUZZZFY3S2059692
+Bewertungsgrundlagen
+£ Systemgenehmigungvorhandenundgeprüft
+£ TD-Prüfberichtvorhandenundgeprüft
+Anforderung erfüllt
+(NachweisdurcheigenePrüfung) Ja Nein n.z.
+T UN-R79.03
+AllgemeineAnforderungen T £ £
+einfacheundsichereHandhabungdesFzbisbbH,selbsttätigeRückstellunginGeradeausstellung (5.1.1)
+GeradeausfahrtohneVibrationenundgrößereLenkkorrekturen (5.1.2)
+Weg-undZeitsynchronisationzwischenBetätigungseinrichtungundRädern,Fahrtrichtungsänderung
+entsprichtBewegungsrichtung
+(5.1.3)
+KonstruktiveGestaltung T £ £
+beanspruchungsgerechteKonstruktiongegeben (5.1.4)
+LenkwinkelohneBegrenzungdurchTeilederÜbertragungseinrichtung,außerwennkonstruktiv
+vorgesehen
+(5.1.4)
+formschlüssigeVerbindungbeiEinstellvorrichtungenfürLenkgeometrie,Verriegelungseinrichtungbei
+einstellbarenÜbertragungseinrichtungen(z.B.Höhe,Länge,Winkel)
+(5.1.8)
+gelenkteRädernichtausschließlichanHA (5.1.9)
+ausreichendeundstörunanfälligeDimensionierungderÜbertragungseinrichtungausMetall (5.3.1.1)
+VerhaltenbeiFahrt/Kreisfahrt T £ £
+einfaches,sicheresLenkenbeiFahrtbiszurbauartbed.odertechn.Höchstgeschwindigkeit
+KreisfahrtmittangentialemVerlassendesKreises: (6.2.1)
+ohneungewöhnlicheVibrationeninderLenkanlage
+KreisfahrtmitR=50m
+T M1:v=50km/h
+£ M2,M3,N:v=40km/h
+Randbedingungen
+beladenbiszurtechnischzulässigenGesamtmasseundseinertechnischzulässigenAchslastdergelenktenAchse(n);
+P:4.8.0 D:2025.12.12
+Zweitschrift
+--- page 2 ---
+PrüfberichtzuGA-Nr:H7WY002O-0-FIN:WAUZZZFY3S2059692 Seite2von4
+beiAchsenmitHilfskraftbremsanlageistdasFahrzeugmitseinertechnischzulässigenHöchstlast,unddieAchse,diemiteiner
+Hilfskraftbremsanlageausgestattetist,mitderzulässigenHöchstlastzubeladen
+Kreisfahrtmit≥10km/hundhalbemRadeinschlag:
+gleichbleibenderodergrößerwerdenderWendekreisbeilosgelassenerBetätigungseinrichtung
+Betätigungskräfte(6.2.4.,6.2.5) T £ £
+beiÜbergangvonderGeradeausfahrtinSpirale
+NachweiszusätzlichmitsimulierterStörung(außerbeireinmechanischenÜbertragungseinrichtungen)
+ZusätzlicheAnforderungen(nichtbeireinmechanischenÜbertragungseinrichtungen)
+VerhaltenbeiStörung(allgemein) £ T £
+FzmitHilfskraftlenkanlagen £ T £
+FzmitFremdkraftlenkanlagen £ £ T
+FzmitHilfslenkanlage(Anh.4) £ £ T
+FzmitVerbindungzurStromversorgungderLenkanlagedesAnh. £ £ T
+KomplexeelektronischeFz-Steuersysteme £ £ T
+Die Anforderungen zu Lenkanlagen wurden überprüft und sind erfüllt; durchgeführte
+Prüfungenwurdenbestanden.
+Ja: T Nein: £
+P:4.8.0 D:2025.12.12
+Zweitschrift
+--- page 3 ---
+PrüfberichtzuGA-Nr:H7WY002O-0-FIN:WAUZZZFY3S2059692 Seite3von4
+C3Notfall-Spurhalteassistent
+AllgemeineDaten
+ZuGANr.: H7WY002O-0
+Prüfstelle: Technische Prüfstelle für den Kraftfahrzeugverkehr
+Prüfort: Kaiserslautern Prüfdatum: 13.01.2026
+Prüfer: aaSmT Marlon
+Andres
+ZusätzlichePersonen:
+Prüfmittel:
+Fahrzeughersteller: AUDI Typ: FY
+FIN: WAUZZZFY3S2059692
+Bewertungsgrundlagen
+£ Systemgenehmigungvorhandenundgeprüft
+£ TD-Prüfberichtvorhandenundgeprüft
+Anforderungen*(VO(EU)2021/646) erfüllt
+*wesentlichetechnischeAnforderungen,derenEinhaltungimRahmenderPrüfungnachgewiesenwurde Ja Nein n.z.
+Ausrüstung £ £ £
+Funktion/Wirkung £ £ £
+Beschaffenheit £ £ £
+NachweisohnezerstörendePrüfung:
+£ HerstellererklärungüberEinhaltung
+£ NachweisaufBasisvonsachdienlichenInformationen
+£ VergleichmitgenehmigtemFzoderBauteil
+£ NachweisderWirkungdurchgleichwertigeGenehmigung
+£ NachweisvonWirkung/FestigkeitdurchaugenscheinlicheBewertung
+Bewertung:Material,Form,Ausführung,Befestigungusw.
+Anbau £ £ £
+Fahrprobe/Messfahrt £ £ £
+weiterePrüfungen £ £ T
+Die entsprechenden Anforderungen wurden überprüft und sind erfüllt. Die
+durchgeführtenPrüfungenwurdenbestanden;Grenzwertewurdeneingehalten.
+Ja: T Nein: £
+Bemerkungen:
+Fahrprobe durchgeführt. System funktioniert beim Verlassen der
+Fahrspur. System lt. Kontrollleuchte aktiv. Keine Fehlermeldung
+vorhanden
+P:4.8.0 D:2025.12.12
+Zweitschrift
+===== C:\Users\morit\autocomply\hackathon-data\Hackathon\Gutachten - Reports\W3Y300WL-0\W3Y300WL-0_Protokoll.pdf =====
+--- page 1 ---
+§§41, 41a, 41b Bremsen und Unterlegkeile, Automatischer Blockierverhinderer ,Druckbehälter für Bremsanlagen - Prüfbericht
+GA-Nr: W3Y300WL-0
+FIN: WBA3R11060KS91709 EG-DOK 4.8.1.20260113 - Datenstand 2026.02.10
+§§41, 41a, 41b Bremsen und Unterlegkeile, Automatischer Blockierverhinderer,
+Druckbehälter für Bremsanlagen - Prüfbericht
+Allgemeine Daten
+Zu GA Nr.: W3Y300WL-0
+Prüfstelle: Technische Prüfstelle für den Kraftfahrzeugverkehr
+Prüfort: Kaiserslautern Prüfdatum: 10.03.2026
+Prüfer: aaSmT Marlon
+Andres Zusätzliche Personen:
+Prüfmittel:
+Fahrzeughersteller: BAYER.MOT.WERKE-BMW Typ: 3C
+FIN: WBA3R11060KS91709
+Nachweis (System, Bauteil oder selbstst. techn. Einheit) vorhanden ☐ ja ☒ nein
+Nachweis:
+begutachtende Stelle:
+Kennzeichnung Nachweis:
+Datum:
+Nachweis durch Eigenprüfung ☐ ja ☒ nein
+Anforderungen der StVZO überprüft und erfüllt ☒ ja ☐ nein ☐ n.z.
+gemäß den §§41, 41a, 41b StVZO mit dem Stand Datum der EZ an die Bremsen und Unterlegkeile, Automatischer Blockierverhinderer,
+Druckbehälter für Bremsanlagen
+Anforderungen der EG-Einzel-RL / EU-Einzel-VO / UN-R erfüllt (alternativ) ☐ ja ☐ nein ☒ n.z.
+Die notwendigen Prüfungen wurden nachgewiesen und die geforderten Ergebnisse erreicht. ☒ ja ☐ nein
+Bemerkungen:
+Fzg. m. serienm. Bremssattel, original BMW M4 Bremsscheibe; serienm. Belag, da Reibfläche v. Bremsscheibe 435i u. M4
+identisch; größerer Hebelarm an Achsschenkel ausgeglichen m. Epytec-Stahlhalter (Festigkeitsnachweis, s. Anlage) ->
+Kühlleistung der Bremsanlage durch größeren Durchmesser verbessert.
+Eine Fahrprobe mit ABV Eingriff wurde durchgeführt. Einen negativen Einfluss auf das Bremsverhalten konnte nicht
+festgestellt werden.
+P:4.8.1 D:2026.02.10
+Zweitschrift

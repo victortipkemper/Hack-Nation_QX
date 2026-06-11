@@ -76,7 +76,71 @@ _WHEEL_19_NO_ABE = WheelTireSpec(
     teilegutachten_number=None,
 )
 
+_BMW_M4_F82 = VehicleData(
+    make="BMW",
+    model="M4",
+    variant="Coupé",
+    chassis_code="F82",
+    vin="WBS3C910X0M0001146",
+    first_registration=date(2017, 4, 18),
+    fuel_type="petrol",
+    power_kw=317,
+    original_tire_size_front="235/30 R20",
+    original_tire_size_rear="265/30 R20",
+    original_rim_size_front="9.0Jx20 ET26",
+    original_rim_size_rear="10.5Jx20 ET31",
+    original_offset_et_front=26,
+    original_offset_et_rear=31,
+    has_esp=True,
+    has_abs=True,
+    gross_vehicle_weight_kg=1840,
+    max_rear_axle_load_kg=1250,
+)
+
 MOCK_CASES: dict[str, Gutachten] = {
+    # Case 0: Real PDF — BMW M4 F82 §21 Gutachten with internal Widerspruch
+    "case-06-bmw-m4-widerspruch": Gutachten(
+        gutachten_id="case-06-bmw-m4-widerspruch",
+        gutachten_type="widerspruch",
+        title="§21 Gutachten — BMW M4 F82 (MU-AC 1146) — Widerspruch",
+        issuing_authority="Technische Prüfstelle für den Kraftfahrzeugverkehr – MUSTER",
+        issue_date=date(2026, 5, 25),
+        vehicle=_BMW_M4_F82,
+        modification=ModificationData(
+            modification_type="wheels_tires",
+            wheels_front=WheelTireSpec(
+                manufacturer="VuH genehm.",
+                model="VA 20″",
+                size="235/30 R20",
+                rim_width_inch=9.0,
+                rim_diameter_inch=20,
+                offset_et=26,
+                load_index=88,
+                speed_index="Y",
+                abe_number=None,
+                teilegutachten_number=None,
+            ),
+            wheels_rear=WheelTireSpec(
+                manufacturer="VuH genehm.",
+                model="HA 20″",
+                size="265/30 R20",
+                rim_width_inch=10.5,
+                rim_diameter_inch=20,
+                offset_et=31,
+                load_index=89,
+                speed_index="Y",
+                abe_number=None,
+                teilegutachten_number=None,
+            ),
+            spacers_front_mm=0,
+            spacers_rear_mm=0,
+            total_track_width_increase_mm=0,
+        ),
+        notes=(
+            "Real document: 1146_E_21_BMW_M4_LI_Widerspruch.pdf — "
+            "§21 positive confirmation contradicts 'BE erloschen — kein TGA'."
+        ),
+    ),
     # Case 1: Standard-ABE — BMW 320i with 19" wheels + 12mm spacers (should PASS)
     "case-01-standard-abe": Gutachten(
         gutachten_id="case-01-standard-abe",
@@ -224,6 +288,10 @@ MOCK_CASES: dict[str, Gutachten] = {
 
 def get_case_summaries() -> list[CaseSummary]:
     descriptions = {
+        "case-06-bmw-m4-widerspruch": (
+            "Real §21 Gutachten BMW M4 F82 (MU-AC 1146): 20″ Mischbereifung, kein TGA, "
+            "interner Widerspruch BE erloschen vs. positive Bestätigung. Expected: AUDIT FLAGGED."
+        ),
         "case-01-standard-abe": (
             "BMW 320i E90 with ABE-certified 19″ BBS CH-R wheels and 12 mm hub-centric spacers. "
             "Expected: PASS."
@@ -246,6 +314,7 @@ def get_case_summaries() -> list[CaseSummary]:
         ),
     }
     expected = {
+        "case-06-bmw-m4-widerspruch": "AUDIT_FLAGGED",  # kein TGA, Widerspruch, HA-LI
         "case-01-standard-abe": "PASS",
         "case-02-teilegutachten": "PASS",
         "case-03-lowering-conditional": "AUDIT_FLAGGED",

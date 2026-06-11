@@ -1,0 +1,441 @@
+===== C:\Users\morit\autocomply\hackathon-data\Hackathon\AutoComply_OnePager_EN.pdf =====
+--- page 1 ---
+Five Reports · Five Assessments
+Original = green · Modification = red · assessment with four-level reasoning
+HOW AUTOCOMPLY READS A REPORT — FOUR KNOWLEDGE LEVELS
+L1 Statutory text
+formal · versioned L2 Technical rules
+operationalised L3 Reports · case files
+lived practice L4 Consensus of the houses
+institutionalised
+Gut-04  · Audi A4 B9   — Standard ABE wheels  ✓ GREEN
+IN PU T · REP ORT
+Reference: ABE · § 19 StVZO
+Audi A4 B9 40 TFSI · M1 · 210 km/h
+225/50 R17 → 245/40 R18 · 8.0J × 18 ET 47
+Checks: ABE doc check, clearance
+AUTOCO MP LY A S SES SME NT
+No conditions · no gaps
+• ABE conformity covers R30.
+• R39 not subject to testing (Δ +1.1 % < 5 %).
+L1 L2 L3 L4 Only formal law active.
+Green = original · Red = modifications
+Gut-01  · BMW 320i E90   — Wheels + tyres  ✓ GREEN
+IN PU T · REP ORT
+Component report § 19 (3) No. 4
+BMW 320i E90 · M1 · 235 km/h
+8.5J × 19 ET 35 · 235/35 R19 · +12 mm track
+Checks: steering, brakes, LI/SR, speedo ✓
+AUTOCO MP LY A S SES SME NT
+Reference case — exemplary documentation
+• All modifications documented.
+• R39 carried out voluntarily — appropriate.
+L1 L2 L3 L4 R30/R13/R79 covered. Mbl. 751 
+matched.
+Green = original · Red = modifications
+Gut-02  · VW Golf VII   — Lowering + 19″ wheels  ✓ GREEN + NOTE
+IN PU T · REP ORT
+Component report § 19 (with conditions)
+VW Golf VII 1.4 TSI · M1 · 210 km/h
+Coilovers −30 mm · 235/35 R19
+Checks: steering, stabiliser, LI/SR
+AUTOCO MP LY A S SES SME NT
++ Note: ESC function test recommended
+• −30 mm near the −40 mm practical ESC threshold.
+• R39 not triggered (Δ < 5 %).
+L1 L2 L3 L4 L3 (test practice) generates the 
+ESC note.
+Green = original · Red = modifications
+Gut-03  · Mercedes Sprinter   — Lift +50 mm + 33″ tyres    DEMO★ ! YELLOW
+IN PU T · REP ORT
+Individual acceptance § 21 (with conditions)
+MB Sprinter 519 CDI · N2 · 155 km/h
+Lift +50 mm · 265/75 R16 · Δ +7.4 %
+Checks: clearance, braking distance, LI/SR
+AUTOCO MP LY A S SES SME NT
+Missing test · R39 not documented
+• Trail: WheelDiameterIncrease (+7.4 %) → R39 → 
+SpeedometerCalibration [MISSING]
+L1 L2 L3 L4 L2 (5 % threshold) + L3 → R39 
+obligation detected.
+Green = original · Red = modifications
+Gut-05  · Tesla Model 3   — Lowering (electric vehicle)  ✓ GREEN + EV-NOTE
+IN PU T · REP ORT
+Component report § 19 (3) No. 4
+Tesla Model 3 LR AWD · M1 · 233 km/h · BEV
+Lowering springs −30 mm · tyres unchanged
+Checks: steering, brake line, driving dynamics
+AUTOCO MP LY A S SES SME NT
++ Out-of-scope: R10 / R100 (BEV) noted
+• R79 + R13H triggered & documented.
+• R39 not triggered (no tyre change).
+L1 L2 L3 L4 EV edge case: R10/R100 as out-of-
+scope node.
+Green = original · Red = modifications
+One report in · one auditable assessment out Four knowledge levels · one knowledge graph · zero generative inference in the decision.
+===== C:\Users\morit\autocomply\hackathon-data\Hackathon\Gutachten - Reports\50 Structured Gutachten (Reports)\Gutachten Part 1\00_Loesungsschluessel_INTERN_Korpus2.pdf =====
+--- page 1 ---
+MUSTER
+AutoComply Testkorpus 2 – Lösungsschlüssel (INTERN)
+25 Muster-Gutachten · ausschließlich §21 StVZO (§19 (2) – ohne Teilegutachten) · Rad/Reifen/Spur/Bremse · Prüfer: aaSmT Max Mustermann
+Archetypen: A typgleiches Modell/OEM-Variante · B Referenz-Volldokumentation · C mit Auflagen · D EV-Edge-Case · E bewusst fehlerhaft
+Nr.
+Typ
+Route
+Fahrzeug / Änderung
+Soll-Ergebnis
+Geplante Lücke (nur E)
+1126
+A
+§21
+530d G30 – BMW 530d MSport Raeder
+GREEN
+–
+1127
+A
+§21
+Q5 – Audi Q5 SQ5 Raeder
+GREEN
+–
+1128
+A
+§21
+Tiguan – VW Tiguan RLine Raeder
+GREEN
+–
+1129
+A
+§21
+V60 – Volvo V60 OEM Raeder
+GREEN
+–
+1130
+A
+§21
+Focus Mk4 – Ford Focus ST Raeder
+GREEN
+–
+1131
+B
+§21
+PORSCHE / 964 – Porsche 964 Klassiker
+GREEN
+–
+1132
+B
+§21
+BMW / E30 – BMW E30 BBS Raeder
+GREEN
+–
+1133
+B
+§21
+190 E – MB 190E Evo Raeder
+GREEN
+–
+1134
+B
+§21
+80 B4 – Audi 80 B4 Raeder
+GREEN
+–
+1135
+B
+§21
+Corrado – VW Corrado Bremsanlage
+GREEN
+–
+1136
+C
+§21
+Sprinter – Sprinter Raeder Spurplatten N2
+GREEN+AUFL
+–
+1137
+C
+§21
+Crafter – VW Crafter Raeder Bremsscheiben
+GREEN+AUFL
+–
+1138
+C
+§21
+Defender 110 – Defender Spurverbreiterung N1
+GREEN+AUFL
+–
+1139
+C
+§21
+M2 F87 – BMW M2 Bremsanlage Track
+GREEN+AUFL
+–
+1140
+C
+§21
+T5 – VW T5 Raeder Spurplatten
+GREEN+AUFL
+–
+1141
+D
+§21
+Model S – Tesla ModelS Bremsanlage
+GREEN+EV
+–
+1142
+D
+§21
+e-tron GT – Audi etronGT Downsize
+GREEN+EV
+–
+1143
+D
+§21
+EV6 – Kia EV6 Spurverbreiterung
+GREEN+EV
+–
+1144
+D
+§21
+i4 – BMW i4 M50 Raeder
+GREEN+EV
+–
+1145
+D
+§21
+ID. Buzz – ID Buzz Cargo C Reifen
+GREEN+EV
+–
+1146
+E
+§21
+M4 F82 – BMW M4 LI Widerspruch
+YELLOW
+Tragfähigkeits-Widerspruch: HA 265/30
+R20 89Y → LI 89 = 580 kg/Rad < halbe
+zul. Achslast 625 kg; Prüfbericht
+behauptet dennoch 'Radtraglast
+1147
+E
+§21
+A8 – Audi A8 SR Verstoss
+YELLOW
+SR-Verstoß: Symbol H (210 km/h) bei
+Vmax 250 km/h ohne V-max-
+Begrenzung/Winterreifen-Regelung;
+Prüfbericht erklärt SR dennoch für
+1148
+E
+§21
+Amarok – VW Amarok Tacho fehlt
+YELLOW
+Tacho-Lücke: Abrollumfangabweichung
++6,1 % (> 5 %) im Prüfbericht genannt,
+aber §57 in Aufstellung N/A und keine
+Tachoprüfung dokumentiert
+1149
+E
+§21
+Cayenne – Porsche Cayenne 41 fehlt
+YELLOW
+Prüfumfangs-Lücke: Änderung umfasst
+Bremsscheiben VA, aber §§41 in
+Aufstellung N/A und kein
+§41-Prüfbericht/Wirkungsprüfung – nur
+1150
+E
+§21
+Model 3 – Tesla M3 Abdeckung fehlt
+YELLOW
+Abdeckungs-Lücke: Spurverbreiterung
+2×18 mm dokumentiert, aber §30c und
+§36a in Aufstellung N/A; keine
+Radabdeckungs-/Außenkantenprüfung im
+Alle 25 Fälle: Erlöschen nach §19 Abs. 2 StVZO, Wiedererteilung über Vollgutachten §21 StVZO (4 Seiten je Fall: Datenblatt,
+Aufstellung 2 S., Prüfbericht).
+Soll-Ergebnis: GREEN = keine Beanstandung · GREEN+AUFL = mit Auflagen · GREEN+EV = mit Out-of-Scope-Vermerk · YELLOW = geplante
+Lücke. Alle Daten fiktiv (MUSTER).
+P:4.8.0 D:2026.06.11
+Zweitschrift – MUSTER / Demonstrationszweck
+
+===== C:\Users\morit\autocomply\hackathon-data\Hackathon\Gutachten - Reports\50 Structured Gutachten (Reports)\Gutachten Part 2 (25,21,19)\00_Loesungsschluessel_INTERN.pdf =====
+--- page 1 ---
+MUSTER
+AutoComply Testkorpus – Lösungsschlüssel (INTERN)
+25 Muster-Gutachten · Bereich Rad/Reifen/Spurverbreiterung/Bremsanlage · Prüfer: aaSmT Max Mustermann · Stand 11.06.2026
+Archetypen: A Standard-ABE · B Referenz-TGA · C mit Auflagen · D EV-Edge-Case · E bewusst fehlerhaft (Lücke zu finden)
+Nr.
+Typ
+Route
+Fahrzeug / Änderung
+Soll-Ergebnis
+Geplante Lücke (nur E)
+1101
+A
+§19(3)
+8W – Audi A4 ABE Raeder
+GREEN
+–
+1102
+A
+§19(3)
+X3 G01 – BMW X3 ABE Raeder
+GREEN
+–
+1103
+A
+§19(3)
+Passat B8 – VW Passat ABE Raeder
+GREEN
+–
+1104
+A
+§19(3)
+Octavia IV – Skoda Octavia ABE Winterraeder
+GREEN
+–
+1105
+A
+§21
+C-Klasse – MB C-Klasse Variante ausserhalb ABE
+GREEN
+–
+1106
+B
+§19(3)
+E90 – BMW 320i TGA Referenz
+GREEN
+–
+1107
+B
+§19(3)
+718 Cayman – Porsche 718 TGA Raeder
+GREEN
+–
+1108
+B
+§19(3)
+Golf VII GTI – Golf GTI TGA Raeder
+GREEN
+–
+1109
+B
+§19(3)
+TT 8S – Audi TT TGA Raeder Spurplatten
+GREEN
+–
+1110
+B
+§21
+W124 – MB W124 Klassiker keine TGA
+GREEN
+–
+1111
+C
+§19(3)
+Golf VII – Golf Spurverbreiterung Auflagen
+GREEN+AUFL
+–
+1112
+C
+§19(3)
+M140i F20 – BMW M140i Bremsanlage Auflagen
+GREEN+AUFL
+–
+1113
+C
+§19(3)
+S3 – Audi S3 Stahlflex Raeder
+GREEN+AUFL
+–
+1114
+C
+§21
+Sprinter – Sprinter Spurverbreiterung N2
+GREEN+AUFL
+–
+1115
+C
+§21
+T6.1 – VW T6 Raeder Bremsscheiben
+GREEN+AUFL
+–
+1116
+D
+§19(3)
+Model 3 – Tesla M3 TGA 20Zoll
+GREEN+EV
+–
+1117
+D
+§19(3)
+Ioniq 5 – Ioniq5 Spurverbreiterung
+GREEN+EV
+–
+1118
+D
+§19(3)
+ID.4 – ID4 ABE Winterraeder
+GREEN+EV
+–
+1119
+D
+§21
+Polestar 2 – Polestar2 Bremsanlage keine TGA
+GREEN+EV
+–
+1120
+D
+§21
+Model Y – TeslaY Downsize keine TGA
+GREEN+EV
+–
+1121
+E
+§21
+Sprinter – Sprinter Lift Tacho fehlt
+YELLOW
+§57/Tacho fehlt trotz Abrollumfang
++7,4 % (> 5 %-Schwelle): §57 in
+Aufstellung N/A, keine Tachoprüfung im
+Prüfbericht
+1122
+E
+§19(3)
+E46 – BMW E46 Verwendungsbereich
+YELLOW
+Verwendungsbereich-Verletzung: TGA
+gilt für BMW Typ 390L (E90), Fahrzeug
+ist Typ 346L (E46) – Zuordnung dennoch
+als 'eingehalten' bescheinigt
+1123
+E
+§21
+A6 Avant – Audi A6 Doku Luecke
+YELLOW
+Dokumentationslücke: Radtraglast nur
+'ausreichend' ohne Zahlenwert; §36a
+(Radabdeckung) trotz
+Rad-/Reifenänderung als N/A bewertet
+1124
+E
+§19(3)
+Golf VII GTI – Golf GTI Bremse Felgenkonflikt
+YELLOW
+Auflagenverstoß: TGA fordert Mindest-
+Felgengröße 18″ für Bremsanlage –
+dokumentierte Räder sind 17″;
+Widerspruch nicht aufgelöst
+1125
+E
+§19(3)
+Model 3 – Tesla M3 Spurplatten Auflage fehlt
+YELLOW
+Fehlende Auflagenübernahme: TGA-
+Auflage A3 (Nachziehen der
+Radschrauben nach 50 km) nicht in den
+Nachweis übernommen; zudem kein
+Soll-Ergebnis-Legende: GREEN = keine Beanstandung · GREEN+AUFL = mit dokumentierten Auflagen · GREEN+EV = mit Out-of-Scope-Vermerk
+R10/R100 · YELLOW = dokumentierte Lücke vorhanden.
+Alle Fahrzeuge, FIN, Kennzeichen, Prüfzeugnis-Nummern fiktiv; Dokumente als MUSTER gekennzeichnet (Demonstrations-/Testzweck).
+P:4.8.0 D:2026.06.11
+Zweitschrift – MUSTER / Demonstrationszweck

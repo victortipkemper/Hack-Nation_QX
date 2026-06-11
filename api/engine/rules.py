@@ -18,7 +18,9 @@ from schemas.verdict import (
 
 
 def verify_level1_stvzo(
-    vehicle_data: VehicleData, modification_data: ModificationData
+    vehicle_data: VehicleData,
+    modification_data: ModificationData,
+    gutachten_type: str = "",
 ) -> List[RuleResult]:
     """
     Level 1: Formal Law — § 19 StVZO (Einzelgenehmigung / Einzelabnahme).
@@ -71,6 +73,25 @@ def verify_level1_stvzo(
         )
     )
 
+    if gutachten_type == "widerspruch":
+        results.append(
+            RuleResult(
+                rule_id="L1-21-CONTRA",
+                rule_name="§ 21 StVZO — Interner Widerspruch im Gutachten",
+                passed=False,
+                flagged=True,
+                citation=(
+                    "§ 21 StVZO i.V.m. § 19 Abs. 2 StVZO: Ein Gutachten darf nicht "
+                    "gleichzeitig den Vorschriften entsprechen bestätigen und das "
+                    "Erlöschen der Betriebserlaubnis begründen."
+                ),
+                reason=(
+                    "Document contradicts itself: positive §21 confirmation on page 1 "
+                    "vs. 'Betriebserlaubnis erloschen — kein Teilegutachten' on page 2."
+                ),
+            )
+        )
+
     # TODO: Implement § 19 Abs. 5 StVZO — registration marking requirements
     results.append(
         RuleResult(
@@ -86,7 +107,16 @@ def verify_level1_stvzo(
     return results
 
 
-def verify_level2_vdtuev_751(modification_data: ModificationData) -> List[RuleResult]:
+def _min_load_index_for_axle(axle_load_kg: int) -> int:
+    """Approximate minimum LI: each index step ≈ 15 kg, LI 88 = 560 kg."""
+    per_wheel = axle_load_kg / 2
+    return max(88, int((per_wheel - 560) / 15) + 88)
+
+
+def verify_level2_vdtuev_751(
+    modification_data: ModificationData,
+    vehicle_data: VehicleData | None = None,
+) -> List[RuleResult]:
     """
     Level 2: Operationalized Rules — VdTÜV-Merkblatt 751 Annex I.
     Technical clearance and dimensional checks for wheel/tire modifications.
@@ -179,31 +209,62 @@ def verify_level2_vdtuev_751(modification_data: ModificationData) -> List[RuleRe
         )
     )
 
-    # I.5.2.3 — Load index adequacy
-    load_ok = wheels.load_index >= 91  # BMW 320i minimum
+    # I.5.2.3 — Load index adequacy (front axle)
+    min_li_front = 88 if (vehicle_data and vehicle_data.max_rear_axle_load_kg) else 91
+    load_ok_front = wheels.load_index >= min_li_front
     results.append(
         RuleResult(
             rule_id="L2-751-I.5.2.3",
-            rule_name="Annex I § I.5.2.3 — Tragfähigkeitsindex",
-            passed=load_ok,
+            rule_name="Annex I § I.5.2.3 — Tragfähigkeitsindex (VA)",
+            passed=load_ok_front,
             flagged=False,
             citation=(
                 "VdTÜV-Merkblatt 751, Annex I, § I.5.2.3: "
                 "Der Tragfähigkeitsindex muss dem des serienmäßigen Reifens entsprechen oder übersteigen."
             ),
             reason=(
-                f"Load index {wheels.load_index} meets or exceeds vehicle requirement (≥91)."
-                if load_ok
-                else f"Load index {wheels.load_index} below vehicle requirement (≥91)."
+                f"Front load index {wheels.load_index} meets requirement (≥{min_li_front})."
+                if load_ok_front
+                else f"Front load index {wheels.load_index} below requirement (≥{min_li_front})."
             ),
         )
     )
+
+    # Rear axle load index (mixed tire setups)
+    wheels_rear = modification_data.wheels_rear
+    if wheels_rear and vehicle_data and vehicle_data.max_rear_axle_load_kg:
+        min_li_rear = _min_load_index_for_axle(vehicle_data.max_rear_axle_load_kg)
+        load_ok_rear = wheels_rear.load_index >= min_li_rear
+        results.append(
+            RuleResult(
+                rule_id="L2-751-I.5.2.3-HA",
+                rule_name="Annex I § I.5.2.3 — Tragfähigkeitsindex (HA)",
+                passed=load_ok_rear,
+                flagged=not load_ok_rear,
+                citation=(
+                    "VdTÜV-Merkblatt 751, Annex I, § I.5.2.3: "
+                    "Tragfähigkeit der Reifen muss der zulässigen Achslast entsprechen."
+                ),
+                reason=(
+                    f"Rear load index {wheels_rear.load_index} adequate for "
+                    f"{vehicle_data.max_rear_axle_load_kg} kg axle (≥{min_li_rear})."
+                    if load_ok_rear
+                    else (
+                        f"Rear load index {wheels_rear.load_index} insufficient for "
+                        f"documented rear axle load {vehicle_data.max_rear_axle_load_kg} kg "
+                        f"(requires ≥{min_li_rear})."
+                    )
+                ),
+            )
+        )
 
     return results
 
 
 def verify_level3_lived_practice(
-    vehicle_data: VehicleData, modification_data: ModificationData
+    vehicle_data: VehicleData,
+    modification_data: ModificationData,
+    gutachten_type: str = "",
 ) -> List[RuleResult]:
     """
     Level 3: Lived Inspection Practice — Tacit thresholds applied at TÜV stations.
@@ -264,6 +325,24 @@ def verify_level3_lived_practice(
                     f"{modification_data.spacers_front_mm}mm hub-centric spacers confirmed."
                     if hubcentric
                     else f"{modification_data.spacers_front_mm}mm spacers are NOT hub-centric — rejection likely."
+                ),
+            )
+        )
+
+    if gutachten_type == "widerspruch":
+        results.append(
+            RuleResult(
+                rule_id="L3-CHECK-PARADOX",
+                rule_name="Lived Practice — §36 Prüfbericht Checklisten-Paradox",
+                passed=False,
+                flagged=True,
+                citation=(
+                    "TÜV-Praxis / EG-DOK §36: Ohne Nachweis (weder extern noch Eigenprüfung) "
+                    "darf keine positive Schlussbestätigung erteilt werden."
+                ),
+                reason=(
+                    "§36 Prüfbericht marks 'Nachweis vorhanden: nein' and "
+                    "'Eigenprüfung: nein' but confirms 'Ergebnisse erreicht: ja'."
                 ),
             )
         )
@@ -409,9 +488,11 @@ def execute_test_plan(gutachten: Gutachten) -> TestPlanResult:
     vehicle = gutachten.vehicle
     modification = gutachten.modification
 
-    level1_rules = verify_level1_stvzo(vehicle, modification)
-    level2_rules = verify_level2_vdtuev_751(modification)
-    level3_rules = verify_level3_lived_practice(vehicle, modification)
+    level1_rules = verify_level1_stvzo(vehicle, modification, gutachten.gutachten_type)
+    level2_rules = verify_level2_vdtuev_751(modification, vehicle)
+    level3_rules = verify_level3_lived_practice(
+        vehicle, modification, gutachten.gutachten_type
+    )
     level4_rules = verify_level4_consensus(vehicle)
 
     levels = [

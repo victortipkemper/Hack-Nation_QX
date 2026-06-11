@@ -1,0 +1,165 @@
+
+AUTOCOMPLY HACKATHON
+Briefing for Hackers &amp; MBA‘s
+Building the future of regulatory compliance — together with Hack-Nation
+Sponsored by Autocomply GmbH
+Founder: Wolfgang Bern
+Web: www.bern.de   ·   Hamburg, Germany
+
+
+ TOC \o "1-3" \h \z \u 1. Who is Wolfgang Bern? PAGEREF _Toc231399289 \h 3
+The TL;DR career PAGEREF _Toc231399290 \h 3
+A few more things you may find interesting PAGEREF _Toc231399291 \h 3
+2. What the heck is vehicle homologation? PAGEREF _Toc231399292 \h 3
+Type approval PAGEREF _Toc231399293 \h 4
+Individual approval ("Einzelabnahme") PAGEREF _Toc231399294 \h 4
+3. How an individual approval actually works in Germany PAGEREF _Toc231399295 \h 4
+Quick context for non-Germans: What is the TÜV? PAGEREF _Toc231399296 \h 4
+The actual process for a modified vehicle PAGEREF _Toc231399297 \h 4
+4. The four levels of regulation — and why this is hard PAGEREF _Toc231399298 \h 5
+Level 1 — Formal regulation PAGEREF _Toc231399299 \h 5
+Level 2 — Operationalized regulation PAGEREF _Toc231399300 \h 5
+Level 3 — Lived inspection practice PAGEREF _Toc231399301 \h 5
+Level 4 — Institutionalized truth PAGEREF _Toc231399302 \h 6
+5. What you'll build at this hackathon as a hacker PAGEREF _Toc231399303 \h 6
+Your mission PAGEREF _Toc231399304 \h 6
+The 24-hour reality check PAGEREF _Toc231399305 \h 7
+Why this matters PAGEREF _Toc231399306 \h 7
+6. What you'll build at this hackathon as a MBA PAGEREF _Toc231399307 \h 8
+Your role at this hackathon PAGEREF _Toc231399308 \h 8
+The thesis you are testing PAGEREF _Toc231399309 \h 8
+What you build over the 24 hours PAGEREF _Toc231399310 \h 8
+Picking your second industry PAGEREF _Toc231399311 \h 9
+The phone call requirement PAGEREF _Toc231399312 \h 9
+What the winning pitch looks like PAGEREF _Toc231399313 \h 10
+7. What we provide PAGEREF _Toc231399314 \h 10
+8. One last thing PAGEREF _Toc231399315 \h 10
+
+
+
+1. Who is Wolfgang Bern?
+Hey hackers — short version: I'm an engineer-turned-entrepreneur who has spent the last 25 years building hardware companies on three continents. I'm the founder of Autocomply GmbH, the company hosting this hackathon, and the one challenging you to help us reinvent how vehicles get legally on the road.
+The TL;DR career
+Studied electrical engineering (RWTH Aachen) and business administration. Engineer brain, business heart.
+2013–2021: Founded Hanseatische Fahrzeug Manufaktur near Hamburg — built German motorcycle production from the ground up, plus the autonomous shuttle Busbee.
+2015–2017: Managing Director of Local Motors Berlin — Europe's launch of Olli, the 3D-printed autonomous minibus.
+2022–today: Founded Quickfoot GmbH — a KBA-accredited, ISO 9001 certified German vehicle manufacturer for vehicle classes M, L and O. This is where I deal with homologation pain every single week.
+2026–today: Founded Autocomply GmbH — the RegTech platform for vehicle homologation. This is the company sponsoring you.
+A few more things you may find interesting
+Commercial helicopter pilot (CPL-H FAA).
+Fluent in English, working knowledge of Chinese, German is my mother tongue.
+Why I love hackathons: I have spent decades watching how slowly regulated industries innovate. The smartest people I know are not inside those industries. They are people like you.
+If you're the kind of person who likes to build real things that touch the real world — vehicles, software, regulation, AI — we're going to get along.
+2. What the heck is vehicle homologation?
+Most software engineers have never heard the word "homologation." That's fine — here's the 60-second version.
+Homologation is the official process by which a vehicle is approved to be used on public roads. Before any car, motorcycle, truck or trailer is allowed in traffic, a government-authorized body must confirm that it meets every applicable technical, safety and environmental regulation.
+There are two main flavors of homologation:
+Type approval
+The manufacturer (say, BMW or Tesla) certifies an entire model. Once the type is approved, every individual unit coming off the line is automatically legal. Good for mass production.
+Individual approval ("Einzelabnahme")
+A single, specific vehicle gets inspected and approved. This is what we care about for this hackathon.
+Think of it as: factory-fresh → type approval. Touched after factory → individual approval.
+Who needs individual approval? Anyone who has modified a vehicle so significantly that its original type approval no longer applies. The biggest customer group: tuners — people who change wheels, suspension, engine parts, body panels, exhaust systems and so on. After modification, the vehicle is technically illegal until a certified inspector signs off that it still meets the rules.
+And this isn't theoretical: German police are explicitly authorized to stop modified vehicles on the road, verify the modifications against the Gutachten, and immobilize the vehicle on the spot if anything can't be justified. A flawed Gutachten doesn't just sit in a filing cabinet — it can end with the owner's car on a flatbed truck. That's the real-world stakes of the software you'll be building.
+3. How an individual approval actually works in Germany
+Quick context for non-Germans: What is the TÜV?
+The TÜV (Technischer Überwachungsverein) is a uniquely German institution — independent technical inspection organizations that have been certifying the safety of pretty much everything in Germany since the 1860s. Originally founded to inspect steam boilers, they now inspect cars, elevators, nuclear plants, amusement park rides, and yes — modified vehicles.
+In Germany, the TÜV is not a government agency — it is a group of state-accredited private organizations. The major players are TÜV, DEKRA, GTÜ, and KÜS. Together they form what we call "technische Dienste" (Technical Services). When a German talks about "getting the TÜV done," they mean having a certified engineer inspect their vehicle.
+If you're American: think of it like a hybrid of the DMV inspection, an SAE engineer, and a notary public — all rolled into one private company that the state has authorized to act on its behalf.
+One detail that matters for understanding the rest of this briefing: the vehicle owner pays the TÜV directly for the inspection — typically €100–€300. Because TÜV, DEKRA, GTÜ and KÜS compete for the same customers but share the same legal authority, consensus across them isn't optional — it's how the whole system holds together. Remember this; it explains why "Level 4" exists later in this document.
+The actual process for a modified vehicle
+The customer (e.g. a tuner) brings their modified vehicle to a TÜV inspection station.
+A certified inspector ("Sachverständiger") examines the vehicle against the applicable regulations.
+The inspector compares the modifications to a hierarchy of rules (more on this in a moment).
+If the vehicle passes, the inspector issues a Gutachten (an official expert report). The customer takes this to the registration office and the car gets re-registered.
+Internally, the inspector also documents the basis of their decision for the TÜV's own quality assurance / internal audit purposes.
+A typical Gutachten is a multi-page German-language PDF mixing structured tables (vehicle data, measurements, tested components) and free-text reasoning (the inspector's justification). Alongside it, the inspector files separate internal notes — those are the "Level 3" gold we'll explain in the next section.
+4. The four levels of regulation — and why this is hard
+This is the most important section. To understand why this problem is interesting, you need to understand that vehicle regulation in Germany is not one rulebook. It's a layered system. Let's walk through it with one of our real reference cases: a BMW 320i E90 (235 km/h, 8.5J × 19 inch wheels, ET 35, with a 12 mm wheel spacer) that has been fitted with aftermarket wheels and tires.
+Level 1 — Formal regulation
+Versioned, citable, official law. EU directives, German vehicle code (StVZO), ECE regulations. This is the bedrock — but it's written in legalese and often abstract.
+BMW 320i example: The legal basis here is § 19 Abs. 3 Nr. 4 StVZO, which governs when modifications can be approved via a Teilegutachten (a part-specific expert report). Underlying ECE regulations include R30 (passenger car tires), R13/R79 (braking and steering implications), and so on. These define what is legally permissible — but they say nothing about your specific BMW with your specific spacer.
+Level 2 — Operationalized regulation
+Technical rules and "TÜV Merkblätter" (information sheets). These translate the abstract laws into specific technical criteria an inspector can actually measure.
+BMW 320i example: VdTÜV-Merkblatt 751 — full title "Begutachtung von baulichen Veränderungen an M- und N-Fahrzeugen unter besonderer Berücksichtigung der Betriebsfestigkeit" — is the operational rulebook here. Its Annex I alone defines 14 specific tests (I.5.1.1 through I.5.1.14) that an inspector walks through for a wheel/tire modification: wheel strength, mounting geometry, tire-to-fender clearance (minimum 4 mm to suspension parts, 6 mm to other components), speedometer tolerance, brake thermal load, ESP functionality, and more. This is the material your test plan will be built from.
+Level 3 — Lived inspection practice
+How the inspector actually decides things. Their internal notes, their reasoning, the precedents they have built up in their head over years of inspections. This is the gold — but it's tacit knowledge that lives in the inspector's brain and in internal TÜV documents.
+Practice example (from one of our reference Gutachten, a VW Golf VII with coilover lowering of ~30 mm): Merkblatt 751 (I.5.1.11) requires that the vehicle's electronic stability control "must remain functional" after the modification — but it doesn't specify the ride-height threshold at which to actively test it. Experienced inspectors have settled on a practical threshold of roughly 40 mm — close enough that on a 30 mm drop, a careful inspector adds an ESP recommendation to the Gutachten. The rule says "check if relevant." Practice decides when it's relevant. That threshold lives in nobody's law book — it lives in the inspectors' collective experience.
+Level 4 — Institutionalized truth
+Consensus across multiple inspection organizations. When TÜV, DEKRA, GTÜ and KÜS all agree on how to handle a certain modification, that consensus becomes the de facto standard — even if no formal law dictates it. (Remember the competition dynamic from Section 3? This is where it manifests.)
+Consensus example (from another reference case, a Tesla Model 3 BEV with lowering springs): ECE regulations R10 and R100 govern electromagnetic compatibility and electric powertrain safety for BEVs. The major German inspection bodies have collectively classified these as out-of-scope for tuning-style wheel/tire Gutachten — they're handled separately by the OEM type approval and not re-tested per modification. No StVZO paragraph spells this out. But every inspector at every house follows it, because they have all aligned on this position.
+All four levels matter. A Gutachten that satisfies Level 1 but contradicts Level 3 will fail an internal audit. A Gutachten that follows Level 3 but ignores Level 1 is legally void. The challenge: no software today can reason across all four levels.
+5. What you'll build at this hackathon as a hacker
+We'll provide you with a set of curated, structured Gutachten — built around five archetypal reference patterns (a Standard-ABE case, a textbook Teilegutachten reference, a lowering-with-conditions case, an EV edge case, and a deliberately flawed case with a documented gap to find), with approximately 50 individual Gutachten distributed across these patterns. These come to you in a clean, structured format — no PDF-parsing required. Wheel/tire modifications are the most common tuning change, and a perfectly contained problem for a 24-hour build.
+Your mission
+This is the what — a separate technical briefing covers the how (data formats, evaluation criteria, the five reference cases, suggested approaches). Here's the outcome we're looking for. Build software that:
+Reads a structured Gutachten and understands the vehicle, the modification, and the inspector's reasoning.
+Generates a test plan for each Gutachten — a structured checklist of which rules from Levels 1, 2, 3 and 4 should have been applied, given this specific vehicle and its date of first registration. The process must be deterministic, and the decision-making process must be traceable step by step.
+Checks the Gutachten against that test plan and flags any rules that were missed, misapplied or ignored.
+Shows its work. For every finding, the software must cite the underlying regulation, technical rule or TÜV information sheet that justifies the check. Black-box LLM outputs without citation will not qualify for prizes.
+Learns over time. As more Gutachten from many different inspectors flow through the system — and especially as the inspectors' internal reasoning notes are ingested — the software should build up an evolving "brain" of which rules apply to which vehicle, given its first date of registration and the modifications performed.
+The 24-hour reality check
+24 hours is short — that's why we've scoped the challenge tight. Wheels and tires only. For that slice, we expect working error detection on real Gutachten by the end of the day. The five bullets above are the full vision — your 24-hour build should hit the first three solidly on wheels and tires; the learning loop (bullet 5) can be sketched as direction, not delivered.
+Why this matters
+If we get this right, we are not just building a quality-assurance tool for TÜV inspectors. We are building the first software in the world that can reason across all four levels of vehicle regulation — and we are giving tuners, manufacturers, importers, and inspection bodies a way to do their work faster, cheaper and with fewer mistakes.
+This problem sits at the intersection of: regulatory text parsing, structured data extraction from semi-structured documents, knowledge graphs, retrieval-augmented generation, rule-based reasoning, and continual learning. There is no "off the shelf" solution. You will be inventing something new.
+Our motto for this project: One Gutachten in, one auditable verdict out — zero generative inference in the decision. The LLM helps you understand the document; the rules engine makes the call.
+
+6. What you'll build at this hackathon as a MBA
+Your role at this hackathon
+You are  MBA innovation architect with an average of seven years of compliance experience, distributed two-per-team across the three hacker teams. You are not here to advise the hackers. They work on the technical stack for vehicle homologation; that conversation is theirs. You work on a parallel, equally important question, one that may matter more for the company's future than any single tech stack does:
+Where else does this software belong, and what is it worth?
+Your output is an investor-grade pitch deck answering that question for Autocomply GmbH.
+The thesis you are testing
+Autocomply is built on a single conviction:
+Regulatory truth is not the legal text. It is the interpretation accepted in practice.
+That distinction is the entire business case. Every regulated industry has a formal layer (statutes, directives, regulations), but the actual compliance threshold is set by the people who interpret those rules day to day, inspectors, auditors, certifying bodies. The gap between the written rule and the lived interpretation is where compliance software either earns its place or proves itself irrelevant.
+Vehicle homologation is one example of this pattern. There are many others. Your job is to find a second one, validate it, and tell the investor story for both.
+What you build over the 24 hours
+A slide pitch deck, live-presented at the closing ceremony, which includes at least:
+The Pattern: the regulatory-truth thesis in your own words, framed for an investor
+The Problem: the four-level model (formal regulation, operationalized rules, lived practice, institutional consensus) and why the gap between levels is where software wins or loses
+Vehicle Homologation Business Case: market size, business model, go-to-market, competitive landscape. This is Autocomply's home turf and must be investor-ready
+Cross-Industry Expansion: a second regulated industry of your choice, validated by phone calls, mapped to the four-level model, with a concrete market estimate
+Investment Thesis: what this means for Autocomply as a platform play, not just a single-vertical product
+You can rebalance within the 10–12 slide envelope, but every section must be present.
+
+Picking your second industry
+You choose your own. But the industry must clear five criteria - all five, not a subset:
+Regulated. Formal rules exist at statute or directive level. (Level 1 is visible.)
+Four-level structure detectable. There is a gap between what the rules say and how practitioners actually apply them. (Level 3 exists.)
+Cross-jurisdiction tension. Different markets allow or forbid different things - the same substance, product, or practice gets different treatment in different countries. (Level 4 matters.)
+Adressable market above 100 M EUR annually. Smaller than that and a software platform cannot earn its cost of capital.
+Pain validated by phone. At least one practitioner you called confirms that the problem is real, expensive, and currently unsolved.
+A worked example to calibrate against: flavoring agents. A strawberry flavor compound that turns green in milk but stays red in mineral water (Level 3 reality that no Level 1 text predicts). The same compound permitted as a milk additive in Germany, banned in Japan (Level 4 jurisdiction tension). EU Regulation 1333/2008 sets the formal rules, but how a certifier interprets "natural-identical" varies by national tradition. Compliance pain is real, the market is global, and no good software exists. The pattern fits.
+Pharma, medical devices, cosmetics, food safety, construction materials, marine equipment, agricultural inputs, dual-use export controls, many candidates fit. Find one that interests your team and survives the five criteria.
+The phone call requirement
+This is not optional. At least three validated calls with practitioners in your chosen industry, completed within the 24-hour sprint window. Each call documented with:
+Name and position of the person
+Date and time of the call
+Two to three core statements they made about the compliance pain in their industry
+At least one of these three calls must be with someone operationally embedded in the compliance work - not a consultant, not an analyst, not someone who writes about the industry. An actual practitioner who deals with regulatory interpretation as part of their job.
+The reason for this rule: a pitch built on desk research alone is indistinguishable from a confident hallucination. Calls are the evidence layer. They are also the part of your work that will hold up under investor scrutiny in three months, when someone asks you whether the pain is real.
+A realistic operating window: roughly 4–6 business hours during the sprint (15:00–18:00 on day one, 09:00–15:00 on day two). Calls can be 15–20 minutes. You will be telling people you are working on a research project from a German venture during a structured sprint - most practitioners will give you 15 minutes if you ask cleanly.
+What the winning pitch looks like
+Tight on numbers, honest about risk, specific about the next move, anchored in validated practitioner pain. Not "Autocomply could be the Bloomberg of regulatory compliance" (it cannot - Bloomberg sells data, Autocomply will sell interpretation). Not "TAM is 200 B EUR" (TAM is whatever you can defend, not whatever sounds large). Not "we have first-mover advantage" (you have a 24-hour sketch, not an advantage).
+What it sounds like: "In flavoring agents, the certification gap costs mid-sized European producers an average of 4–8 weeks per new product launch. We spoke to three operations leads at companies between 50 M and 300 M EUR revenue. All three confirmed they pay external consultants 60–120 K EUR per launch to navigate cross-jurisdiction interpretation differences. Autocomply's stack — built first for vehicle homologation — generalizes to this market through the same four-level abstraction, with a realistic two-year capture path."
+That tone. Specific, validated, honest about the limits.
+
+7. What we provide
+Direct access to me and the Autocomply team for any questions about the domain. We are not the kind of sponsor that hands you a brief and disappears.
+A real shot at continuing the work after the hackathon. Autocomply is actively building this platform, and the winning team(s) can become the foundation of a real product, a partnership, or a hire. We mean it.
+Approx. 50 curated, structured reference Gutachten distributed across five archetypal patterns — a Standard-ABE case, a textbook Teilegutachten reference, a lowering-with-conditions case, an EV edge case, and a deliberately flawed case with a documented gap to find. Delivered in clean structured format — no PDF parsing required.
+The relevant regulatory texts (Level 1) and technical rules / Merkblätter (Level 2) for the wheel/tire domain.
+Sample internal reasoning notes from certified inspectors (Level 3) — anonymized.
+8. One last thing
+I've spent my whole career building physical things — motorcycles, helicopters, autonomous shuttles, supply chains across continents. What I have learned is that the gap between "the rules" and "how things actually get built" is where the most valuable software in the world gets created.
+Vehicle homologation is one of those gaps. It is enormous. It is boring on the outside and fascinating on the inside. And it is wide open for the right team of hackers to crack it.
+Bring your curiosity. Bring your favorite stack. We'll handle the domain knowledge.
+For that, join our Discord at https://discord.com/invite/fFaBjFTFGy.
+
+See you at the hackathon.
+— Wolfgang Bern
+Founder, Autocomply GmbH
+Email: Wolfgang@Bern.de
+Web: www.bern.de

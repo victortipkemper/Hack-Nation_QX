@@ -1,0 +1,70 @@
+Underlying Regulations – Source and Download List
+Expert reports XSOC017Z-0 (Audi A6 Avant) and XSOC017I-1 (Mercedes E 350 CDI)   ·   As of: 11 June 2026   ·   Bern GmbH
+All regulations referenced in the two expert reports and the associated review memo, with a link to the respective official source. National provisions via gesetze-im-internet.de, EU law via EUR-Lex (English language version), UN Regulations via UNECE or EUR-Lex. The links lead to the currently consolidated version; the version in force at the time of assessment always governs.
+Regulation
+Subject matter
+Source / Download
+A   National law – official source: gesetze-im-internet.de
+StVZO (full version)
+German Road Traffic Licensing Regulation, consolidated (PDF)
+https://www.gesetze-im-internet.de/stvzo_2012/StVZO.pdf
+§ 19 StVZO
+Validity / lapse of the operating permit
+https://www.gesetze-im-internet.de/stvzo_2012/__19.html
+§ 21 StVZO
+Operating permit for individual vehicles
+https://www.gesetze-im-internet.de/stvzo_2012/__21.html
+§ 30 StVZO
+General construction requirements for vehicles
+https://www.gesetze-im-internet.de/stvzo_2012/__30.html
+§ 30c StVZO
+Projecting outer edges, front protection systems
+https://www.gesetze-im-internet.de/stvzo_2012/__30c.html
+§ 36 StVZO
+Tyres and tread surfaces
+https://www.gesetze-im-internet.de/stvzo_2012/__36.html
+§ 36a StVZO
+Wheel covers, spare wheels
+https://www.gesetze-im-internet.de/stvzo_2012/__36a.html
+§ 38 StVZO
+Steering equipment
+https://www.gesetze-im-internet.de/stvzo_2012/__38.html
+§ 57 StVZO
+Speedometer and odometer
+https://www.gesetze-im-internet.de/stvzo_2012/__57.html
+StVZO Annex XIX
+Component report (Teilegutachten) / scope of use
+included in StVZO full version (see above)
+EG-FGV
+EC Vehicle Approval Regulation (implementing 2018/858)
+gesetze-im-internet.de/eg-fgv_2011
+B   EU law – official source: EUR-Lex (English language version)
+Reg. (EU) 2018/858
+Framework: type-approval &amp; market surveillance of motor vehicles
+eur-lex.europa.eu – CELEX 32018R0858
+Reg. (EU) 2019/2144
+General Safety Regulation (GSR); amends 2018/858
+eur-lex.europa.eu – CELEX 32019R2144
+Reg. (EU) 2020/740
+Tyre labelling (fuel efficiency etc.)
+eur-lex.europa.eu – CELEX 32020R0740
+C   UN Regulations (1958 Agreement) – co-applicable for wheels/tyres
+UN-R 30
+Tyres for passenger cars and their trailers (approval/marking)
+unece.org (consolidated, EN)
+UN-R 39
+Speedometer/odometer (02 series, from 2025)
+eur-lex.europa.eu (EN, OJ 2025/1902)
+UN-R 124
+Replacement wheels for passenger cars and their trailers
+unece.org (consolidated, EN)
+D   Technical codes – recognised rules of technology
+VdTÜV Merkblatt 751
+Assessment of wheels / wheel-tyre combinations
+can be downloaded from our google drive
+ETRTO Standards Manual
+Dimensions / load capacity / speed rating of tyres and rims
+Calculate it on your own based on ETRTO criteria:
+
+
+Notes: UN Regulations are officially available in EN/FR; German-language versions are published as EU adoptions in the Official Journal (EUR-Lex). Regulations (EU) 2018/858, 2019/2144 and 2020/740 are listed for reference as the framework – they do not directly apply to modifications of an already registered vehicle (national competence).

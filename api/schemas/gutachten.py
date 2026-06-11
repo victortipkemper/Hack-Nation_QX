@@ -59,6 +59,7 @@ class VehicleData(BaseModel):
     has_esp: bool = True
     has_abs: bool = True
     gross_vehicle_weight_kg: int
+    max_rear_axle_load_kg: Optional[int] = None
 
 
 class Gutachten(BaseModel):

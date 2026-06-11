@@ -7,7 +7,10 @@ const nextConfig = {
     return [
       {
         source: "/api/:path*",
-        destination: "http://localhost:8000/api/:path*",
+        destination:
+          process.env.AUTOCOMPLY_API_URL ??
+          process.env.NEXT_PUBLIC_API_URL ??
+          "http://127.0.0.1:8010/api/:path*",
       },
     ];
   },
