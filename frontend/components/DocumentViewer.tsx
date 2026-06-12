@@ -10,6 +10,7 @@ import {
   Highlighter,
   Wrench,
 } from "lucide-react";
+import { ExpertNachpruefungPanel } from "./ExpertNachpruefung";
 import { PdfHijackViewer } from "./PdfHijackViewer";
 import type { RuleAnnotation, GutachtenDocument } from "@/lib/documentAnnotations";
 import type { RuleResult } from "@/types";
@@ -18,6 +19,7 @@ interface DocumentViewerProps {
   document: GutachtenDocument;
   rule: RuleResult;
   annotation: RuleAnnotation;
+  uploadId?: string | null;
   onClose: () => void;
 }
 
@@ -25,6 +27,7 @@ export function DocumentViewer({
   document: doc,
   rule,
   annotation,
+  uploadId,
   onClose,
 }: DocumentViewerProps) {
   const activeRegions = annotation.regions ?? [];
@@ -139,6 +142,14 @@ export function DocumentViewer({
           </div>
         )}
       </div>
+
+      {uploadId && rule.flagged && rule.rule_id !== "—" && (
+        <ExpertNachpruefungPanel
+          uploadId={uploadId}
+          checkId={rule.rule_id}
+          checkName={rule.rule_name}
+        />
+      )}
 
       <div className="bg-white rounded-xl border border-slate-200 shadow-sm overflow-hidden">
         <div className="flex items-center gap-2 px-4 py-3 bg-slate-800 text-white">

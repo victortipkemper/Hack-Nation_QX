@@ -1,4 +1,4 @@
-# Autocomply starten — Doppelklick auf start.bat
+# Autocomply starten - Doppelklick auf start.bat
 $ErrorActionPreference = "SilentlyContinue"
 $root = Split-Path -Parent $MyInvocation.MyCommand.Path
 
@@ -22,14 +22,22 @@ Stop-Port 3001
 Stop-Port $apiPort
 Start-Sleep -Seconds 2
 
+$envFile = Join-Path $root "api\.env"
+if (Test-Path $envFile) {
+    Write-Host '  LLM: api/.env gefunden (OPENAI_API_KEY wird geladen)' -ForegroundColor Green
+} else {
+    Write-Host '  LLM: keine api/.env - Expertenwissen nur als Vorlage' -ForegroundColor Gray
+    Write-Host '       Tipp: copy api/.env.example api/.env und Key eintragen' -ForegroundColor Gray
+}
+
 Write-Host "[2/5] API starten (Port $apiPort)..." -ForegroundColor Yellow
-Start-Process powershell -ArgumentList @(
-    "-NoExit", "-Command",
-    "Set-Location '$root\api'; " +
-    "Write-Host '>>> API: http://localhost:$apiPort' -ForegroundColor Green; " +
-    "Write-Host '>>> Docs: http://localhost:$apiPort/docs' -ForegroundColor Gray; " +
-    "python -m uvicorn main:app --host 127.0.0.1 --port $apiPort --reload"
-)
+$apiCmd = @"
+Set-Location '$root\api'
+Write-Host '>>> API: http://localhost:$apiPort' -ForegroundColor Green
+Write-Host '>>> Docs: http://localhost:$apiPort/docs' -ForegroundColor Gray
+python -m uvicorn main:app --host 127.0.0.1 --port $apiPort --reload
+"@
+Start-Process powershell -ArgumentList @("-NoExit", "-Command", $apiCmd)
 
 Write-Host "[3/5] Warte auf kalibrierte Checkliste-API..." -ForegroundColor Yellow
 $apiReady = $false
@@ -39,6 +47,9 @@ for ($i = 1; $i -le 25; $i++) {
         $h = Invoke-RestMethod -Uri "http://127.0.0.1:$apiPort/api/health" -TimeoutSec 2
         if ($h.checklist_version -and $h.version -like "*checklist*") {
             Write-Host "  API bereit: $($h.version) / $($h.checklist_version)" -ForegroundColor Green
+            if ($h.llm_available) {
+                Write-Host '  LLM aktiv (llm_available=true)' -ForegroundColor Green
+            }
             $apiReady = $true
             break
         }
@@ -52,14 +63,14 @@ if (-not $apiReady) {
 }
 
 Write-Host "[4/5] Frontend starten (Port 3000, API -> $apiPort)..." -ForegroundColor Yellow
-Start-Process powershell -ArgumentList @(
-    "-NoExit", "-Command",
-    "Set-Location '$root\frontend'; " +
-    "`$env:NEXT_PUBLIC_API_URL='http://127.0.0.1:$apiPort'; " +
-    "Write-Host '>>> Frontend: http://localhost:3000' -ForegroundColor Green; " +
-    "Write-Host '>>> API proxy: http://127.0.0.1:$apiPort' -ForegroundColor Gray; " +
-    "npm run dev"
-)
+$feCmd = @"
+Set-Location '$root\frontend'
+`$env:NEXT_PUBLIC_API_URL='http://127.0.0.1:$apiPort'
+Write-Host '>>> Frontend: http://localhost:3000' -ForegroundColor Green
+Write-Host '>>> API proxy: http://127.0.0.1:$apiPort' -ForegroundColor Gray
+npm run dev
+"@
+Start-Process powershell -ArgumentList @("-NoExit", "-Command", $feCmd)
 
 Write-Host "[5/5] Warte auf Frontend..." -ForegroundColor Yellow
 $ready = $false

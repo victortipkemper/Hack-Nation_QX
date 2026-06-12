@@ -56,3 +56,4 @@ class UploadResponse(BaseModel):
     test_plan: TestPlanResult
     checklist_execution: ChecklistExecution
     document: UploadedDocument
+    bundle_manifest: Optional[dict] = None

@@ -4,6 +4,7 @@ import { useCallback, useEffect, useMemo, useState } from "react";
 import { CaseSelector } from "@/components/CaseSelector";
 import { InspectorWorkspace } from "@/components/InspectorWorkspace";
 import {
+  deleteExpertKnowledge,
   fetchHealth,
   fetchUploadChecklist,
   submitExpertReview,
@@ -11,6 +12,7 @@ import {
 } from "@/lib/api";
 import { resolveChecklistExecution } from "@/lib/checklistFallback";
 import {
+  isCalibratedApiHealth,
   isCalibratedChecklist,
   testPlanFromChecklist,
 } from "@/lib/checklistView";
@@ -45,12 +47,7 @@ export default function HomePage() {
   useEffect(() => {
     fetchHealth()
       .then((h) => {
-        const calibrated =
-          h.checklist_engine &&
-          h.version.includes("checklist") &&
-          (h.checklist_version?.includes("golden") ||
-            h.checklist_version?.includes("1.1"));
-        setApiOutdated(!calibrated);
+        setApiOutdated(!isCalibratedApiHealth(h));
       })
       .catch(() => setApiOutdated(true));
   }, []);
@@ -86,7 +83,7 @@ export default function HomePage() {
           const h = await fetchHealth();
           detail = `API meldet Version „${h.version}“${
             h.checklist_version ? ` (Checkliste ${h.checklist_version})` : ""
-          } — erwartet wird 0.3.0-checklist.`;
+          } — erwartet wird 0.3.1-learning mit Checkliste 1.2.x.`;
         } catch {
           detail = "API auf Port 8010 nicht erreichbar.";
         }
@@ -176,6 +173,27 @@ export default function HomePage() {
     [activeSessionId]
   );
 
+  const refreshSessionChecklist = useCallback(
+    async (sessionId: string, uploadId: string) => {
+      if (!uploadId || uploadId.startsWith("pending-")) return;
+      const checklist = await fetchUploadChecklist(uploadId);
+      const checklistExecution = resolveChecklistExecution(checklist);
+      if (!checklistExecution) return;
+      setSessions((prev) =>
+        prev.map((s) =>
+          s.id === sessionId
+            ? {
+                ...s,
+                checklistExecution,
+                result: testPlanFromChecklist(checklistExecution),
+              }
+            : s
+        )
+      );
+    },
+    []
+  );
+
   const handleExpertReview = useCallback(
     async (step: WhiteBoxStep, decision: ExpertDecision) => {
       const session = sessions.find((s) => s.id === activeSessionId);
@@ -189,30 +207,20 @@ export default function HomePage() {
         gutachten_id: session.checklistExecution?.gutachten_id ?? "",
       });
 
-      // Approval changes the verdict — re-run the checklist with the new knowledge
-      if (
-        decision === "approve" &&
-        session.uploadId &&
-        !session.uploadId.startsWith("pending-")
-      ) {
-        const checklist = await fetchUploadChecklist(session.uploadId);
-        const checklistExecution = resolveChecklistExecution(checklist);
-        if (checklistExecution) {
-          setSessions((prev) =>
-            prev.map((s) =>
-              s.id === session.id
-                ? {
-                    ...s,
-                    checklistExecution,
-                    result: testPlanFromChecklist(checklistExecution),
-                  }
-                : s
-            )
-          );
-        }
-      }
+      // Both decisions change the persisted state — re-run the checklist
+      await refreshSessionChecklist(session.id, session.uploadId);
     },
-    [sessions, activeSessionId]
+    [sessions, activeSessionId, refreshSessionChecklist]
+  );
+
+  const handleRevokeReview = useCallback(
+    async (entryId: string) => {
+      const session = sessions.find((s) => s.id === activeSessionId);
+      if (!session) return;
+      await deleteExpertKnowledge(entryId);
+      await refreshSessionChecklist(session.id, session.uploadId);
+    },
+    [sessions, activeSessionId, refreshSessionChecklist]
   );
 
   const handleInspectRule = useCallback((rule: RuleResult) => {
@@ -281,6 +289,7 @@ export default function HomePage() {
           result={activeSession?.result ?? null}
           checklistExecution={activeSession?.checklistExecution ?? null}
           document={activeSession?.document ?? null}
+          uploadId={activeSession?.uploadId ?? null}
           loading={activeSession?.status === "loading"}
           inspectedRule={inspectedRule}
           activeAnnotation={activeAnnotation}
@@ -289,6 +298,7 @@ export default function HomePage() {
           workspaceTab={workspaceTab}
           onTabChange={setWorkspaceTab}
           onExpertReview={handleExpertReview}
+          onRevokeReview={handleRevokeReview}
         />
       </main>
     </div>

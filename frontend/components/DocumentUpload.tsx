@@ -19,11 +19,12 @@ export function DocumentUpload({
 
   const handleFiles = useCallback(
     async (fileList: FileList | File[]) => {
-      const pdfs = Array.from(fileList).filter((f) =>
-        f.name.toLowerCase().endsWith(".pdf")
-      );
-      if (pdfs.length === 0) return;
-      await onUploadFiles(pdfs);
+      const files = Array.from(fileList).filter((f) => {
+        const n = f.name.toLowerCase();
+        return n.endsWith(".pdf") || n.endsWith(".zip");
+      });
+      if (files.length === 0) return;
+      await onUploadFiles(files);
     },
     [onUploadFiles]
   );
@@ -63,7 +64,7 @@ export function DocumentUpload({
         <input
           ref={inputRef}
           type="file"
-          accept=".pdf,application/pdf"
+          accept=".pdf,.zip,application/pdf,application/zip"
           multiple
           className="hidden"
           onChange={(e) => {
@@ -78,8 +79,8 @@ export function DocumentUpload({
             <Loader2 className="w-6 h-6 text-brand-500 animate-spin" />
             <p className="text-xs text-slate-600">
               {loadingCount > 1
-                ? `${loadingCount} PDFs werden analysiert…`
-                : "PDF wird analysiert…"}
+                ? `${loadingCount} Dateien werden analysiert…`
+                : "Datei wird analysiert…"}
             </p>
           </div>
         ) : (
@@ -88,11 +89,11 @@ export function DocumentUpload({
               <Upload className="w-5 h-5 text-brand-600" />
             </div>
             <p className="text-sm font-medium text-slate-700">
-              PDF(s) hier ablegen
+              PDF oder ZIP hier ablegen
             </p>
             <p className="text-xs text-slate-500 flex items-center gap-1">
               <FileUp className="w-3 h-3" />
-              mehrere möglich · max. 20 MB
+              PDF · ZIP-Paket · max. 50 MB
             </p>
           </div>
         )}

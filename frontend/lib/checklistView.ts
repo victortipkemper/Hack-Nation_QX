@@ -6,6 +6,23 @@ const NEW_ENGINE_CHECK_IDS = new Set([
   "L3-AUFSTELLUNG-001",
 ]);
 
+/** Health response from /api/health — new checklist engine running? */
+export function isCalibratedApiHealth(h: {
+  checklist_engine?: boolean;
+  version?: string;
+  checklist_version?: string;
+}): boolean {
+  if (!h.checklist_engine) return false;
+  const cv = h.checklist_version ?? "";
+  return (
+    cv.includes("golden") ||
+    cv.includes("bundle") ||
+    cv.includes("1.1") ||
+    cv.includes("1.2") ||
+    cv.includes("photos")
+  );
+}
+
 /** True when the API returned the golden-calibrated checklist (not legacy rules engine). */
 export function isCalibratedChecklist(
   execution: ChecklistExecution | null | undefined
@@ -15,7 +32,13 @@ export function isCalibratedChecklist(
   const version = execution.checklist_version ?? "";
   if (version.includes("fallback")) return false;
 
-  if (version.includes("golden") || version.includes("1.1")) {
+  if (
+    version.includes("golden") ||
+    version.includes("bundle") ||
+    version.includes("1.1") ||
+    version.includes("1.2") ||
+    version.includes("photos")
+  ) {
     return true;
   }
 

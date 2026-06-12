@@ -16,6 +16,12 @@ api/data/expert_decisions.jsonl
 *.tsbuildinfo
 api/data/reference_docs/
 api/data/reference_renders/
+api/_bundle_*.txt
+api/_proto.txt
 hackathon-data/
 _push.ps1
 _push_log.txt
+_push_err.txt
+_push_out.txt
+api/data/learned_model.json
+api/data/expert/merkblatt_751_extract.json

@@ -21,10 +21,14 @@ class WhiteBoxStep(BaseModel):
     evidence: str = ""
     reason: str = ""
     remediation_hint: str = ""
-    exemplar_reference: str = ""
+    verification_hint: str = ""  # So überprüfbar — ohne Verweis auf andere Dokumente
+    exemplar_reference: str = ""  # legacy alias, synced from verification_hint
+    hint_source: str = "seed"  # seed | corpus+seed | corpus-primary
     review_fingerprint: str = ""
     expert_override: bool = False
     expert_override_id: str = ""
+    expert_confirmed: bool = False
+    expert_confirmed_id: str = ""
 
 
 class ChecklistExecution(BaseModel):

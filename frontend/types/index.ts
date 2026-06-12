@@ -170,10 +170,16 @@ export interface WhiteBoxStep {
   evidence: string;
   reason: string;
   remediation_hint: string;
+  /** Procedural verification steps — learned from corpus, no doc references */
+  verification_hint?: string;
   exemplar_reference: string;
+  /** seed | corpus+seed | corpus-primary */
+  hint_source?: string;
   review_fingerprint?: string;
   expert_override?: boolean;
   expert_override_id?: string;
+  expert_confirmed?: boolean;
+  expert_confirmed_id?: string;
 }
 
 export interface ExpertReviewRequest {
@@ -189,6 +195,7 @@ export interface ExpertReviewRequest {
 export interface ExpertKnowledgeEntry {
   entry_id: string;
   fingerprint: string;
+  decision?: "approve" | "reject";
   check_id: string;
   check_name?: string;
   evidence: string;
@@ -230,4 +237,5 @@ export interface UploadResponse {
   test_plan: TestPlanResult;
   checklist_execution?: ChecklistExecution | null;
   document: UploadedDocument;
+  bundle_manifest?: Record<string, unknown> | null;
 }

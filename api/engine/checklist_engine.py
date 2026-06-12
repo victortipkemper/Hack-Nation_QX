@@ -18,7 +18,7 @@ from schemas.verdict import (
     VerdictStatus,
 )
 from schemas.whitebox import ChecklistExecution, WhiteBoxStep
-from services.expert_knowledge import find_override, make_fingerprint
+from services.expert_decisions import find_decision, make_fingerprint
 
 LEVEL_NAMES = {
     1: "Level 1 — StVZO (formales Recht)",
@@ -44,7 +44,7 @@ def execute_checklist(
         is_applicable, applicability_reason = check.applicable(features)
 
         if not is_applicable:
-            remediation, exemplar = _remediation(check.exemplar_key)
+            remediation, verification, hint_source = _remediation(check.exemplar_key)
             steps.append(
                 WhiteBoxStep(
                     step=step_num,
@@ -58,7 +58,9 @@ def execute_checklist(
                     executed=False,
                     skipped_reason="Nicht anwendbar für dieses Gutachten.",
                     remediation_hint=remediation,
-                    exemplar_reference=exemplar,
+                    verification_hint=verification,
+                    exemplar_reference=verification,
+                    hint_source=hint_source,
                 )
             )
             continue
@@ -66,19 +68,29 @@ def execute_checklist(
         applicable_count += 1
         passed, flagged, reason, _evidence_key = check.evaluate(features)
         executed_count += 1
-        remediation, exemplar = _remediation(check.exemplar_key)
+        remediation, verification, hint_source = _remediation(
+            check.exemplar_key, reason
+        )
         fingerprint = make_fingerprint(check.check_id, reason)
 
-        # Expert-approved override: same finding was reviewed as acceptable
-        override = None
+        # Saved expert decision for this exact finding:
+        # approve → finding is acceptable, step passes;
+        # reject → genuine defect, stays flagged but marked confirmed.
+        entry = None
         if check.severity == "error" and (flagged or passed is False):
-            override = find_override(check.check_id, reason)
-        if override:
+            entry = find_decision(check.check_id, reason)
+        decision = entry.get("decision", "approve") if entry else ""
+        if decision == "approve":
             passed = True
             flagged = False
             reason = (
                 f"Durch Expertenwissen freigegeben "
-                f"({override['entry_id']}): {reason}"
+                f"({entry['entry_id']}): {reason}"
+            )
+        elif decision == "reject":
+            reason = (
+                f"Beanstandung durch Experten bestätigt "
+                f"({entry['entry_id']}): {reason}"
             )
 
         steps.append(
@@ -97,10 +109,14 @@ def execute_checklist(
                 evidence=reason,
                 reason=reason,
                 remediation_hint=remediation if (not passed or flagged) else "",
-                exemplar_reference=exemplar,
+                verification_hint=verification,
+                exemplar_reference=verification,
+                hint_source=hint_source,
                 review_fingerprint=fingerprint,
-                expert_override=override is not None,
-                expert_override_id=override["entry_id"] if override else "",
+                expert_override=decision == "approve",
+                expert_override_id=entry["entry_id"] if decision == "approve" else "",
+                expert_confirmed=decision == "reject",
+                expert_confirmed_id=entry["entry_id"] if decision == "reject" else "",
             )
         )
 
@@ -196,11 +212,21 @@ def _build_levels(level_rules: dict[int, list[RuleResult]]) -> list[LevelResult]
 
 def _compute_verdict(steps: list[WhiteBoxStep], gutachten_id: str) -> FinalVerdict:
     error_flags = [s for s in steps if _is_error_flag(s)]
+    confirmed = [s for s in error_flags if s.expert_confirmed]
 
-    if error_flags:
+    if error_flags and len(confirmed) == len(error_flags):
+        status = VerdictStatus.FAIL
+        ids = ", ".join(s.check_id for s in error_flags)
+        summary = (
+            f"Beanstandung durch Experten bestätigt "
+            f"({len(error_flags)}): {ids}"
+        )
+    elif error_flags:
         status = VerdictStatus.AUDIT_FLAGGED
         ids = ", ".join(s.check_id for s in error_flags)
         summary = f"Beanstandung ({len(error_flags)}): {ids}"
+        if confirmed:
+            summary += f" — davon {len(confirmed)} bestätigt"
     else:
         status = VerdictStatus.PASS
         summary = "Alle Pflichtprüfungen bestanden — keine Beanstandung."

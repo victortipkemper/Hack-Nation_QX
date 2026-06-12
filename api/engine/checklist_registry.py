@@ -11,7 +11,7 @@ from data.exemplar_patterns import EXEMPLAR_PATTERNS
 from schemas.features import DocumentFeatures
 from services.feature_extractor import li_to_kg, sr_to_kmh
 
-CHECKLIST_VERSION = "1.1.0-golden-calibrated"
+CHECKLIST_VERSION = "1.2.1-bundle-photos"
 
 
 @dataclass
@@ -26,9 +26,15 @@ class CheckDefinition:
     severity: str = "error"  # error = Beanstandung; advisory = nur Hinweis
 
 
-def _remediation(key: str) -> tuple[str, str]:
-    ex = EXEMPLAR_PATTERNS.get(key, {})
-    return ex.get("remediation", ""), ex.get("reference", "")
+def _remediation(key: str, current_evidence: str = "") -> tuple[str, str, str]:
+    """Returns (remediation, verification, hint_source) — seed + learned corpus."""
+    from services.learning_engine import get_learned_hints
+
+    remediation, verification, meta = get_learned_hints(key, current_evidence)
+    if not remediation and not verification:
+        ex = EXEMPLAR_PATTERNS.get(key, {})
+        return ex.get("remediation", ""), ex.get("verification", ""), "seed"
+    return remediation, verification, meta.get("source", "seed")
 
 
 def _checks() -> list[CheckDefinition]:
@@ -299,6 +305,70 @@ def _checks() -> list[CheckDefinition]:
         )
     )
 
+    # ── Level 3: Unstructured bundles (ZIP / Protokoll + Anlagen) ───
+
+    checks.append(
+        CheckDefinition(
+            check_id="L3-BUNDLE-DOCS",
+            level=3,
+            check_name="Dokumentenpaket vollständig (Protokoll + Anlagen)",
+            citation="TÜV-Praxis: GA-Nr. mit Prüfprotokoll und Nachweisanlagen",
+            exemplar_key="bundle_docs",
+            applicable=lambda f: (
+                f.bundle.is_bundle,
+                "ZIP-/Mehrdatei-Paket erkannt (Protokoll/Anlagen/Aufstellung).",
+            ),
+            evaluate=lambda f: _eval_bundle_docs(f),
+        )
+    )
+
+    checks.append(
+        CheckDefinition(
+            check_id="L3-BUNDLE-VIN",
+            level=3,
+            check_name="FIN/VIN konsistent im Dokumentenpaket",
+            citation="StVZO / Prüfpraxis: eindeutige Fahrzeugidentifikation",
+            exemplar_key="bundle_docs",
+            applicable=lambda f: (
+                f.bundle.is_bundle and len(f.bundle.vins_found) > 0,
+                "Mehrere FIN-Angaben im Paket — Konsistenzprüfung.",
+            ),
+            evaluate=lambda f: _eval_bundle_vin(f),
+        )
+    )
+
+    checks.append(
+        CheckDefinition(
+            check_id="L3-BUNDLE-PROTOCOL",
+            level=3,
+            check_name="Prüfprotokoll (C1/C3) ordnungsgemäß abgeschlossen",
+            citation="Prüfprotokoll — Schlussbewertung Ja/Nein",
+            exemplar_key="bundle_protocol",
+            applicable=lambda f: (
+                f.bundle.is_bundle and f.bundle.has_protokoll,
+                "Prüfprotokoll im Paket vorhanden.",
+            ),
+            evaluate=lambda f: _eval_bundle_protocol(f),
+        )
+    )
+
+    checks.append(
+        CheckDefinition(
+            check_id="L3-BUNDLE-PHOTOS",
+            level=3,
+            check_name="Fotonachweise (Anlagen) mit Bildinhalt",
+            citation="TÜV-Praxis: Anlagenfotos (3/4-Ansicht, FIN, Fabrikschild …)",
+            exemplar_key="bundle_photos",
+            applicable=lambda f: (
+                f.bundle.is_bundle
+                and f.bundle.has_photo_anlagen
+                and len(f.bundle.photo_evidence) > 0,
+                "Foto-Anhang mit Nachweis-Labels erkannt.",
+            ),
+            evaluate=lambda f: _eval_bundle_photos(f),
+        )
+    )
+
     # ── Level 4: Consensus ────────────────────────────────────────────
 
     checks.append(
@@ -503,6 +573,106 @@ def _eval_wheel_load_doc(f: DocumentFeatures) -> tuple[bool, bool, str, str]:
     if documented:
         return True, False, "Radtraglast mit LI und/oder Achslast-Berechnung dokumentiert.", "wheel_load"
     return True, False, "Radtraglast-Nachweis ausreichend oder nicht behauptet.", "wheel_load"
+
+
+def _eval_bundle_docs(f: DocumentFeatures) -> tuple[bool, bool, str, str]:
+    b = f.bundle
+    missing: list[str] = []
+    if not (b.has_protokoll or b.has_gutachten):
+        missing.append("Gutachten/Prüfprotokoll")
+    if not b.has_photo_anlagen:
+        missing.append("Foto-Anlagen")
+    if missing:
+        parts = []
+        if b.has_gutachten:
+            parts.append("Gutachten")
+        if b.has_protokoll:
+            parts.append("Protokoll")
+        if b.has_aufstellung:
+            parts.append("Aufstellung")
+        if b.has_photo_anlagen:
+            parts.append("Fotos")
+        return (
+            False,
+            True,
+            f"Dokumentenpaket unvollständig — fehlt: {', '.join(missing)}. "
+            f"Vorhanden: {', '.join(parts) or ', '.join(b.files)}.",
+            "bundle",
+        )
+    return (
+        True,
+        False,
+        f"Paket vollständig ({len(b.files)} Dateien): "
+        f"{b.gutachten_nr or 'GA-Nr.'} — "
+        + ", ".join(
+            p
+            for p, ok in [
+                ("Gutachten", b.has_gutachten),
+                ("Protokoll", b.has_protokoll),
+                ("Aufstellung", b.has_aufstellung),
+                ("Fotos", b.has_photo_anlagen),
+            ]
+            if ok
+        ),
+        "bundle",
+    )
+
+
+def _eval_bundle_vin(f: DocumentFeatures) -> tuple[bool, bool, str, str]:
+    b = f.bundle
+    if b.vin_consistent and b.vins_found:
+        return (
+            True,
+            False,
+            f"FIN konsistent: {b.vins_found[0]}",
+            "vin",
+        )
+    return (
+        False,
+        True,
+        f"Widersprüchliche FINs im Paket: {', '.join(b.vins_found)}",
+        "vin",
+    )
+
+
+def _eval_bundle_protocol(f: DocumentFeatures) -> tuple[bool, bool, str, str]:
+    b = f.bundle
+    if not b.protocol_sections:
+        return False, True, b.protocol_summary or "Protokoll nicht auswertbar.", "protocol"
+    if b.protocol_all_passed:
+        return True, False, b.protocol_summary, "protocol"
+    failed = [s.section_id for s in b.protocol_sections if s.final_passed is False]
+    return (
+        False,
+        True,
+        f"Protokoll nicht ordnungsgemäß abgeschlossen: {', '.join(failed)}. {b.protocol_summary}",
+        "protocol",
+    )
+
+
+def _eval_bundle_photos(f: DocumentFeatures) -> tuple[bool, bool, str, str]:
+    from services.image_evidence import CANONICAL_PHOTO_LABELS
+
+    b = f.bundle
+    by_label: dict[str, bool] = {}
+    for p in b.photo_evidence:
+        if p.label not in CANONICAL_PHOTO_LABELS:
+            continue
+        by_label[p.label] = by_label.get(p.label, False) or p.has_image
+
+    if not by_label:
+        return True, False, "Keine Foto-Anlagen-Labels — Prüfung entfällt.", "photos"
+
+    missing = [lbl for lbl, ok in by_label.items() if not ok]
+    if missing:
+        return (
+            False,
+            True,
+            f"Foto-Anhang: ohne Bildinhalt — {', '.join(missing)}",
+            "photos",
+        )
+    labels = ", ".join(by_label.keys())
+    return True, False, f"Foto-Anhang vollständig mit Bild/Scan: {labels}", "photos"
 
 
 def _eval_ev_note(f: DocumentFeatures) -> tuple[bool, bool, str, str]:
