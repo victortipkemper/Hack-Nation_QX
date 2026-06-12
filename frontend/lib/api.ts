@@ -13,6 +13,7 @@ export async function fetchHealth(): Promise<{
   version: string;
   checklist_engine?: boolean;
   checklist_version?: string;
+  llm_available?: boolean;
 }> {
   const res = await fetch(`${API_BASE}/api/health`);
   if (!res.ok) throw new Error("API nicht erreichbar");
@@ -67,5 +68,64 @@ export async function uploadGutachtenPdf(file: File): Promise<UploadResponse> {
     );
   }
 
+  return res.json();
+}
+
+export interface ProcedureStepOut {
+  order: number;
+  title: string;
+  instruction: string;
+  acceptance_criteria: string;
+  tools: string[];
+}
+
+export interface ExpertGuidanceItem {
+  check_id: string;
+  check_name: string;
+  citation: string;
+  finding: string;
+  severity: string;
+  merkblatt_sections: string[];
+  merkblatt_excerpt: string;
+  standard_procedure: ProcedureStepOut[];
+  nachpruefung_steps: ProcedureStepOut[];
+  documentation_checklist: string[];
+  practice_notes: string[];
+  learned_verification: string;
+  learned_remediation: string;
+  llm_guide: string;
+  citations: string[];
+}
+
+export interface ExpertNachpruefungResponse {
+  upload_id: string;
+  filename: string;
+  flagged_count: number;
+  llm_used: boolean;
+  llm_model?: string | null;
+  merkblatt_available: boolean;
+  items: ExpertGuidanceItem[];
+}
+
+export async function fetchExpertNachpruefung(
+  uploadId: string,
+  checkId?: string,
+  useLlm = true
+): Promise<ExpertNachpruefungResponse> {
+  const params = new URLSearchParams();
+  if (checkId) params.set("check_id", checkId);
+  params.set("use_llm", String(useLlm));
+  const res = await fetch(
+    `${API_BASE}/api/expert/nachpruefung/${uploadId}?${params}`,
+    { method: "POST" }
+  );
+  if (!res.ok) {
+    const err = await res.json().catch(() => ({ detail: "Fehler" }));
+    throw new Error(
+      typeof err.detail === "string"
+        ? err.detail
+        : "Expertenwissen nicht verfügbar"
+    );
+  }
   return res.json();
 }

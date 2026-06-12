@@ -12,6 +12,18 @@ from services.pdf_renderer import render_pdf_pages
 UPLOADS_DIR = Path(__file__).resolve().parent.parent / "uploads"
 
 
+def process_upload(file_bytes: bytes, filename: str) -> UploadResponse:
+    """Route PDF or ZIP bundle to the appropriate pipeline."""
+    lower = filename.lower()
+    if lower.endswith(".zip"):
+        from services.bundle_processor import process_bundle_upload
+
+        return process_bundle_upload(file_bytes, filename)
+    if lower.endswith(".pdf"):
+        return process_pdf_upload(file_bytes, filename)
+    raise ValueError("Nur PDF oder ZIP werden unterstützt.")
+
+
 def process_pdf_upload(file_bytes: bytes, filename: str) -> UploadResponse:
     """
     Full upload pipeline:

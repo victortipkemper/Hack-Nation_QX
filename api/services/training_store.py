@@ -29,6 +29,10 @@ def save_training_exemplar(response: UploadResponse, pdf_path: str) -> None:
         "verdict": response.test_plan.final_verdict.status.value,
         "gutachten": response.gutachten.model_dump(mode="json"),
         "test_plan": response.test_plan.model_dump(mode="json"),
+        "checklist_steps": [
+            s.model_dump() for s in response.checklist_execution.steps
+        ],
+        "bundle_manifest": response.bundle_manifest,
         "annotations": [a.model_dump() for a in response.document.annotations],
         "paragraphs": [
             {
@@ -60,3 +64,7 @@ def save_training_exemplar(response: UploadResponse, pdf_path: str) -> None:
 
     out_path = CORPUS_DIR / f"{response.upload_id}.json"
     out_path.write_text(json.dumps(exemplar, ensure_ascii=False, indent=2), encoding="utf-8")
+
+    from services.learning_engine import learn_from_exemplar
+
+    learn_from_exemplar(exemplar)

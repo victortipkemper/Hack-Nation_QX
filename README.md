@@ -29,7 +29,7 @@ npm run dev
 
 ## Nutzung
 
-1. **PDF hochladen** — Drag & Drop in der linken Sidebar
+1. **PDF oder ZIP hochladen** — einzelnes Gutachten-PDF oder Dokumentenpaket (Protokoll + Anlagen + Aufstellung)
 2. **White-Box-Checkliste** (rechts) — jeder Prüfschritt mit Anwendbarkeit, Nachweis, Korrekturhinweis
 3. **Beanstandete Prüfung anklicken** — PDF-Markierung + verlinkte Gesetzestexte
 4. Tabs: **White-Box** | **Gutachten-Daten** | **PDF-Dokument**
@@ -47,8 +47,17 @@ npm run dev
 |---------|--------|
 | Seite lädt nicht | `start.bat` erneut ausführen |
 | Port 3000 belegt | http://localhost:3001 probieren |
-| API-Fehler | Prüfen ob Terminal 1 läuft (Port 8000) |
+| API-Fehler | Prüfen ob Terminal 1 läuft (Port 8010) |
 | Leere Seite | Hard-Refresh: `Ctrl+Shift+R` |
 
 ## API-Dokumentation
-http://localhost:8000/docs
+http://localhost:8010/docs
+
+## Unstrukturierte Dokumentenpakete (ZIP)
+
+ZIP mit mehreren PDFs (z. B. `Protokoll.pdf`, `Anl.pdf`, `NW_Nat.pdf`):
+
+- **Rollen-Erkennung** — Protokoll, Anlagen/Fotos, nationale Aufstellung
+- **Prüfprotokoll** — C1/C3-Abschnitte, Schlussbewertung Ja/Nein
+- **Fotonachweise** — Labels (3/4-Ansicht, FIN, Fabrikschild) + Bildinhalt pro Seite
+- **FIN-Konsistenz** — gleiche Fahrzeug-ID über alle Dateien

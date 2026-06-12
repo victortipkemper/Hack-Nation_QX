@@ -5,6 +5,48 @@ from typing import Optional
 from pydantic import BaseModel, Field
 
 
+class PhotoEvidenceItem(BaseModel):
+    label: str
+    page: int = 0
+    source_file: str = ""
+    has_image: bool = False
+    image_count: int = 0
+    confidence: float = 0.0
+    note: str = ""
+
+
+class ProtocolSectionResult(BaseModel):
+    section_id: str
+    title: str = ""
+    final_passed: Optional[bool] = None
+    fulfilled_markers: int = 0
+    open_markers: int = 0
+    reason: str = ""
+
+
+class BundleEvidence(BaseModel):
+    is_bundle: bool = False
+    source_zip: str = ""
+    gutachten_nr: str = ""
+    files: list[str] = Field(default_factory=list)
+    roles: dict[str, str] = Field(default_factory=dict)
+    vin: str = ""
+    vin_consistent: bool = True
+    vins_found: list[str] = Field(default_factory=list)
+    has_protokoll: bool = False
+    has_anlagen: bool = False
+    has_photo_anlagen: bool = False
+    has_gutachten: bool = False
+    has_aufstellung: bool = False
+    has_national_aufstellung: bool = False
+    protocol_sections: list[ProtocolSectionResult] = Field(default_factory=list)
+    protocol_all_passed: bool = True
+    protocol_summary: str = ""
+    photo_evidence: list[PhotoEvidenceItem] = Field(default_factory=list)
+    photos_complete: bool = True
+    combined_page_count: int = 0
+
+
 class AufstellungFlags(BaseModel):
     """Which StVZO paragraphs are marked N/A vs compliant in Aufstellung."""
 
@@ -73,3 +115,4 @@ class DocumentFeatures(BaseModel):
 
     aufstellung: AufstellungFlags = Field(default_factory=AufstellungFlags)
     pruefbericht: PruefberichtFlags = Field(default_factory=PruefberichtFlags)
+    bundle: BundleEvidence = Field(default_factory=BundleEvidence)

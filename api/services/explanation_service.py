@@ -32,6 +32,8 @@ def _build_explanation(
         parts.append(knowledge.explanation_template)
     parts.append(f"\n\nPrüfung: {rule.rule_name}")
     parts.append(f"Regelwerk: {rule.citation}")
+    if step and step.verification_hint:
+        parts.append(f"\n\nSo überprüfbar: {step.verification_hint}")
     if step and step.evidence:
         parts.append(f"\n\nNachweis im Dokument: {step.evidence}")
     parts.append(f"\n\nEngine-Begründung: {rule.reason}")
@@ -121,11 +123,16 @@ def build_rule_annotation(
     step = _step_for_rule(checklist_execution, rule.rule_id)
     knowledge = CHECKLIST_KNOWLEDGE.get(rule.rule_id)
 
-    remediation = (step.remediation_hint if step else "") or (
-        knowledge.explanation_template if knowledge else ""
+    remediation_parts: list[str] = []
+    if step and step.verification_hint:
+        remediation_parts.append(f"So überprüfbar: {step.verification_hint}")
+    if step and step.remediation_hint:
+        remediation_parts.append(f"Maßnahme: {step.remediation_hint}")
+    elif knowledge and knowledge.explanation_template:
+        remediation_parts.append(knowledge.explanation_template)
+    remediation = "\n\n".join(remediation_parts) or (
+        "Manuelle Prüfung durch Sachverständigen erforderlich."
     )
-    if not remediation:
-        remediation = "Manuelle Prüfung durch Sachverständigen erforderlich."
 
     all_regions = _find_regions(pdf_path, knowledge, step)
     highlight_text = (

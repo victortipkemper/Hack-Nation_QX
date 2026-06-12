@@ -18,7 +18,6 @@ from schemas.verdict import (
     VerdictStatus,
 )
 from schemas.whitebox import ChecklistExecution, WhiteBoxStep
-from services.expert_knowledge import find_override, make_fingerprint
 
 LEVEL_NAMES = {
     1: "Level 1 — StVZO (formales Recht)",
@@ -44,7 +43,7 @@ def execute_checklist(
         is_applicable, applicability_reason = check.applicable(features)
 
         if not is_applicable:
-            remediation, exemplar = _remediation(check.exemplar_key)
+            remediation, verification, hint_source = _remediation(check.exemplar_key)
             steps.append(
                 WhiteBoxStep(
                     step=step_num,
@@ -58,7 +57,9 @@ def execute_checklist(
                     executed=False,
                     skipped_reason="Nicht anwendbar für dieses Gutachten.",
                     remediation_hint=remediation,
-                    exemplar_reference=exemplar,
+                    verification_hint=verification,
+                    exemplar_reference=verification,
+                    hint_source=hint_source,
                 )
             )
             continue
@@ -66,20 +67,9 @@ def execute_checklist(
         applicable_count += 1
         passed, flagged, reason, _evidence_key = check.evaluate(features)
         executed_count += 1
-        remediation, exemplar = _remediation(check.exemplar_key)
-        fingerprint = make_fingerprint(check.check_id, reason)
-
-        # Expert-approved override: same finding was reviewed as acceptable
-        override = None
-        if check.severity == "error" and (flagged or passed is False):
-            override = find_override(check.check_id, reason)
-        if override:
-            passed = True
-            flagged = False
-            reason = (
-                f"Durch Expertenwissen freigegeben "
-                f"({override['entry_id']}): {reason}"
-            )
+        remediation, verification, hint_source = _remediation(
+            check.exemplar_key, reason
+        )
 
         steps.append(
             WhiteBoxStep(
@@ -97,10 +87,9 @@ def execute_checklist(
                 evidence=reason,
                 reason=reason,
                 remediation_hint=remediation if (not passed or flagged) else "",
-                exemplar_reference=exemplar,
-                review_fingerprint=fingerprint,
-                expert_override=override is not None,
-                expert_override_id=override["entry_id"] if override else "",
+                verification_hint=verification,
+                exemplar_reference=verification,
+                hint_source=hint_source,
             )
         )
 

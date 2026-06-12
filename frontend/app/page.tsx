@@ -11,6 +11,7 @@ import {
 } from "@/lib/api";
 import { resolveChecklistExecution } from "@/lib/checklistFallback";
 import {
+  isCalibratedApiHealth,
   isCalibratedChecklist,
   testPlanFromChecklist,
 } from "@/lib/checklistView";
@@ -45,12 +46,7 @@ export default function HomePage() {
   useEffect(() => {
     fetchHealth()
       .then((h) => {
-        const calibrated =
-          h.checklist_engine &&
-          h.version.includes("checklist") &&
-          (h.checklist_version?.includes("golden") ||
-            h.checklist_version?.includes("1.1"));
-        setApiOutdated(!calibrated);
+        setApiOutdated(!isCalibratedApiHealth(h));
       })
       .catch(() => setApiOutdated(true));
   }, []);
@@ -86,7 +82,7 @@ export default function HomePage() {
           const h = await fetchHealth();
           detail = `API meldet Version „${h.version}“${
             h.checklist_version ? ` (Checkliste ${h.checklist_version})` : ""
-          } — erwartet wird 0.3.0-checklist.`;
+          } — erwartet wird 0.3.1-learning mit Checkliste 1.2.x.`;
         } catch {
           detail = "API auf Port 8010 nicht erreichbar.";
         }
@@ -281,6 +277,7 @@ export default function HomePage() {
           result={activeSession?.result ?? null}
           checklistExecution={activeSession?.checklistExecution ?? null}
           document={activeSession?.document ?? null}
+          uploadId={activeSession?.uploadId ?? null}
           loading={activeSession?.status === "loading"}
           inspectedRule={inspectedRule}
           activeAnnotation={activeAnnotation}

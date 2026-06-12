@@ -27,7 +27,7 @@ STVZO_PARAGRAPHS: dict[str, str] = {
 OTHER_LINKS: dict[str, RegulatoryLink] = {
     "mbl751": RegulatoryLink(
         label="VdTÜV Merkblatt 751 — Rad/Reifen-Änderungen",
-        url="https://www.vdtuev.de/de/dienstleistungen/fahrzeugtechnik/merkblaetter",
+        url="/api/reference/regulatory/mbl751.pdf",
     ),
     "r39": RegulatoryLink(
         label="UN Regulation No. 39 — Speedometer / Odometer",

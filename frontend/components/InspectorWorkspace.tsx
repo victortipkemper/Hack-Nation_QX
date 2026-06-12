@@ -21,6 +21,7 @@ interface InspectorWorkspaceProps {
   result: TestPlanResult | null;
   checklistExecution: ChecklistExecution | null;
   document: GutachtenDocument | null;
+  uploadId?: string | null;
   loading: boolean;
   inspectedRule: RuleResult | null;
   activeAnnotation: ReturnType<
@@ -41,6 +42,7 @@ export function InspectorWorkspace({
   result,
   checklistExecution,
   document,
+  uploadId,
   loading,
   inspectedRule,
   activeAnnotation,
@@ -127,6 +129,7 @@ export function InspectorWorkspace({
               document={document!}
               rule={inspectedRule!}
               annotation={activeAnnotation!}
+              uploadId={uploadId}
               onClose={onCloseDocument}
             />
           ) : workspaceTab === "document" && document?.pageImages?.length ? (

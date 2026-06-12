@@ -176,21 +176,36 @@ function StepRow({
             </>
           )}
 
+          {(step.verification_hint || step.exemplar_reference) &&
+            step.executed && (
+              <div className="flex gap-2 p-2.5 bg-slate-50 border border-slate-200 rounded-md">
+                <ListChecks className="w-4 h-4 text-slate-600 shrink-0 mt-0.5" />
+                <div>
+                  <p className="font-semibold text-slate-700 mb-0.5 flex items-center gap-2 flex-wrap">
+                    So überprüfbar
+                    {step.hint_source && step.hint_source !== "seed" && (
+                      <span className="text-[10px] font-normal uppercase tracking-wide text-emerald-700 bg-emerald-50 border border-emerald-100 px-1.5 py-0.5 rounded">
+                        Aus Korpus gelernt
+                      </span>
+                    )}
+                  </p>
+                  <p className="text-slate-700 leading-relaxed">
+                    {step.verification_hint || step.exemplar_reference}
+                  </p>
+                </div>
+              </div>
+            )}
+
           {step.remediation_hint && errorFinding && (
             <div className="flex gap-2 p-2.5 bg-blue-50 border border-blue-100 rounded-md">
               <AlertTriangle className="w-4 h-4 text-blue-600 shrink-0 mt-0.5" />
               <div>
                 <p className="font-semibold text-blue-800 mb-0.5">
-                  Korrekturhinweis
+                  Maßnahme bei Beanstandung
                 </p>
                 <p className="text-blue-900 leading-relaxed">
                   {step.remediation_hint}
                 </p>
-                {step.exemplar_reference && (
-                  <p className="text-blue-700/70 mt-1">
-                    Referenz: {step.exemplar_reference}
-                  </p>
-                )}
               </div>
             </div>
           )}
@@ -284,7 +299,7 @@ export function WhiteBoxChecklist({
         <ListChecks className="w-8 h-8 text-slate-300" />
         <p>White-Box-Checkliste nicht geladen.</p>
         <p className="text-xs text-amber-700 bg-amber-50 border border-amber-100 rounded-lg px-3 py-2">
-          PDF erneut hochladen. Falls das nicht hilft: API auf Port 8000 neu
+          PDF erneut hochladen. Falls das nicht hilft: API auf Port 8010 neu
           starten — die alte Version liefert keine Checkliste.
         </p>
       </div>
