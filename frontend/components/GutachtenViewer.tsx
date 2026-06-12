@@ -38,10 +38,14 @@ function DataRow({
       <span className="text-xs text-slate-500 shrink-0">{label}</span>
       <div className="flex items-center gap-2">
         {verified === true && (
-          <CheckCircle2 className="w-4 h-4 text-emerald-500" title="Verified exact match in document" />
+          <span title="Verified exact match in document">
+            <CheckCircle2 className="w-4 h-4 text-emerald-500" />
+          </span>
         )}
         {verified === false && (
-          <AlertCircle className="w-4 h-4 text-amber-500" title="Not found exactly in document" />
+          <span title="Not found exactly in document">
+            <AlertCircle className="w-4 h-4 text-amber-500" />
+          </span>
         )}
         <span
           className={`text-sm text-slate-800 text-right ${mono ? "font-mono" : "font-medium"}`}
