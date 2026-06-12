@@ -266,6 +266,8 @@ export function WhiteBoxChecklist({
   onInspectCheck,
   onExpertReview,
 }: WhiteBoxChecklistProps) {
+  const [showInapplicable, setShowInapplicable] = useState(false);
+
   if (loading) {
     return (
       <div className="animate-pulse space-y-2">
@@ -298,6 +300,7 @@ export function WhiteBoxChecklist({
   };
 
   const totalErrors = execution.steps.filter(isErrorFinding).length;
+  const inapplicableCount = execution.steps.filter((s) => !s.applicable).length;
 
   return (
     <div className="space-y-4">
@@ -311,11 +314,25 @@ export function WhiteBoxChecklist({
             </span>
           )}
         </span>
-        <span className="font-mono">{execution.total_checks} Schritte gesamt</span>
+        {inapplicableCount > 0 ? (
+          <button
+            type="button"
+            onClick={() => setShowInapplicable((v) => !v)}
+            className="shrink-0 underline decoration-dotted underline-offset-2 hover:text-slate-700"
+          >
+            {showInapplicable
+              ? "Nicht anwendbare ausblenden"
+              : `${inapplicableCount} nicht anwendbar — anzeigen`}
+          </button>
+        ) : (
+          <span className="font-mono">{execution.total_checks} Schritte gesamt</span>
+        )}
       </div>
 
       {levels.map((level) => {
-        const steps = execution.steps.filter((s) => s.level === level);
+        const steps = execution.steps.filter(
+          (s) => s.level === level && (showInapplicable || s.applicable)
+        );
         if (!steps.length) return null;
         const flagged = steps.filter(isErrorFinding).length;
 
