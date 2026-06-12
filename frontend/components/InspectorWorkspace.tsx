@@ -4,13 +4,14 @@ import { Database, FileSearch, LayoutPanelLeft, ListChecks } from "lucide-react"
 import { ComplianceDashboard } from "./ComplianceDashboard";
 import { DocumentViewer } from "./DocumentViewer";
 import { GutachtenViewer } from "./GutachtenViewer";
-import { WhiteBoxChecklist } from "./WhiteBoxChecklist";
+import { WhiteBoxChecklist, type ExpertDecision } from "./WhiteBoxChecklist";
 import type { GutachtenDocument } from "@/lib/documentAnnotations";
 import type {
   ChecklistExecution,
   Gutachten,
   RuleResult,
   TestPlanResult,
+  WhiteBoxStep,
 } from "@/types";
 
 type WorkspaceTab = "data" | "document" | "checklist";
@@ -29,6 +30,10 @@ interface InspectorWorkspaceProps {
   onCloseDocument: () => void;
   workspaceTab: WorkspaceTab;
   onTabChange: (tab: WorkspaceTab) => void;
+  onExpertReview?: (
+    step: WhiteBoxStep,
+    decision: ExpertDecision
+  ) => Promise<void>;
 }
 
 export function InspectorWorkspace({
@@ -43,6 +48,7 @@ export function InspectorWorkspace({
   onCloseDocument,
   workspaceTab,
   onTabChange,
+  onExpertReview,
 }: InspectorWorkspaceProps) {
   const hasAnalysis = Boolean(checklistExecution || result);
   const showDocument =
@@ -175,6 +181,7 @@ export function InspectorWorkspace({
             loading={loading}
             selectedCheckId={inspectedRule?.rule_id}
             onInspectCheck={onInspectRule}
+            onExpertReview={onExpertReview}
           />
         </div>
       </div>

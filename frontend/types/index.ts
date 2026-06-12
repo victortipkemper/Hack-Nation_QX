@@ -170,6 +170,37 @@ export interface WhiteBoxStep {
   reason: string;
   remediation_hint: string;
   exemplar_reference: string;
+  review_fingerprint?: string;
+  expert_override?: boolean;
+  expert_override_id?: string;
+}
+
+export interface ExpertReviewRequest {
+  check_id: string;
+  check_name?: string;
+  evidence: string;
+  decision: "approve" | "reject";
+  note?: string;
+  gutachten_id?: string;
+  expert?: string;
+}
+
+export interface ExpertKnowledgeEntry {
+  entry_id: string;
+  fingerprint: string;
+  check_id: string;
+  check_name?: string;
+  evidence: string;
+  note?: string;
+  gutachten_id?: string;
+  expert?: string;
+  created_at: string;
+}
+
+export interface ExpertReviewResponse {
+  decision: string;
+  stored: boolean;
+  entry?: ExpertKnowledgeEntry | null;
 }
 
 export interface ChecklistExecution {

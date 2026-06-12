@@ -6,6 +6,7 @@ import { InspectorWorkspace } from "@/components/InspectorWorkspace";
 import {
   fetchHealth,
   fetchUploadChecklist,
+  submitExpertReview,
   uploadGutachtenPdf,
 } from "@/lib/api";
 import { resolveChecklistExecution } from "@/lib/checklistFallback";
@@ -22,7 +23,8 @@ import {
   createLoadingSession,
   type GutachtenSession,
 } from "@/lib/uploadSession";
-import type { RuleResult } from "@/types";
+import type { RuleResult, WhiteBoxStep } from "@/types";
+import type { ExpertDecision } from "@/components/WhiteBoxChecklist";
 
 type WorkspaceTab = "data" | "document" | "checklist";
 
@@ -174,6 +176,45 @@ export default function HomePage() {
     [activeSessionId]
   );
 
+  const handleExpertReview = useCallback(
+    async (step: WhiteBoxStep, decision: ExpertDecision) => {
+      const session = sessions.find((s) => s.id === activeSessionId);
+      if (!session) return;
+
+      await submitExpertReview({
+        check_id: step.check_id,
+        check_name: step.check_name,
+        evidence: step.reason || step.evidence,
+        decision,
+        gutachten_id: session.checklistExecution?.gutachten_id ?? "",
+      });
+
+      // Approval changes the verdict — re-run the checklist with the new knowledge
+      if (
+        decision === "approve" &&
+        session.uploadId &&
+        !session.uploadId.startsWith("pending-")
+      ) {
+        const checklist = await fetchUploadChecklist(session.uploadId);
+        const checklistExecution = resolveChecklistExecution(checklist);
+        if (checklistExecution) {
+          setSessions((prev) =>
+            prev.map((s) =>
+              s.id === session.id
+                ? {
+                    ...s,
+                    checklistExecution,
+                    result: testPlanFromChecklist(checklistExecution),
+                  }
+                : s
+            )
+          );
+        }
+      }
+    },
+    [sessions, activeSessionId]
+  );
+
   const handleInspectRule = useCallback((rule: RuleResult) => {
     setInspectedRule(rule);
     setWorkspaceTab("document");
@@ -247,6 +288,7 @@ export default function HomePage() {
           onCloseDocument={handleCloseDocument}
           workspaceTab={workspaceTab}
           onTabChange={setWorkspaceTab}
+          onExpertReview={handleExpertReview}
         />
       </main>
     </div>

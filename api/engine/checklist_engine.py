@@ -18,6 +18,7 @@ from schemas.verdict import (
     VerdictStatus,
 )
 from schemas.whitebox import ChecklistExecution, WhiteBoxStep
+from services.expert_knowledge import find_override, make_fingerprint
 
 LEVEL_NAMES = {
     1: "Level 1 — StVZO (formales Recht)",
@@ -66,6 +67,19 @@ def execute_checklist(
         passed, flagged, reason, _evidence_key = check.evaluate(features)
         executed_count += 1
         remediation, exemplar = _remediation(check.exemplar_key)
+        fingerprint = make_fingerprint(check.check_id, reason)
+
+        # Expert-approved override: same finding was reviewed as acceptable
+        override = None
+        if check.severity == "error" and (flagged or passed is False):
+            override = find_override(check.check_id, reason)
+        if override:
+            passed = True
+            flagged = False
+            reason = (
+                f"Durch Expertenwissen freigegeben "
+                f"({override['entry_id']}): {reason}"
+            )
 
         steps.append(
             WhiteBoxStep(
@@ -84,6 +98,9 @@ def execute_checklist(
                 reason=reason,
                 remediation_hint=remediation if (not passed or flagged) else "",
                 exemplar_reference=exemplar,
+                review_fingerprint=fingerprint,
+                expert_override=override is not None,
+                expert_override_id=override["entry_id"] if override else "",
             )
         )
 

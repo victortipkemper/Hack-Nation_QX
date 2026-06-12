@@ -22,6 +22,9 @@ class WhiteBoxStep(BaseModel):
     reason: str = ""
     remediation_hint: str = ""
     exemplar_reference: str = ""
+    review_fingerprint: str = ""
+    expert_override: bool = False
+    expert_override_id: str = ""
 
 
 class ChecklistExecution(BaseModel):

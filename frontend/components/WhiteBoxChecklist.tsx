@@ -9,15 +9,24 @@ import {
   XCircle,
   ListChecks,
   Info,
+  Loader2,
+  ThumbsDown,
+  ThumbsUp,
 } from "lucide-react";
 import { useState } from "react";
 import type { ChecklistExecution, RuleResult, WhiteBoxStep } from "@/types";
+
+export type ExpertDecision = "approve" | "reject";
 
 interface WhiteBoxChecklistProps {
   execution: ChecklistExecution | null;
   loading?: boolean;
   selectedCheckId?: string | null;
   onInspectCheck?: (rule: RuleResult) => void;
+  onExpertReview?: (
+    step: WhiteBoxStep,
+    decision: ExpertDecision
+  ) => Promise<void>;
 }
 
 function isErrorFinding(step: WhiteBoxStep): boolean {
@@ -63,13 +72,32 @@ function StepRow({
   step,
   selected,
   onInspect,
+  onExpertReview,
 }: {
   step: WhiteBoxStep;
   selected: boolean;
   onInspect?: (rule: RuleResult) => void;
+  onExpertReview?: (
+    step: WhiteBoxStep,
+    decision: ExpertDecision
+  ) => Promise<void>;
 }) {
   const errorFinding = isErrorFinding(step);
   const [open, setOpen] = useState(selected || errorFinding);
+  const [reviewState, setReviewState] = useState<
+    "idle" | "saving" | "rejected"
+  >("idle");
+
+  const handleReview = async (decision: ExpertDecision) => {
+    if (!onExpertReview || reviewState === "saving") return;
+    setReviewState("saving");
+    try {
+      await onExpertReview(step, decision);
+      setReviewState(decision === "reject" ? "rejected" : "idle");
+    } catch {
+      setReviewState("idle");
+    }
+  };
 
   return (
     <div
@@ -106,6 +134,11 @@ function StepRow({
             {step.severity === "advisory" && step.applicable && (
               <span className="text-[10px] uppercase tracking-wide text-blue-600 bg-blue-50 px-1.5 py-0.5 rounded">
                 Hinweis
+              </span>
+            )}
+            {step.expert_override && (
+              <span className="text-[10px] uppercase tracking-wide text-emerald-700 bg-emerald-50 border border-emerald-100 px-1.5 py-0.5 rounded">
+                Expertenwissen
               </span>
             )}
           </div>
@@ -161,6 +194,65 @@ function StepRow({
               </div>
             </div>
           )}
+
+          {errorFinding && onExpertReview && reviewState !== "rejected" && (
+            <div className="flex items-center gap-2 flex-wrap pt-1">
+              <span className="font-semibold text-slate-500">
+                Experten-Bewertung:
+              </span>
+              <button
+                type="button"
+                disabled={reviewState === "saving"}
+                onClick={(e) => {
+                  e.stopPropagation();
+                  void handleReview("approve");
+                }}
+                className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md border border-emerald-200 bg-emerald-50 text-emerald-800 font-medium hover:bg-emerald-100 disabled:opacity-50"
+              >
+                {reviewState === "saving" ? (
+                  <Loader2 className="w-3.5 h-3.5 animate-spin" />
+                ) : (
+                  <ThumbsUp className="w-3.5 h-3.5" />
+                )}
+                In Ordnung — als zulässig lernen
+              </button>
+              <button
+                type="button"
+                disabled={reviewState === "saving"}
+                onClick={(e) => {
+                  e.stopPropagation();
+                  void handleReview("reject");
+                }}
+                className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md border border-red-200 bg-red-50 text-red-700 font-medium hover:bg-red-100 disabled:opacity-50"
+              >
+                <ThumbsDown className="w-3.5 h-3.5" />
+                Beanstandung bestätigen
+              </button>
+            </div>
+          )}
+
+          {errorFinding && reviewState === "rejected" && (
+            <div className="flex items-center gap-1.5 pt-1 text-red-700">
+              <ThumbsDown className="w-3.5 h-3.5 shrink-0" />
+              <span>
+                Beanstandung bestätigt — nicht in die Wissensdatenbank
+                übernommen.
+              </span>
+            </div>
+          )}
+
+          {step.expert_override && (
+            <div className="flex items-center gap-1.5 pt-1 text-emerald-700">
+              <ThumbsUp className="w-3.5 h-3.5 shrink-0" />
+              <span>
+                Von einem Experten als zulässig bewertet
+                {step.expert_override_id
+                  ? ` (Eintrag ${step.expert_override_id})`
+                  : ""}
+                .
+              </span>
+            </div>
+          )}
         </div>
       )}
     </div>
@@ -172,6 +264,7 @@ export function WhiteBoxChecklist({
   loading,
   selectedCheckId,
   onInspectCheck,
+  onExpertReview,
 }: WhiteBoxChecklistProps) {
   if (loading) {
     return (
@@ -245,6 +338,7 @@ export function WhiteBoxChecklist({
                   step={step}
                   selected={selectedCheckId === step.check_id}
                   onInspect={onInspectCheck}
+                  onExpertReview={onExpertReview}
                 />
               ))}
             </div>

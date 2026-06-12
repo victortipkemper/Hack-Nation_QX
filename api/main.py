@@ -6,6 +6,11 @@ from fastapi.staticfiles import StaticFiles
 
 from data.mock_cases import MOCK_CASES, get_case_summaries
 from engine.rules import execute_test_plan
+from schemas.expert import (
+    ExpertKnowledgeEntry,
+    ExpertReviewRequest,
+    ExpertReviewResponse,
+)
 from schemas.gutachten import CaseSummary, Gutachten
 from schemas.upload import UploadResponse
 from schemas.verdict import TestPlanResult
@@ -16,6 +21,7 @@ from engine.checklist_engine import checklist_to_test_plan, execute_checklist
 from engine.checklist_registry import CHECKLIST_VERSION
 from services.calibration import run_calibration
 from services.corpus_evaluator import evaluate_full_corpus, evaluate_single_pdf
+from services.expert_knowledge import delete_entry, list_entries, record_decision
 from services.feature_extractor import extract_features
 from services.pdf_parser import extract_text_from_pdf
 from services.reference_documents import REFERENCE_RENDER_DIR, get_reference_document
@@ -174,6 +180,44 @@ def calibrate_against_solution_key():
     GREEN → keine error-Flags; YELLOW → primärer Gap-Check muss feuern.
     """
     return run_calibration()
+
+
+@app.post("/api/expert-review", response_model=ExpertReviewResponse)
+def submit_expert_review(review: ExpertReviewRequest):
+    """
+    Expert verdict on a flagged finding.
+    approve → stored as reusable knowledge override (future identical
+    findings pass automatically); reject → audit-logged only, nothing
+    is added to the knowledge base.
+    """
+    entry = record_decision(
+        check_id=review.check_id,
+        check_name=review.check_name,
+        evidence=review.evidence,
+        decision=review.decision,
+        note=review.note,
+        gutachten_id=review.gutachten_id,
+        expert=review.expert,
+    )
+    return ExpertReviewResponse(
+        decision=review.decision,
+        stored=entry is not None,
+        entry=ExpertKnowledgeEntry(**entry) if entry else None,
+    )
+
+
+@app.get("/api/expert-knowledge", response_model=list[ExpertKnowledgeEntry])
+def get_expert_knowledge():
+    """List all expert-approved overrides in the knowledge base."""
+    return [ExpertKnowledgeEntry(**e) for e in list_entries()]
+
+
+@app.delete("/api/expert-knowledge/{entry_id}")
+def remove_expert_knowledge(entry_id: str):
+    """Withdraw an expert-approved override."""
+    if not delete_entry(entry_id):
+        raise HTTPException(status_code=404, detail=f"Entry '{entry_id}' not found.")
+    return {"deleted": entry_id}
 
 
 @app.post("/api/upload", response_model=UploadResponse)

@@ -11,6 +11,9 @@ dist/
 .DS_Store
 api/uploads/
 api/data/training_corpus/
+api/data/expert_knowledge.json
+api/data/expert_decisions.jsonl
+*.tsbuildinfo
 api/data/reference_docs/
 api/data/reference_renders/
 hackathon-data/
