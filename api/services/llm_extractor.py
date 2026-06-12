@@ -31,7 +31,8 @@ def extract_gutachten_with_llm(text: str) -> Optional[LLMGutachtenExtraction]:
                     "content": (
                         "You are a strict data extraction assistant. Extract vehicle and modification "
                         "data from the provided German 'Gutachten' (vehicle modification document). "
-                        "Do not guess. Use exact strings and numbers found in the text."
+                        "Do not guess or assume any preconfigured values. Use exact strings and numbers found in the text. "
+                        "If a value is not explicitly stated in the document, you MUST return null."
                     ),
                 },
                 {"role": "user", "content": text},

@@ -5,14 +5,14 @@ from pydantic import BaseModel, Field
 
 
 class WheelTireSpec(BaseModel):
-    manufacturer: str
-    model: str
-    size: str  # e.g. "245/40 R19"
-    rim_width_inch: float
-    rim_diameter_inch: float
-    offset_et: int
-    load_index: int
-    speed_index: str
+    manufacturer: Optional[str] = None
+    model: Optional[str] = None
+    size: Optional[str] = None  # e.g. "245/40 R19"
+    rim_width_inch: Optional[float] = None
+    rim_diameter_inch: Optional[float] = None
+    offset_et: Optional[int] = None
+    load_index: Optional[int] = None
+    speed_index: Optional[str] = None
     abe_number: Optional[str] = None
     teilegutachten_number: Optional[str] = None
 
@@ -42,23 +42,23 @@ class ModificationData(BaseModel):
 
 
 class VehicleData(BaseModel):
-    make: str
-    model: str
-    variant: str
-    chassis_code: str
-    vin: str
-    first_registration: date
-    fuel_type: str  # "petrol", "diesel", "electric", "hybrid"
-    power_kw: int
-    original_tire_size_front: str
-    original_tire_size_rear: str
-    original_rim_size_front: str
-    original_rim_size_rear: str
-    original_offset_et_front: int
-    original_offset_et_rear: int
-    has_esp: bool = True
-    has_abs: bool = True
-    gross_vehicle_weight_kg: int
+    make: Optional[str] = None
+    model: Optional[str] = None
+    variant: Optional[str] = None
+    chassis_code: Optional[str] = None
+    vin: Optional[str] = None
+    first_registration: Optional[date] = None
+    fuel_type: Optional[str] = None  # "petrol", "diesel", "electric", "hybrid"
+    power_kw: Optional[int] = None
+    original_tire_size_front: Optional[str] = None
+    original_tire_size_rear: Optional[str] = None
+    original_rim_size_front: Optional[str] = None
+    original_rim_size_rear: Optional[str] = None
+    original_offset_et_front: Optional[int] = None
+    original_offset_et_rear: Optional[int] = None
+    has_esp: Optional[bool] = None
+    has_abs: Optional[bool] = None
+    gross_vehicle_weight_kg: Optional[int] = None
     max_rear_axle_load_kg: Optional[int] = None
 
 

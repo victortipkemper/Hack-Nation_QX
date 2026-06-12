@@ -98,7 +98,7 @@ def _parse_vehicle(text: str) -> VehicleData:
         else (vin_match.group(1) if vin_match else "UNKNOWN")
     )
 
-    make, model, chassis = "BMW", "Unknown", "—"
+    make, model, chassis = None, None, None
     vehicle_match = re.search(
         r"Fahrzeughersteller\s*/\s*Typ[:\s]*([A-Za-z]+)\s*/\s*([^\n(]+)(?:\(([^)]+)\))?",
         text,
@@ -107,34 +107,34 @@ def _parse_vehicle(text: str) -> VehicleData:
     if vehicle_match:
         make = vehicle_match.group(1).strip()
         model_raw = vehicle_match.group(2).strip()
-        chassis = (vehicle_match.group(3) or "—").strip()
-        if "M4" in model_raw or "M4" in chassis:
+        chassis = (vehicle_match.group(3) or "").strip() or None
+        if "M4" in model_raw or (chassis and "M4" in chassis):
             model = "M4"
         elif "320" in model_raw:
             model = "320i"
         elif "i4" in model_raw:
             model = "i4"
         else:
-            model = model_raw.split()[0] if model_raw else "Unknown"
+            model = model_raw.split()[0] if model_raw else None
 
     tires = TIRE_PATTERN.findall(text)
-    front_tire = f"{tires[0][0]} R{tires[0][1]}" if tires else "225/45 R17"
+    front_tire = f"{tires[0][0]} R{tires[0][1]}" if tires else None
     rear_tire = (
         f"{tires[1][0]} R{tires[1][1]}" if len(tires) > 1 else front_tire
     )
 
     et_matches = ET_PATTERN.findall(text)
-    et_front = int(et_matches[0]) if et_matches else 37
+    et_front = int(et_matches[0]) if et_matches else None
     et_rear = int(et_matches[1]) if len(et_matches) > 1 else et_front
 
     rim_matches = RIM_PATTERN.findall(text)
     rim_front = (
-        f"{rim_matches[0][0].replace(',', '.')}Jx{rim_matches[0][1]} ET{et_front}"
+        f"{rim_matches[0][0].replace(',', '.')}Jx{rim_matches[0][1]} ET{et_front or ''}".strip()
         if rim_matches
-        else f"7.5Jx17 ET{et_front}"
+        else None
     )
     rim_rear = (
-        f"{rim_matches[1][0].replace(',', '.')}Jx{rim_matches[1][1]} ET{et_rear}"
+        f"{rim_matches[1][0].replace(',', '.')}Jx{rim_matches[1][1]} ET{et_rear or ''}".strip()
         if len(rim_matches) > 1
         else rim_front
     )
@@ -147,21 +147,21 @@ def _parse_vehicle(text: str) -> VehicleData:
     return VehicleData(
         make=make,
         model=model,
-        variant="Coupé" if "M4" in model else "Limousine",
+        variant="Coupé" if model == "M4" else None,
         chassis_code=chassis,
-        vin=vin,
+        vin=vin if vin != "UNKNOWN" else None,
         first_registration=_parse_first_registration(text),
-        fuel_type="petrol",
-        power_kw=250 if "M4" in model else 110,
+        fuel_type=None,
+        power_kw=None,
         original_tire_size_front=front_tire,
         original_tire_size_rear=rear_tire,
         original_rim_size_front=rim_front,
         original_rim_size_rear=rim_rear,
         original_offset_et_front=et_front,
         original_offset_et_rear=et_rear,
-        has_esp=True,
-        has_abs=True,
-        gross_vehicle_weight_kg=1840,
+        has_esp=None,
+        has_abs=None,
+        gross_vehicle_weight_kg=None,
         max_rear_axle_load_kg=max_rear_axle,
     )
 
@@ -192,23 +192,26 @@ def _parse_wheels(text: str) -> tuple[WheelTireSpec | None, WheelTireSpec | None
     rims = RIM_PATTERN.findall(source)
 
     def _wheel(idx: int) -> WheelTireSpec:
-        w, d = tires[idx] if idx < len(tires) else tires[0]
-        li, si = li_si[idx] if idx < len(li_si) else ("91", "W")
-        et = et_vals[idx] if idx < len(et_vals) else 37
-        rim_w = float(rims[idx][0].replace(",", ".")) if idx < len(rims) else 8.0
-        rim_d = float(rims[idx][1]) if idx < len(rims) else float(d)
+        w = tires[idx][0] if idx < len(tires) else (tires[0][0] if tires else None)
+        d = tires[idx][1] if idx < len(tires) else (tires[0][1] if tires else None)
+        li = int(li_si[idx][0]) if idx < len(li_si) else (int(li_si[0][0]) if li_si else None)
+        si = li_si[idx][1] if idx < len(li_si) else (li_si[0][1] if li_si else None)
+        et = et_vals[idx] if idx < len(et_vals) else (et_vals[0] if et_vals else None)
+        rim_w = float(rims[idx][0].replace(",", ".")) if idx < len(rims) else (float(rims[0][0].replace(",", ".")) if rims else None)
+        rim_d = float(rims[idx][1]) if idx < len(rims) else (float(rims[0][1]) if rims else (float(d) if d else None))
+        
         has_tga = "teilegutachten" in text.lower() and "kein tga" not in text.lower()
         tg_match = re.search(r"Teilegutachten[- ]?Nr\.?\s*:?\s*([A-Z0-9-]+)", text, re.I)
         abe_match = re.search(r"ABE[- ]?(?:Nr\.?)?\s*:?\s*([A-Z]\s*\d+)", text, re.I)
 
         return WheelTireSpec(
-            manufacturer="VuH genehm." if "VuH" in source else "Unknown",
-            model=f"{'VA' if idx == 0 else 'HA'} {d}″",
-            size=f"{w} R{d}",
+            manufacturer="VuH genehm." if "VuH" in source else None,
+            model=f"{'VA' if idx == 0 else 'HA'} {d}″" if d else None,
+            size=f"{w} R{d}" if w and d else None,
             rim_width_inch=rim_w,
             rim_diameter_inch=rim_d,
             offset_et=et,
-            load_index=int(li),
+            load_index=li,
             speed_index=si,
             abe_number=abe_match.group(1).replace(" ", "") if abe_match else None,
             teilegutachten_number=tg_match.group(1) if has_tga and tg_match else None,

@@ -1,12 +1,12 @@
 export interface WheelTireSpec {
-  manufacturer: string;
-  model: string;
-  size: string;
-  rim_width_inch: number;
-  rim_diameter_inch: number;
-  offset_et: number;
-  load_index: number;
-  speed_index: string;
+  manufacturer?: string | null;
+  model?: string | null;
+  size?: string | null;
+  rim_width_inch?: number | null;
+  rim_diameter_inch?: number | null;
+  offset_et?: number | null;
+  load_index?: number | null;
+  speed_index?: string | null;
   abe_number?: string | null;
   teilegutachten_number?: string | null;
 }
@@ -36,23 +36,23 @@ export interface ModificationData {
 }
 
 export interface VehicleData {
-  make: string;
-  model: string;
-  variant: string;
-  chassis_code: string;
-  vin: string;
-  first_registration: string;
-  fuel_type: string;
-  power_kw: number;
-  original_tire_size_front: string;
-  original_tire_size_rear: string;
-  original_rim_size_front: string;
-  original_rim_size_rear: string;
-  original_offset_et_front: number;
-  original_offset_et_rear: number;
-  has_esp: boolean;
-  has_abs: boolean;
-  gross_vehicle_weight_kg: number;
+  make?: string | null;
+  model?: string | null;
+  variant?: string | null;
+  chassis_code?: string | null;
+  vin?: string | null;
+  first_registration?: string | null;
+  fuel_type?: string | null;
+  power_kw?: number | null;
+  original_tire_size_front?: string | null;
+  original_tire_size_rear?: string | null;
+  original_rim_size_front?: string | null;
+  original_rim_size_rear?: string | null;
+  original_offset_et_front?: number | null;
+  original_offset_et_rear?: number | null;
+  has_esp?: boolean | null;
+  has_abs?: boolean | null;
+  gross_vehicle_weight_kg?: number | null;
   max_rear_axle_load_kg?: number | null;
 }
 
