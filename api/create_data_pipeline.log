@@ -1,0 +1,376 @@
+2026-06-12 10:34:33,452 [INFO] Found 62 legal text assets. Starting rule extraction...
+2026-06-12 10:34:33,452 [INFO] [1/62] Processing § 19...
+2026-06-12 10:34:34,370 [INFO] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-12 10:34:34,384 [INFO]   No relevant rules found.
+2026-06-12 10:34:34,890 [INFO] [2/62] Processing § 21...
+2026-06-12 10:34:35,553 [INFO] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-12 10:34:35,555 [INFO]   No relevant rules found.
+2026-06-12 10:34:36,062 [INFO] [3/62] Processing § 30...
+2026-06-12 10:34:36,884 [INFO] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-12 10:34:36,887 [INFO]   No relevant rules found.
+2026-06-12 10:34:37,393 [INFO] [4/62] Processing § 30a...
+2026-06-12 10:34:44,649 [INFO] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-12 10:34:44,652 [INFO]   Extracted 3 rules:
+2026-06-12 10:34:44,652 [INFO]     - L2-STVZO-30a-1-vmax-moment-leicht-erkennbar: Schutz gegen unbefugte/technische Änderungen der bauartbestimmten Höchstgeschwindigkeit sowie Motor-Maßgrößen (Erkennbarkeit)
+2026-06-12 10:34:44,652 [INFO]     - L2-STVZO-30a-2-trailer-100: Anhängerkonzept: Ausrüstung/Stand mindestens 100 km/h bzw. Kennzeichnung nach §58
+2026-06-12 10:34:44,652 [INFO]     - L2-STVZO-30a-3-application-eu-annex: Ermittlungsmethode: bauartbestimmte Höchstgeschwindigkeit sowie max. Drehmoment/Nutzleistung nach Anhang bei EU-Fahrzeugen
+2026-06-12 10:34:45,158 [INFO] [5/62] Processing § 30b...
+2026-06-12 10:34:45,972 [INFO] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-12 10:34:45,973 [INFO]   No relevant rules found.
+2026-06-12 10:34:46,479 [INFO] [6/62] Processing § 30c...
+2026-06-12 10:34:52,425 [INFO] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-12 10:34:52,428 [INFO]   Extracted 4 rules:
+2026-06-12 10:34:52,428 [INFO]     - L2-STVZO-30c-1: Keine verkehrsgefährdenden hervorstehenden Teile am Fahrzeugumriss
+2026-06-12 10:34:52,428 [INFO]     - L2-STVZO-30c-2: Vorstehende Außenkanten bei Pkw: Vorgaben des Anhangs einhalten
+2026-06-12 10:34:52,429 [INFO]     - L2-STVZO-30c-3: Vorstehende Außenkanten bei zweirädrigen/dreirädrigen Kraftfahrzeugen: Anhangsvorgaben einhalten
+2026-06-12 10:34:52,429 [INFO]     - L2-STVZO-30c-4: Frontschutzsysteme (Pkw/Lkw/Zugmaschine/Sattelzugmaschine bis 3,5 t und Vmax > 25 km/h): Anhangsvorgaben einhalten
+2026-06-12 10:34:52,936 [INFO] [7/62] Processing § 32...
+2026-06-12 10:35:09,350 [INFO] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-12 10:35:09,364 [INFO]   Extracted 6 rules:
+2026-06-12 10:35:09,364 [INFO]     - L2-StVZO-32-ABMESS-1: Gesamtbreite (über alles) – Kraftfahrzeuge/Anhänger
+2026-06-12 10:35:09,364 [INFO]     - L2-StVZO-32-ABMESS-2: Höchstzulässige Höhe über alles
+2026-06-12 10:35:09,365 [INFO]     - L2-StVZO-32-ABMESS-3: Höchstzulässige Länge einzelnes Fahrzeug (Kraftfahrzeuge/Anhänger)
+2026-06-12 10:35:09,365 [INFO]     - L2-StVZO-32-ABMESS-4: Höchstzulässige Länge Fahrzeugkombinationen (Züge/Sattel)
+2026-06-12 10:35:09,365 [INFO]     - L2-StVZO-32-ABMESS-5: Kombinations-Länge für Kraftomnibus + Anhänger (Abs. 4a)
+2026-06-12 10:35:09,365 [INFO]     - L2-StVZO-32-ABMESS-6: Sondergrenzen für Kraftfahrzeuge nach § 30a Abs. 3 (Breite/Höhe/Länge)
+2026-06-12 10:35:09,872 [INFO] [8/62] Processing § 32b...
+2026-06-12 10:35:21,127 [INFO] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-12 10:35:21,135 [INFO]   Extracted 4 rules:
+2026-06-12 10:35:21,136 [INFO]     - L2-STVZO-32b-URB-H1: Hinterer Unterfahrschutz erforderlich (Fahrzeuge >25 km/h, Achsabstand-Kriterium, lichte Höhe)
+2026-06-12 10:35:21,136 [INFO]     - L2-STVZO-32b-URB-F4: Vorderer Unterfahrschutz erforderlich (Güterfahrzeuge >3,5 t, >25 km/h, mind. 4 Räder)
+2026-06-12 10:35:21,136 [INFO]     - L2-STVZO-32b-URB-Compliance-Dir70_221: Konformität hinterer Unterfahrschutz nach RL 70/221/EWG (bzw. jeweils anzuwendende Fassung)
+2026-06-12 10:35:21,136 [INFO]     - L2-STVZO-32b-URB-Compliance-Annex: Konformität vorderer Unterfahrschutz nach Anhang zu § 32b
+2026-06-12 10:35:21,643 [INFO] [9/62] Processing § 32d...
+2026-06-12 10:35:33,928 [INFO] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-12 10:35:33,930 [INFO]   Extracted 3 rules:
+2026-06-12 10:35:33,930 [INFO]     - L2-STVZO-32d-1-TRACKWIDTH: Kurvenlaufeigenschaften: maximale Breite im 360°-Kreis (R=12,50 m)
+2026-06-12 10:35:33,931 [INFO]     - L2-STVZO-32d-2-ENTRANCE_OVERSWING: Kurvenlaufeigenschaften: Überschneiden beim Einfahren aus Tangente
+2026-06-12 10:35:33,932 [INFO]     - L2-STVZO-32d-3_BUSES_GAINS_LINE_AND_GELENKALIGN: Kurvenlaufeigenschaften: Omnibusse (Linientangente/ Gelenkteil-Auslegung)
+2026-06-12 10:35:34,436 [INFO] [10/62] Processing § 34...
+2026-06-12 10:36:04,796 [INFO] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-12 10:36:43,777 [INFO] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-12 10:36:43,786 [INFO]   Extracted 10 rules:
+2026-06-12 10:36:43,786 [INFO]     - L2-STVZO-34-AXLOAD-01: Zulässige Achslast (Luftreifen/Gummireifen nach §36 Abs. 8) – Einzelachsen
+2026-06-12 10:36:43,786 [INFO]     - L2-STVZO-34-AXLOAD-02: Zulässige Achslast (Luftreifen/Gummireifen nach §36 Abs. 8) – Doppelachslast Kraftfahrzeuge (Achsabstand)
+2026-06-12 10:36:43,786 [INFO]     - L2-STVZO-34-AXLOAD-03: Zulässige Achslast (Luftreifen/Gummireifen nach §36 Abs. 8) – Doppelachslast Anhänger (Achsabstand)
+2026-06-12 10:36:43,786 [INFO]     - L2-STVZO-34-AXLOAD-04: Zulässige Achslast (Luftreifen/Gummireifen nach §36 Abs. 8) – Dreifachachslast
+2026-06-12 10:36:43,786 [INFO]     - L2-STVZO-34-AXLOAD-05: Achslast bei anderen Reifen als in §34 Abs. 4 S.1 genannt
+2026-06-12 10:36:43,786 [INFO]     - L2-STVZO-34-TOTAL-01: Zulässiges Gesamtgewicht Kraftfahrzeuge/Anhänger – Luft-/Gummireifen nach §36 Abs. 8
+2026-06-12 10:36:43,786 [INFO]     - L2-STVZO-34-ALT-01: Abweichung Gesamtgewicht: alternativer Antrieb/emissionsfrei (± Toleranz) – Fahrzeug (Abs. 5b)
+2026-06-12 10:36:43,786 [INFO]     - L2-STVZO-34-TRAIN-01: Zulässiges Gesamtgewicht Fahrzeugkombinationen – Grenzen nach Achsanzahl/Kombinationsart
+2026-06-12 10:36:43,786 [INFO]     - L2-STVZO-34-BOUNDARY-01: Gewichtsanteil auf Antriebsachsen im grenzüberschreitenden Verkehr (Lkw/Sattel/Lastzug)
+2026-06-12 10:36:43,786 [INFO]     - L2-STVZO-34-AXLE_GAP-01: Abstand Achse Zugfahrzeug – erste Achse Anhänger (Koppelabstand)
+2026-06-12 10:36:44,294 [INFO] [11/62] Processing § 35a...
+2026-06-12 10:37:23,413 [INFO] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-12 10:37:28,831 [INFO] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-12 10:37:28,835 [INFO]   Extracted 2 rules:
+2026-06-12 10:37:28,835 [INFO]     - L2-STVZO-35a-SEC1: Fahrersitz/Betätigungsraum: Fahrzeug sicher führbar (auch bei Gurt/anderem Rückhaltesystem)
+2026-06-12 10:37:28,835 [INFO]     - L2-STVZO-35a-SYSTEMS_AT_ALL_SEATS: Gurte/Rückhaltesysteme: einwandfreie Funktion bei bestimmungsgemäßem Gebrauch (alle ausgewiesenen Sitzplätze)
+2026-06-12 10:37:29,339 [INFO] [12/62] Processing § 35b...
+2026-06-12 10:37:29,957 [INFO] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-12 10:37:29,961 [INFO]   No relevant rules found.
+2026-06-12 10:37:30,468 [INFO] [13/62] Processing § 35c...
+2026-06-12 10:37:31,187 [INFO] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-12 10:37:31,189 [INFO]   No relevant rules found.
+2026-06-12 10:37:31,697 [INFO] [14/62] Processing § 35d...
+2026-06-12 10:37:32,313 [INFO] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-12 10:37:32,316 [INFO]   No relevant rules found.
+2026-06-12 10:37:32,819 [INFO] [15/62] Processing § 35e...
+2026-06-12 10:37:33,439 [INFO] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-12 10:37:33,442 [INFO]   No relevant rules found.
+2026-06-12 10:37:33,946 [INFO] [16/62] Processing § 36...
+2026-06-12 10:38:00,326 [INFO] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-12 10:38:00,338 [INFO]   Extracted 9 rules:
+2026-06-12 10:38:00,338 [INFO]     - L2-STVZO-36-3-PROFILTIEFEN: Reifen-Hauptprofil Profiltiefe (Sommer/Luftreifen)
+2026-06-12 10:38:00,338 [INFO]     - L2-STVZO-36-5-REIFEN-HOECHSTGESCHWINDIGKEIT-UNTERSCHREITUNG: Verwendung Reifen niedrigerer Geschwindigkeitskategorie (Kennzeichnung/Anzeige)
+2026-06-12 10:38:00,338 [INFO]     - L2-STVZO-36-4-WINTERREIFEN-ALPINE-MANDAT: Winterreifenpflichtig nach Alpine-Symbol (für winterliche Wetterverhältnisse)
+2026-06-12 10:38:00,338 [INFO]     - L2-STVZO-36-6-DIAG-RADIAL-ACHSE-GTG40: Rad-/Reifentyp Diagonal oder Radial (Achsen je Achse nur eine Bauart, bei >3,5t und >40 km/h)
+2026-06-12 10:38:00,338 [INFO]     - L2-STVZO-36-7-REIFENKENNZEICHNUNG-HOCHGESCHWINDIGKEIT-UEBER40: Kennzeichnungsvorschrift Reifenhersteller/-erneuerer (>40 km/h)
+2026-06-12 10:38:00,339 [INFO]     - L2-STVZO-36-8-GUMMIREIFEN-BIS25-LIMIT: Gummireifen statt Luftreifen zulässig nur bei <=25 km/h (Ausnahmeregeln)
+2026-06-12 10:38:00,339 [INFO]     - L2-STVZO-36-9-EISENREIFEN-125N_PER_MM-8KMH: Eiserne Reifen zulässig bei Auflagedruck <=125 N/mm (spezifizierte Einsatzfälle)
+2026-06-12 10:38:00,339 [INFO]     - L2-STVZO-36-10-GLEISKETTENDRUCK-LIMITS: Gleiskettenfahrzeuge: Auflagedruck- und Geschwindigkeitsbeschränkung nach Laufrollen/Aufbau
+2026-06-12 10:38:00,339 [INFO]     - L2-STVZO-36-11-MnS-UNECE117-CLASS-L: M+S-Reifen (UNECE R75) dürfen unter Bedingungen für Klasse L verwendet werden
+2026-06-12 10:38:00,846 [INFO] [17/62] Processing § 36a...
+2026-06-12 10:38:11,376 [INFO] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-12 10:38:11,380 [INFO]   Extracted 3 rules:
+2026-06-12 10:38:11,381 [INFO]     - L2-STVZO-36a-1: Radabdeckungen ausreichend vorhanden (Räder von Fahrzeugen/Anhängern)
+2026-06-12 10:38:11,381 [INFO]     - L2-STVZO-36a-2: Ausnahme Radabdeckungen bei ≤25 km/h bzw. Sonderfahrzeugen
+2026-06-12 10:38:11,381 [INFO]     - L2-STVZO-36a-3: Ersatzräder: sichere Halterung & zweifache Sicherung gegen Verlieren
+2026-06-12 10:38:11,888 [INFO] [18/62] Processing § 38...
+2026-06-12 10:38:13,990 [INFO] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-12 10:38:13,993 [INFO]   No relevant rules found.
+2026-06-12 10:38:14,497 [INFO] [19/62] Processing § 38a...
+2026-06-12 10:38:15,144 [INFO] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-12 10:38:15,147 [INFO]   No relevant rules found.
+2026-06-12 10:38:15,650 [INFO] [20/62] Processing § 38b...
+2026-06-12 10:38:16,241 [INFO] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-12 10:38:16,244 [INFO]   No relevant rules found.
+2026-06-12 10:38:16,751 [INFO] [21/62] Processing § 39...
+2026-06-12 10:38:17,463 [INFO] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-12 10:38:17,466 [INFO]   No relevant rules found.
+2026-06-12 10:38:17,973 [INFO] [22/62] Processing § 39a...
+2026-06-12 10:38:18,805 [INFO] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-12 10:38:18,808 [INFO]   No relevant rules found.
+2026-06-12 10:38:19,315 [INFO] [23/62] Processing § 40...
+2026-06-12 10:38:20,033 [INFO] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-12 10:38:20,037 [INFO]   No relevant rules found.
+2026-06-12 10:38:20,544 [INFO] [24/62] Processing § 41...
+2026-06-12 10:38:48,606 [INFO] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-12 10:39:12,559 [INFO] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-12 10:39:12,565 [INFO]   Extracted 7 rules:
+2026-06-12 10:39:12,565 [INFO]     - L2-STVZO-41-4: Bremsverzögerung Betriebsbremse (Kfz, Vollverzögerung)
+2026-06-12 10:39:12,566 [INFO]     - L2-STVZO-41-4a: Restbremswirkung bei Ausfall eines Teils (mind. 44%)
+2026-06-12 10:39:12,566 [INFO]     - L2-STVZO-41-5: Feststellbremse mechanisch feststellbar + Mindestverzögerung 1,5 m/s²
+2026-06-12 10:39:12,566 [INFO]     - L2-STVZO-41-9: Anhängerverzögerung Betrieb + Feststellbremse (Vollverzögerung)
+2026-06-12 10:39:12,566 [INFO]     - L2-STVZO-41-10: Auflaufbremsen nur zulässig nach GW & Geschwindigkeitsbereich; Sattelanhänger ausgeschlossen
+2026-06-12 10:39:12,566 [INFO]     - L2-STVZO-41-14: Unterlegkeile Pflicht (Mindestanzahl) + sichere Halterung (ohne Haken/Ketten)
+2026-06-12 10:39:12,566 [INFO]     - L2-STVZO-41-15: Dauerbremse Pflicht (Bus >5,5 t; sonst Kfz >9 t) + Leistungsanforderung 7%/6 km/30 km/h
+2026-06-12 10:39:13,073 [INFO] [25/62] Processing § 41a...
+2026-06-12 10:39:13,793 [INFO] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-12 10:39:13,796 [INFO]   No relevant rules found.
+2026-06-12 10:39:14,298 [INFO] [26/62] Processing § 41b...
+2026-06-12 10:39:17,662 [INFO] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-12 10:39:17,663 [INFO]   Extracted 1 rules:
+2026-06-12 10:39:17,663 [INFO]     - L2-STVZO-41b-ABS-COMPLY: Automatischer Blockierverhinderer: ABS-Pflicht bei Vmax > 60 km/h
+2026-06-12 10:39:18,169 [INFO] [27/62] Processing § 42...
+2026-06-12 10:43:49,462 [INFO] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-12 10:44:02,309 [INFO] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-12 10:44:02,313 [INFO]   Extracted 2 rules:
+2026-06-12 10:44:02,313 [INFO]     - L2-STVZO-42-anh_last-1: Zulässige Anhängelast – Pkw/Lkw-Grundgrenzen nach § 42 Abs. 1
+2026-06-12 10:44:02,313 [INFO]     - L2-STVZO-42-anh_ohne_eigene_bremse-2: Anhänger ohne ausreichende eigene Bremse – Voraussetzungen/zulässige Last nach § 42 Abs. 2
+2026-06-12 10:44:02,820 [INFO] [28/62] Processing § 43...
+2026-06-12 10:44:15,787 [INFO] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-12 10:44:15,791 [INFO]   Extracted 6 rules:
+2026-06-12 10:44:15,791 [INFO]     - L2-STVZO-43-1: Kupplung/Verbindung sicher ausgebildet und befestigt (Stand der Technik)
+2026-06-12 10:44:15,791 [INFO]     - L2-STVZO-43-1-SET: Anhänger-Zugöse höhenverstellbar (Kupplungsmaul-Niveau)
+2026-06-12 10:44:15,791 [INFO]     - L2-STVZO-43-2: Abschleppbefestigung vorn (PKW/Personenkraftwagen auch hinten) ausreichend und leicht zugänglich
+2026-06-12 10:44:15,791 [INFO]     - L2-STVZO-43-3: Abschleppen: lichter Abstand ≤ 5 m und Abschleppstange/Seil ausreichend erkennbar
+2026-06-12 10:44:15,791 [INFO]     - L2-STVZO-43-4: Anhängekupplungen: selbsttätig (Ausnahmen für bestimmte Fahrzeugarten/Zugänge)
+2026-06-12 10:44:15,791 [INFO]     - L2-STVZO-43-5: Zweirad-/Dreirad-Kfz nach § 30a Abs. 3: Kupplung und Anbringung nach Anhang
+2026-06-12 10:44:16,297 [INFO] [29/62] Processing § 44...
+2026-06-12 10:44:28,376 [INFO] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-12 10:44:28,383 [INFO]   Extracted 3 rules:
+2026-06-12 10:44:28,383 [INFO]     - L1-STVZO-44-STA02: Stütz-/Stützlastanforderungen für Sattelanhänger (Stützeinrichtung vorhanden bzw. selbsttätig)
+2026-06-12 10:44:28,384 [INFO]     - L1-STVZO-44-STA03: Höhenverstellbare Stütze für Starrdeichselanhänger bei Stützlast > 50 kg
+2026-06-12 10:44:28,384 [INFO]     - L1-STVZO-44-MINMAX01: Mindest- und Höchststützlast bei Starrdeichsel-/Zentralachsanhängern (4%/25 kg; 4%/500 kg; 15%/2,0 t Deckel)
+2026-06-12 10:44:28,891 [INFO] [30/62] Processing § 45...
+2026-06-12 10:44:46,731 [INFO] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-12 10:44:46,734 [INFO]   Extracted 9 rules:
+2026-06-12 10:44:46,734 [INFO]     - L2-STVZO-45-FT-01: Kraftstoffbehälter korrosionsfest und Dichtheit (Überdruck)
+2026-06-12 10:44:46,735 [INFO]     - L2-STVZO-45-FT-02: Weichgelötete Behälter: Zusammenhalten auch nach Ausschmelzen des Lotes
+2026-06-12 10:44:46,735 [INFO]     - L2-STVZO-45-FT-03: Überdruckausgleich selbsttätig + ausreichende Entlüftungssicherung gegen Flammendurchschlag
+2026-06-12 10:44:46,735 [INFO]     - L2-STVZO-45-FT-04: Weich angelötete Teile: zusätzlich vernietet/angeschraubt oder gleichwertig sicher befestigt
+2026-06-12 10:44:46,735 [INFO]     - L2-STVZO-45-FT-05: Kein Ausfließen aus Füllverschluss/Überdruckausgleich bei Schräglage, Kurvenfahrt oder Stößen
+2026-06-12 10:44:46,735 [INFO]     - L2-STVZO-45-FT-06: Vergaserkraftstoff-Behälter: nicht unmittelbar hinter Frontverkleidung; Abstand/Trennung zum Motor gegen Entzündung
+2026-06-12 10:44:46,735 [INFO]     - L2-STVZO-45-FT-07: Kraftomnibus: Behälter nicht im Fahrgast- oder Führerraum
+2026-06-12 10:44:46,735 [INFO]     - L2-STVZO-45-FT-08: Kraftomnibus: Vergaserkraftstoffbehälter hinten/seitlich unter Fußboden mit mind. 500 mm Abstand zu Türöffnungen, sonst Abschirmung
+2026-06-12 10:44:46,735 [INFO]     - L2-STVZO-45-FT-09: Anhangspflichten für Fahrzeuge nach § 30a Abs. 3 (Behälter & Leitungen)
+2026-06-12 10:44:47,242 [INFO] [31/62] Processing § 46...
+2026-06-12 10:44:56,159 [INFO] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-12 10:44:56,163 [INFO]   Extracted 6 rules:
+2026-06-12 10:44:56,163 [INFO]     - L2-STVZO-46-01: Kraftstoffleitungen mechanisch/verbiegungsfest verlegen
+2026-06-12 10:44:56,163 [INFO]     - L2-STVZO-46-02: Rohrverbindungen zulässig (verschraubt ohne Lötung bzw. hart aufgelötet)
+2026-06-12 10:44:56,163 [INFO]     - L2-STVZO-46-03: Absperreinrichtung in der Kraftstoffleitung (Fahrersitzbedienbar) bzw. zulässige Ausnahmen
+2026-06-12 10:44:56,164 [INFO]     - L2-STVZO-46-04: Schlauchmaterial & Schutz gegen mechanische Beschädigung
+2026-06-12 10:44:56,164 [INFO]     - L2-STVZO-46-05: Wärmeschutz & Anordnung gegen Entzündung (abtropfender/verdunstender Kraftstoff)
+2026-06-12 10:44:56,164 [INFO]     - L2-STVZO-46-06: Kraftomnibus: Kraftstoffleitungen nicht im Fahrgast- oder Führerraum; keine Schwerkraftförderung
+2026-06-12 10:44:56,671 [INFO] [32/62] Processing § 47...
+2026-06-12 10:45:03,291 [INFO] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-12 10:45:03,295 [INFO]   Extracted 3 rules:
+2026-06-12 10:45:03,295 [INFO]     - L1-STVZO-47-EMISSIONS-EURO: Abgasvorschriften müssen entsprechend einschlägigen EU-Rechtsakten eingehalten werden (StVZO §47 Abs. 1/1a/2/6/6a)
+2026-06-12 10:45:03,295 [INFO]     - L1-STVZO-47-NOXSYS-270: NOx-Minderungssystem: weniger als 270 mg NOx/km (StVZO §47 Abs. 3b/3c)
+2026-06-12 10:45:03,296 [INFO]     - L1-STVZO-47-PARTICLE_REDUCTION-CLASS: Besonders partikelreduziert nur bei Einhaltung Minderungsstufen (StVZO §47 Abs. 3a)
+2026-06-12 10:45:03,803 [INFO] [33/62] Processing § 47c...
+2026-06-12 10:45:06,803 [INFO] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-12 10:45:06,807 [INFO]   Extracted 1 rules:
+2026-06-12 10:45:06,807 [INFO]     - L2-STVZO-47c-EXHAUST-ANGLE-OUTLET: Auspuff-Endrohr: Richtung/Überstand begrenzen (§47c StVZO)
+2026-06-12 10:45:07,314 [INFO] [34/62] Processing § 47d...
+2026-06-12 10:45:08,205 [INFO] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-12 10:45:08,209 [INFO]   No relevant rules found.
+2026-06-12 10:45:08,715 [INFO] [35/62] Processing § 47e...
+2026-06-12 10:45:09,485 [INFO] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-12 10:45:09,488 [INFO]   No relevant rules found.
+2026-06-12 10:45:09,995 [INFO] [36/62] Processing § 48...
+2026-06-12 10:45:10,612 [INFO] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-12 10:45:10,616 [INFO]   No relevant rules found.
+2026-06-12 10:45:11,119 [INFO] [37/62] Processing § 49...
+2026-06-12 10:45:11,890 [INFO] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-12 10:45:11,893 [INFO]   No relevant rules found.
+2026-06-12 10:45:12,397 [INFO] [38/62] Processing § 49a...
+2026-06-12 10:45:26,638 [INFO] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-12 10:45:26,645 [INFO]   Extracted 9 rules:
+2026-06-12 10:45:26,645 [INFO]     - L1-STVZO-49a-2: Scheinwerfer müssen bei Abdeckung/Versenkung dauerhaft betriebsfertig bleiben
+2026-06-12 10:45:26,645 [INFO]     - L1-STVZO-49a-3: Gegenseitige Beeinträchtigung lichttechnischer Einrichtungen minimieren (bei Zusammenbau)
+2026-06-12 10:45:26,645 [INFO]     - L1-STVZO-49a-5: Vorwärts wirkende Lichtfunktionen nur zusammen mit Schlussleuchten/ Kennzeichenbeleuchtung einschaltbar (Ausnahmen)
+2026-06-12 10:45:26,645 [INFO]     - L1-STVZO-49a-6: In Scheinwerfern/Leuchten nur für Bauart bestimmte Lichtquellen
+2026-06-12 10:45:26,645 [INFO]     - L1-STVZO-49a-8: Elektrische Energieversorgung für Signalleuchten und Scheinwerfer dauerhaft sicherstellen
+2026-06-12 10:45:26,645 [INFO]     - L1-STVZO-49a-9: Leuchtenträger (abnehmbares Schild/Gestell) nur in bestimmten Fällen, rechtwinklig und nicht pendelnd
+2026-06-12 10:45:26,645 [INFO]     - L1-STVZO-49a-9a: Zusätzliche Rückfahrscheinwerfer/Leuchten bei teilweise in Sichtwinkel ragender Ladung: fest anbringen + Nebelschlusslogik
+2026-06-12 10:45:26,645 [INFO]     - L1-STVZO-49a-10: Leuchtenträger bei bestimmten Anhängern/Anbaugeräten aus 2 oder 3 Einheiten (unsachgemäße Anbringung ausgeschlossen)
+2026-06-12 10:45:26,646 [INFO]     - L1-STVZO-49a-11: Begriffsbestimmung 'leuchtende Fläche', 'Lichtaustrittsfläche', 'Winkel der geometrischen Sichtbarkeit' nach EU-Richtlinie 76/756/EWG
+2026-06-12 10:45:27,151 [INFO] [39/62] Processing § 50...
+2026-06-12 10:46:02,893 [INFO] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-12 10:46:02,901 [INFO]   Extracted 16 rules:
+2026-06-12 10:46:02,901 [INFO]     - L2-STVZO-50-1-WHITELIGHT: Scheinwerfer/Beleuchtung nur weißes Licht für Fahrbahnbetrieb
+2026-06-12 10:46:02,901 [INFO]     - L2-STVZO-50-3-AIMING_RANGE: Einstellbarkeit & Spiegelkante/Leuchtflächenniveau bei Abblendlicht
+2026-06-12 10:46:02,901 [INFO]     - L2-STVZO-50-3-SPEED_LIMIT_IF_OVER_1500: Abblend-/Scheinwerferhöhe >1500 mm nur bis 30 km/h
+2026-06-12 10:46:02,901 [INFO]     - L2-STVZO-50-5-ILLUM_STRENGTH_FERN_W_VALUES: Mindest-Beleuchtungsstärke Fernlicht in 100 m (lx)
+2026-06-12 10:46:02,901 [INFO]     - L2-STVZO-50-6-LUX_LIMITS_25M_ABLEND: Blendungsfreiheit Abblendlicht: 1 lx-Grenze je Scheinwerfer bei 25 m
+2026-06-12 10:46:02,902 [INFO]     - L2-STVZO-50-6-OVER_1200_HEIGHT_LUX_LIMIT_ABOVE_1000: Abblendlicht: Hellbereich über 1000 mm bei Scheinwerferhöhe >1200 mm max. 1 lx
+2026-06-12 10:46:02,902 [INFO]     - L2-STVZO-50-6-HDL_EDGE_HEIGHT_HALVED_IF_OVER_1400: Hell-Dunkel-Grenze bei Anbringungshöhe >1400 mm nur halb so hoch (15 m vor Scheinwerfer)
+2026-06-12 10:46:02,902 [INFO]     - L2-STVZO-50-6b-ASYMMETRIC_RISE_15DEG: Asymmetrisches Abblendlicht: 1-lx-Grenze darf nach rechts unter 15° ansteigen
+2026-06-12 10:46:02,902 [INFO]     - L2-STVZO-50-6-REQUIRED_25M_MIN_ILLUMINATION_RIGOROUS: Abblendlicht-Anforderung: 25 m, 150 mm über Fahrbahn min. Werte nach Abs. 5
+2026-06-12 10:46:02,902 [INFO]     - L2-STVZO-50-6a-MOFA_DAUERABBLEND_25M_MAX_1LX: Mofa: Dauerabblendlicht mit max. 1 lx (25 m, ab Scheinwerfermitte +)
+2026-06-12 10:46:02,902 [INFO]     - L2-STVZO-50-8-AIM_DIRECTION_ANHANG_FOR_1200MM: Mehrspurige Fahrzeuge: Abblendlicht-Ausrichtung gemäß Anhang bei Anbringung <=1200 mm
+2026-06-12 10:46:02,902 [INFO]     - L2-STVZO-50-10-GASDISCHARGE_REQUIREMENTS: Gasentladungslampen: ALWR + Scheinwerferreinigungsanlage + System für dauerhaftes Abblendlicht bei Fern
+2026-06-12 10:46:02,902 [INFO]     - L2-STVZO-50-6a-MOTORCYCLE_LOW_POWER_COVERAGE: Kleinkrafträder/andere Fahrräder mit Hilfsmotor: Dauerabblendlicht-Regel (wenn Energievoraussetzung nur damit erfüllt)
+2026-06-12 10:46:02,902 [INFO]     - L2-STVZO-50-9-HEADLIGHT_SWITCHING: Fernlicht: nur gleichzeitig/paariweise; beim Abblenden alle erlöschen
+2026-06-12 10:46:02,902 [INFO]     - L2-STVZO-50-4_COMBINED_DIPPING_ALLOWED: Fern/Abblend: besondere Scheinwerfer; Schaltung darf Abblend mitbrennen lassen
+2026-06-12 10:46:02,902 [INFO]     - L2-STVZO-50-2_REQUIRED_NUMBER_OF_HEADLIGHTS: Anzahl nach vorn wirkender Scheinwerfer (Grundausrüstung)
+2026-06-12 10:46:03,410 [INFO] [40/62] Processing § 51...
+2026-06-12 10:46:21,115 [INFO] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-12 10:46:21,119 [INFO]   Extracted 4 rules:
+2026-06-12 10:46:21,119 [INFO]     - L2-STVZO-51-01: Seiten-Begrenzungsleuchten vorne (Kfz) – Anzahl, Position (Abstand ≤ 400 mm) und Lichtfarbe/Blendfreiheit
+2026-06-12 10:46:21,120 [INFO]     - L2-STVZO-51-02: Begrenzungsleuchten – besondere Anhängerregel vorne (Ragt > 400 mm über Zugfahrzeug hinaus) + Rückstrahler weiß (nicht dreieckig)
+2026-06-12 10:46:21,120 [INFO]     - L2-STVZO-51-03: Höhenlage Begrenzungsleuchten und vordere Rückstrahler – Höhenbereiche über Fahrbahn
+2026-06-12 10:46:21,120 [INFO]     - L2-STVZO-51-04: Spurhalteleuchte am hinteren Ende von Anhängern (je eine an jeder Längsseite)
+2026-06-12 10:46:21,626 [INFO] [41/62] Processing § 51a...
+2026-06-12 10:46:43,718 [INFO] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-12 10:46:43,721 [INFO]   Extracted 9 rules:
+2026-06-12 10:46:43,721 [INFO]     - L2-STVZO-51a-1: Gelbe nicht-dreieckige Rückstrahler seitlich (Längsseiten) für Fahrzeuge > 6 m (ausgenommen Pkw) / Anhänger
+2026-06-12 10:46:43,721 [INFO]     - L2-STVZO-51a-2: Krankenfahrstühle: gelbe Rückstrahler seitlich (Höhe max. 600 mm, so tief wie möglich) ggf. an Speichen
+2026-06-12 10:46:43,721 [INFO]     - L2-STVZO-51a-3: Zulässigkeit abnehmbarer Rückstrahler (nur bestimmte Ausnahmen)
+2026-06-12 10:46:43,721 [INFO]     - L2-STVZO-51a-4: Seitliche Kenntlichmachung freiwillig: Anordnung nach Abs. 1 (sonst mind. vorderes/hinteres Drittel)
+2026-06-12 10:46:43,721 [INFO]     - L2-STVZO-51a-5: Zulässigkeit gelber waagerechter retroreflektierender Streifen (keine Schrift/Embleme)
+2026-06-12 10:46:43,721 [INFO]     - L2-STVZO-51a-6: Ringförmig zusammenhängende retroreflektierende weiße Streifen an Reifen (Krafträder/Krankenfahrstühle) zulässig
+2026-06-12 10:46:43,721 [INFO]     - L2-STVZO-51a-7: Seitliche Seitenmarkierungsleuchten (gelb) für Fahrzeuge > 6 m (ausgenommen bestimmte Kategorien)
+2026-06-12 10:46:43,721 [INFO]     - L2-STVZO-51a-8: Zusatzkenntlichmachung von Fahrzeugkombinationen mit Nachläufern für Langmaterial: gelbes retroreflektierendes Material
+2026-06-12 10:46:43,722 [INFO]     - L2-STVZO-51a-9: Abweichung für Nachläufer Langmaterial: Seitenmarkierungsleuchten soweit wie möglich vorne & hinten (auch trotz Abs. 6)
+2026-06-12 10:46:44,228 [INFO] [42/62] Processing § 51b...
+2026-06-12 10:46:49,760 [INFO] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-12 10:46:53,063 [INFO] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-12 10:46:53,067 [INFO]   Extracted 1 rules:
+2026-06-12 10:46:53,067 [INFO]     - L1-STVZO-51b: Umrissleuchten: zulässige Breite & Anbau (inkl. Abstand >200 mm)
+2026-06-12 10:46:53,571 [INFO] [43/62] Processing § 51c...
+2026-06-12 10:47:16,617 [INFO] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-12 10:47:16,621 [INFO]   Extracted 4 rules:
+2026-06-12 10:47:16,621 [INFO]     - L2-STVZO-51c-01: Parkleuchten/Park-Warntafeln – zugelassene Bauarten (Ausstattung nach §51c Abs.2)
+2026-06-12 10:47:16,621 [INFO]     - L2-STVZO-51c-02: Parkleuchten/Park-Warntafeln – Einbauhöhe und horizontale Lage (Abstände)
+2026-06-12 10:47:16,621 [INFO]     - L2-STVZO-51c-03: Parkleuchten (abnehmbare) – Anschluss-/Stromversorgungsanforderung
+2026-06-12 10:47:16,622 [INFO]     - L2-STVZO-51c-04: Park-Warntafeln – Höhe, seitlicher Versatz und Sicht-/Abdeckungsregeln
+2026-06-12 10:47:17,128 [INFO] [44/62] Processing § 52...
+2026-06-12 10:47:38,380 [INFO] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-12 10:47:38,385 [INFO]   Extracted 8 rules:
+2026-06-12 10:47:38,385 [INFO]     - L2-STVZO-52-1-FOG-1: Nebelscheinwerfer-Zusatz: Anbauhöhe, Abschaltung/Schaltung bei weiter außen, Einstellbarkeit und Blendfreiheit
+2026-06-12 10:47:38,385 [INFO]     - L2-STVZO-52-2-SEEKER: Suchscheinwerfer: Leistungsaufnahme, gleichzeitiges Einschalten
+2026-06-12 10:47:38,385 [INFO]     - L2-STVZO-52-4-AWARENESS-yellow-strobe: Gelbes Rundumlicht (Warnleuchten): zulässige Einsatzfälle/Anordnungsvorgabe
+2026-06-12 10:47:38,385 [INFO]     - L2-STVZO-52-5-AMBULANCE-SIGNAL-ONLY-FRONT: Sonderbeleuchtung Krankentransport/Notfallrettung: nur nach vorn, keine Scheinwerferwirkung
+2026-06-12 10:47:38,385 [INFO]     - L2-STVZO-52-7-WORK-LAMPS: Arbeitsscheinwerfer: während der Fahrt grundsätzlich aus; nur bei zugehöriger Arbeitsfahrt einschaltbar und Blendfreiheit
+2026-06-12 10:47:38,386 [INFO]     - L2-STVZO-52-9-PREHEAT-CAMPING-COACH-LAMPS: Vorzeltleuchten Wohnwagen/Wohnmobile: nur bei Nicht-Blenderwartung und nicht während der Fahrt
+2026-06-12 10:47:38,386 [INFO]     - L2-STVZO-52-10-BLUE-RED-STRIPES: Leuchtrot horizontale umlaufende Streifen (DIN 6164): nur bei zugelassenen Einsatzfahrzeugen
+2026-06-12 10:47:38,386 [INFO]     - L2-STVZO-52-11-HECKWARN-LAMP-SYSTEM: Heckwarnsystem (max. 3 Paare gelbe Leuchten): Kategorie X ECE 65, synchron, symmetrisch, Einschaltbeschränkung Stand/Schritt, Kontrollleuchte & Hinweis
+2026-06-12 10:47:38,892 [INFO] [45/62] Processing § 52a...
+2026-06-12 10:57:38,895 [INFO] Retrying request to /chat/completions in 0.474590 seconds
+2026-06-12 10:57:51,259 [INFO] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-12 10:57:51,272 [INFO]   Extracted 6 rules:
+2026-06-12 10:57:51,272 [INFO]     - L2-STVZO-52a-01: Rückfahrscheinwerfer Anzahl/Farbe/Einbauhöhe
+2026-06-12 10:57:51,273 [INFO]     - L2-STVZO-52a-02: Rückfahrscheinwerfer mehrspurige Fahrzeuge >3,5 t: seitlicher Anbau und Überstand
+2026-06-12 10:57:51,273 [INFO]     - L2-STVZO-52a-03: Rückfahrscheinwerfer Schalt-/Bedingungslogik (nur bei Rückwärtsgang)
+2026-06-12 10:57:51,273 [INFO]     - L2-STVZO-52a-04: Ausrichtung: Beleuchtung nicht mehr als 10 m hinter der Leuchte
+2026-06-12 10:57:51,273 [INFO]     - L2-STVZO-52a-05: Entbehrlichkeit: Fahrzeuge ohne Rückfahrscheinwerferpflicht
+2026-06-12 10:57:51,273 [INFO]     - L2-STVZO-52a-06: Nachträglicher Einbau: Anforderungen Abs. 2, 4 und 5 gelten
+2026-06-12 10:57:51,780 [INFO] [46/62] Processing § 53...
+2026-06-12 10:58:07,918 [INFO] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-12 10:58:07,922 [INFO]   Extracted 5 rules:
+2026-06-12 10:58:07,922 [INFO]     - L2-StVZO-53-1a: Schlussleuchten hinten – Anzahl/Abmessungen/Position
+2026-06-12 10:58:07,922 [INFO]     - L2-StVZO-53-2a: Bremsleuchten hinten – Anzahl/Höhen/Anbringung
+2026-06-12 10:58:07,922 [INFO]     - L2-StVZO-53-4a: Rückstrahler hinten – Anzahl/Geometrie/Abstände/Höhen
+2026-06-12 10:58:07,922 [INFO]     - L2-StVZO-53-5a: Anbauort äußerstes Ende – Schlussleuchten/Bremsleuchten/Rückstrahler
+2026-06-12 10:58:07,922 [INFO]     - L2-StVZO-53-9a: Keine Anbringung an beweglichen Fahrzeugteilen (mit Ausnahme abnehmbar nach §49a)
+2026-06-12 10:58:08,429 [INFO] [47/62] Processing § 53a...
+2026-06-12 10:58:25,056 [INFO] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-12 10:58:25,063 [INFO]   Extracted 6 rules:
+2026-06-12 10:58:25,063 [INFO]     - L1-STVZO-53a-WARNTRI: Mitführungspflicht Warndreieck (je nach Fahrzeugklasse/zul. Gesamtgewicht)
+2026-06-12 10:58:25,063 [INFO]     - L1-STVZO-53a-WARNLEUCHTE: Mitführungspflicht Warnleuchte bei >3,5 t
+2026-06-12 10:58:25,063 [INFO]     - L1-STVZO-53a-WESTE: Mitführungspflicht Warnweste (DIN EN 471 / EN ISO 20471) für bestimmte Fahrzeugarten
+2026-06-12 10:58:25,063 [INFO]     - L1-STVZO-53a-WARNTRI_WESTE_BESCHAFFENHEIT: Beschaffenheit und Betriebsfertigkeit der Warneinrichtungen (tragbar/standsicher/erkennbar; Warnwesten Norm)
+2026-06-12 10:58:25,063 [INFO]     - L1-STVZO-53a-WARNBLINK: Warnblinkanlage Pflicht und technische Anforderungen (Frequenz, Kontrolleuchte, Schalter)
+2026-06-12 10:58:25,064 [INFO]     - L1-STVZO-53a-WARNBLINK_NICHT_PFLICHT: Nicht vorgeschriebene Warnblinkanlagen müssen dennoch §53a Abs.4 entsprechen
+2026-06-12 10:58:25,571 [INFO] [48/62] Processing § 53b...
+2026-06-12 10:58:42,727 [INFO] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-12 10:58:42,739 [INFO]   Extracted 5 rules:
+2026-06-12 10:58:42,739 [INFO]     - L2-STVZO-53b-1-LEUCHTEN-ANBAUGERAETE_SEITLICH>400: Anbaugeräte: seitlich >400 mm Überhang → Begrenzungs-/Schlussleuchten & Rückstrahler + Einbauhöhen/Abstände
+2026-06-12 10:58:42,739 [INFO]     - L2-STVZO-53b-2-ANBAUGERAETE_ENDSTUECK>1000_NACH_HINTEN: Anbaugeräte: äußerstes Ende >1000 mm über Schlussleuchten nach hinten → Schlussleuchte & Rückstrahler + Einbauhöhen
+2026-06-12 10:58:42,739 [INFO]     - L2-STVZO-53b-3-KENNZEICHNUNG_PARK-WARNTAFELN: Anbaugeräte-Kennzeichnung vorne/hinten bzw. nur hinten → Park-Warntafeln / DIN 11030
+2026-06-12 10:58:42,739 [INFO]     - L2-STVZO-53b-4-BEEINTRAECHTIGUNG_LICHTTECHNISCHE_EINRICHTUNGEN_NACHFUNKTION: Mitführen: unvermeidbare Beeinträchtigung lichttechnischer Einrichtungen → zusätzliche gleiche Art Einrichtungen
+2026-06-12 10:58:42,739 [INFO]     - L2-STVZO-53b-5-HUBLadebuehne_WARNMARKIERUNGEN_BLINKLEUCHTEN: Hubladebühnen: während Betrieb → gelbe Blinkleuchten (50–500 cd) + rot-weiße retroreflektierende Warnmarkierungen
+2026-06-12 10:58:43,246 [INFO] [49/62] Processing § 53c...
+2026-06-12 10:58:44,147 [INFO] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-12 10:58:44,151 [INFO]   No relevant rules found.
+2026-06-12 10:58:44,655 [INFO] [50/62] Processing § 53d...
+2026-06-12 10:58:53,954 [INFO] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-12 10:58:53,959 [INFO]   Extracted 5 rules:
+2026-06-12 10:58:53,959 [INFO]     - L2-STVZO-53d-1: Nebelschlussleuchte Anforderung (Mehrspurigkeit & vmax>60 km/h)
+2026-06-12 10:58:53,959 [INFO]     - L2-STVZO-53d-2: Einbauhöhe & Abstand zur Bremsleuchte
+2026-06-12 10:58:53,959 [INFO]     - L2-STVZO-53d-3: Schaltung/Abschaltschutz zur Fern-/Abblendlicht-Logik
+2026-06-12 10:58:53,959 [INFO]     - L2-STVZO-53d-4: Kontrollleuchte gelb für Nebelschlussleuchte
+2026-06-12 10:58:53,959 [INFO]     - L2-STVZO-53d-5: Zugverband: nur am letzten Anhänger leuchten (selbsttätige Abschaltung bei Ab-/Aufstecken)
+2026-06-12 10:58:54,467 [INFO] [51/62] Processing § 54...
+2026-06-12 10:59:07,798 [INFO] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-12 10:59:07,804 [INFO]   Extracted 7 rules:
+2026-06-12 10:59:07,804 [INFO]     - L2-STVZO-54-01: Blinkfrequenz Fahrtrichtungsanzeiger (Hz)
+2026-06-12 10:59:07,804 [INFO]     - L2-STVZO-54-02: Gelbes Licht als Fahrtrichtungsanzeiger
+2026-06-12 10:59:07,804 [INFO]     - L2-STVZO-54-03: Funktionsanzeige für den Fahrer (sinnfällig) bei nicht im Blickfeld
+2026-06-12 10:59:07,804 [INFO]     - L2-STVZO-54-04: Keine Montage an beweglichen Fahrzeugteilen (nach hinten)
+2026-06-12 10:59:07,804 [INFO]     - L2-STVZO-54-05: Zulässige Montage an beweglichen Teilen nur mit Normallage (vorne/seitlich)
+2026-06-12 10:59:07,804 [INFO]     - L2-STVZO-54-06: Fahrtrichtungsanzeiger vorgeschrieben? (Nicht erforderlich)
+2026-06-12 10:59:07,804 [INFO]     - L2-STVZO-54-07: Fahrtrichtungsanzeiger an nicht vorgeschriebenen Fahrzeugen müssen §54 entsprechen
+2026-06-12 10:59:08,311 [INFO] [52/62] Processing § 54a...
+2026-06-12 10:59:08,868 [INFO] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-12 10:59:08,870 [INFO]   No relevant rules found.
+2026-06-12 10:59:09,377 [INFO] [53/62] Processing § 54b...
+2026-06-12 10:59:09,942 [INFO] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-12 10:59:09,944 [INFO]   No relevant rules found.
+2026-06-12 10:59:10,450 [INFO] [54/62] Processing § 55...
+2026-06-12 10:59:11,173 [INFO] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-12 10:59:11,175 [INFO]   No relevant rules found.
+2026-06-12 10:59:11,681 [INFO] [55/62] Processing § 55a...
+2026-06-12 10:59:12,209 [INFO] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-12 10:59:12,213 [INFO]   No relevant rules found.
+2026-06-12 10:59:12,720 [INFO] [56/62] Processing § 56...
+2026-06-12 10:59:19,674 [INFO] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-12 10:59:19,678 [INFO]   Extracted 3 rules:
+2026-06-12 10:59:19,679 [INFO]     - L2-STVZO-56-INDIRECT-VIEW-REAR-SIDE: Indirekte Sicht: Spiegel/Einrichtungen müssen ausreichende Sicht sichern
+2026-06-12 10:59:19,679 [INFO]     - L2-STVZO-56-INDIRECT-VIEW-TARGETS-COMPONENTS: Indirekte Sicht nach Fahrzeugart/Vmax: richtige Spiegelkategorie erforderlich
+2026-06-12 10:59:19,679 [INFO]     - L2-STVZO-56-EXEMPT-NO-MIRRORS: Ausnahmen Spiegelpflicht entfällt bei bestimmten Fahrzeugausführungen
+2026-06-12 10:59:20,184 [INFO] [57/62] Processing § 57...
+2026-06-12 10:59:24,490 [INFO] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-12 10:59:24,491 [INFO]   Extracted 3 rules:
+2026-06-12 10:59:24,491 [INFO]     - L2-STVZO-57-1: Geschwindigkeitsmessgerät im unmittelbaren Sichtfeld
+2026-06-12 10:59:24,491 [INFO]     - L2-STVZO-57-2: Geschwindigkeitsanzeige in km/h
+2026-06-12 10:59:24,491 [INFO]     - L2-STVZO-57-3: Wegstreckenzähler-Abweichung ± 4 %
+2026-06-12 10:59:24,998 [INFO] [58/62] Processing § 57a...
+2026-06-12 10:59:25,586 [INFO] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-12 10:59:25,587 [INFO]   No relevant rules found.
+2026-06-12 10:59:26,092 [INFO] [59/62] Processing § 58...
+2026-06-12 10:59:34,319 [INFO] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-12 10:59:34,324 [INFO]   Extracted 4 rules:
+2026-06-12 10:59:34,324 [INFO]     - L2-STVZO-58-25: Vorhandensein Geschwindigkeitsschild & ausreichende Kennzeichnungspflichten
+2026-06-12 10:59:34,324 [INFO]     - L2-STVZO-58-26: Befestigungspunkte Geschwindigkeitsschild (Anzahl/Position)
+2026-06-12 10:59:34,324 [INFO]     - L2-STVZO-58-27: Form/Abmessungen Geschwindigkeitsschild & Rand/Farbgebung
+2026-06-12 10:59:34,324 [INFO]     - L2-STVZO-58-28: Retroreflektierendes Schild: Norm DIN 74069 & Prüf-/Überwachungszeichen
+2026-06-12 10:59:34,831 [INFO] [60/62] Processing § 59...
+2026-06-12 10:59:47,051 [INFO] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-12 10:59:47,060 [INFO]   Extracted 5 rules:
+2026-06-12 10:59:47,060 [INFO]     - L2-STVZO-59-IDF-02: VIN muss an zugänglicher Stelle vorn rechts einschlag-/eingeprägt sein (bzw. nach Rahmentausch korrekt durchkreuzt/neu vermerkt)
+2026-06-12 10:59:47,060 [INFO]     - L2-STVZO-59-Schild-01: Fabrikschilder/sonstige Schilder vorhanden (vorn rechts, zugänglich, gut lesbar, dauerhaft)
+2026-06-12 10:59:47,061 [INFO]     - L2-STVZO-59-Schild-02: Abweichende Schildpflicht bei Fahrzeugen für Güterbeförderung (Anhang-Schild statt Fabrikschild nach Abs. 1)
+2026-06-12 10:59:47,061 [INFO]     - L2-STVZO-59-Schild-03: Abweichende Schildpflicht bei zweirädrigen/dreirädrigen Fahrzeugen nach § 30a Abs. 3
+2026-06-12 10:59:47,061 [INFO]     - L2-STVZO-59-Fallback-01: Fehlende/nicht sicher feststellbare VIN: Zuteilung durch Zulassungsbehörde möglich
+2026-06-12 10:59:47,567 [INFO] [61/62] Processing § 60...
+2026-06-12 10:59:48,550 [INFO] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-12 10:59:48,553 [INFO]   No relevant rules found.
+2026-06-12 10:59:49,060 [INFO] [62/62] Processing § 62...
+2026-06-12 10:59:50,068 [INFO] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-12 10:59:50,071 [INFO]   No relevant rules found.
+2026-06-12 10:59:50,585 [INFO] Rule extraction finished. Saved 182 rules to /Users/dibbosaha/Programming/hacknation/Hack-Nation_QX/api/data/pipeline/assets_rules.json

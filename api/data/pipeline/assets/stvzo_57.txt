@@ -1,0 +1,9 @@
+§ 57 Geschwindigkeitsmessgerät und Wegstreckenzähler (Straßenverkehrs-Zulassungs-Ordnung (StVZO))
+
+(1) Kraftfahrzeuge müssen mit einem im unmittelbaren Sichtfeld des Fahrzeugführers liegenden Geschwindigkeitsmessgerät ausgerüstet sein. Dies gilt nicht für
+  1. mehrspurige Kraftfahrzeuge mit einer durch die Bauart bestimmten Höchstgeschwindigkeit von nicht mehr als 30 km/h sowie
+  2. mit Fahrtschreiber oder Kontrollgerät (§ 57a) ausgerüstete Kraftfahrzeuge, wenn die Geschwindigkeitsanzeige im unmittelbaren Sichtfeld des Fahrzeugführers liegt.
+
+(2) Bei Geschwindigkeitsmessgeräten muss die Geschwindigkeit in Kilometer je Stunde angezeigt werden. Das Geschwindigkeitsmessgerät muss den im Anhang zu dieser Vorschrift genannten Bestimmungen entsprechen.
+
+(3) Das Geschwindigkeitsmessgerät darf mit einem Wegstreckenzähler verbunden sein, der die zurückgelegte Strecke in Kilometern anzeigt. Die vom Wegstreckenzähler angezeigte Wegstrecke darf von der tatsächlich zurückgelegten Wegstrecke ± 4 Prozent abweichen.

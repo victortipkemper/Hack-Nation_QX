@@ -1,0 +1,20 @@
+§ 59 Fabrikschilder, sonstige Schilder, Fahrzeug-Identifizierungsnummer (Straßenverkehrs-Zulassungs-Ordnung (StVZO))
+
+(1) An allen Kraftfahrzeugen und Anhängern muss an zugänglicher Stelle am vorderen Teil der rechten Seite gut lesbar und dauerhaft ein Fabrikschild mit folgenden Angaben angebracht sein:
+  1. Hersteller des Fahrzeugs;
+  2. Fahrzeugtyp;
+  3. Baujahr (nicht bei zulassungspflichtigen Fahrzeugen);
+  4. Fahrzeug-Identifizierungsnummer;
+  5. zulässiges Gesamtgewicht;
+  6. zulässige Achslasten (nicht bei Krafträdern). Dies gilt nicht für die in § 53 Absatz 7 bezeichneten Anhänger.
+
+(1a) Abweichend von Absatz 1 ist an Personenkraftwagen, Kraftomnibussen, Lastkraftwagen und Sattelzugmaschinen mit mindestens vier Rädern und einer durch die Bauart bestimmten Höchstgeschwindigkeit von mehr als 25 km/h sowie ihren Anhängern zur Güterbeförderung ein Schild gemäß den im Anhang zu dieser Vorschrift genannten Bestimmungen anzubringen; an anderen Fahrzeugen – ausgenommen Kraftfahrzeuge nach § 30a Absatz 3 – darf das Schild angebracht sein.
+
+(1b) Abweichend von Absatz 1 ist an zweirädrigen oder dreirädrigen Kraftfahrzeugen nach § 30a Absatz 3 ein Schild entsprechend den im Anhang zu dieser Vorschrift genannten Bestimmungen anzubringen.
+
+(2) Die Fahrzeug-Identifizierungsnummer nach der Norm DIN ISO 3779, Ausgabe Februar 1977, oder nach der Richtlinie 76/114/EWG des Rates vom 18. Dezember 1975 zur Angleichung der Rechtsvorschriften der Mitgliedstaaten über Schilder, vorgeschriebene Angaben, deren Lage und Anbringungsart an Kraftfahrzeugen und Kraftfahrzeuganhängern (ABl. L 24 vom 30.1.1976, S. 1), die zuletzt durch die Richtlinie 2006/96/EG (ABl. L 363 vom 20.12.2006, S. 81) geändert worden ist, muss 17 Stellen haben; andere Fahrzeug-Identifizierungsnummern dürfen nicht mehr als 14 Stellen haben. Sie muss unbeschadet des Absatzes 1 an zugänglicher Stelle am vorderen Teil der rechten Seite des Fahrzeugs gut lesbar am Rahmen oder an einem ihn ersetzenden Teil eingeschlagen oder eingeprägt sein. Wird nach dem Austausch des Rahmens oder des ihn ersetzenden Teils der ausgebaute Rahmen oder Teil wieder verwendet, so ist
+  1. die eingeschlagene oder eingeprägte Fahrzeug-Identifizierungsnummer dauerhaft so zu durchkreuzen, dass sie lesbar bleibt,
+  2. die Fahrzeug-Identifizierungsnummer des Fahrzeugs, an dem der Rahmen oder Teil wieder verwendet wird, neben der durchkreuzten Nummer einzuschlagen oder einzuprägen und
+  3. die durchkreuzte Nummer der Zulassungsbehörde zum Vermerk auf dem Brief und der Karteikarte des Fahrzeugs zu melden, an dem der Rahmen oder Teil wieder verwendet wird. Satz 3 Nummer 3 ist entsprechend anzuwenden, wenn nach dem Austausch die Fahrzeug-Identifizierungsnummer in einen Rahmen oder einen ihn ersetzenden Teil eingeschlagen oder eingeprägt wird, der noch keine Fahrzeug-Identifizierungsnummer trägt.
+
+(3) Ist eine Fahrzeug-Identifizierungsnummer nicht vorhanden oder lässt sie sich nicht mit Sicherheit feststellen, so kann die Zulassungsbehörde eine Nummer zuteilen. Absatz 2 gilt für diese Nummer entsprechend.

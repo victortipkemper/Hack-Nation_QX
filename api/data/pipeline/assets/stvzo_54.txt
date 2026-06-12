@@ -1,0 +1,29 @@
+§ 54 Fahrtrichtungsanzeiger (Straßenverkehrs-Zulassungs-Ordnung (StVZO))
+
+(1) Kraftfahrzeuge und ihre Anhänger müssen mit Fahrtrichtungsanzeigern ausgerüstet sein. Die Fahrtrichtungsanzeiger müssen nach dem Einschalten mit einer Frequenz von 1,5 Hz ± 0,5 Hz (90 Impulse ± 30 Impulse in der Minute) zwischen hell und dunkel sowie auf derselben Fahrzeugseite – ausgenommen an Krafträdern mit Wechselstromlichtanlage – in gleicher Phase blinken. Sie müssen so angebracht und beschaffen sein, dass die Anzeige der beabsichtigten Richtungsänderung unter allen Beleuchtungs- und Betriebsverhältnissen von anderen Verkehrsteilnehmern, für die ihre Erkennbarkeit von Bedeutung ist, deutlich wahrgenommen werden kann. Fahrtrichtungsanzeiger brauchen ihre Funktion nicht zu erfüllen, solange sie Warnblinklicht abstrahlen.
+
+(1a) Die nach hinten wirkenden Fahrtrichtungsanzeiger dürfen nicht an beweglichen Fahrzeugteilen angebracht werden. Die nach vorn wirkenden Fahrtrichtungsanzeiger und die zusätzlichen seitlichen Fahrtrichtungsanzeiger dürfen an beweglichen Fahrzeugteilen angebaut sein, wenn diese Teile nur eine Normallage (Betriebsstellung) haben. Die Sätze 1 und 2 gelten nicht für Fahrtrichtungsanzeiger, die nach § 49a Absatz 9 und 10 abnehmbar sein dürfen.
+
+(2) Sind Fahrtrichtungsanzeiger nicht im Blickfeld des Führers angebracht, so muss ihre Wirksamkeit dem Führer sinnfällig angezeigt werden; dies gilt nicht für Fahrtrichtungsanzeiger an Krafträdern und für seitliche Zusatzblinkleuchten. Fahrtrichtungsanzeiger dürfen die Sicht des Fahrzeugführers nicht behindern.
+
+(3) Als Fahrtrichtungsanzeiger sind nur Blinkleuchten für gelbes Licht zulässig.
+
+(4) Erforderlich als Fahrtrichtungsanzeiger sind
+  1. an mehrspurigen Kraftfahrzeugenpaarweise angebrachte Blinkleuchten an der Vorderseite und an der Rückseite. Statt der Blinkleuchten an der Vorderseite dürfen Fahrtrichtungsanzeiger am vorderen Teil der beiden Längsseiten angebracht sein. An Fahrzeugen mit einer Länge von nicht mehr als 4 m und einer Breite von nicht mehr als 1,60 m genügen Fahrtrichtungsanzeiger an den beiden Längsseiten. An Fahrzeugen, bei denen der Abstand zwischen den einander zugekehrten äußeren Rändern der Lichtaustrittsflächen der Blinkleuchten an der Vorderseite und an der Rückseite mehr als 6 m beträgt, müssen zusätzliche Fahrtrichtungsanzeiger an den beiden Längsseiten angebracht sein,
+  2. an Krafträdernpaarweise angebrachte Blinkleuchten an der Vorderseite und an der Rückseite. Der Abstand des inneren Randes der Lichtaustrittsfläche der Blinkleuchten muss von der durch die Längsachse des Kraftrades verlaufenden senkrechten Ebene bei den an der Rückseite angebrachten Blinkleuchten mindestens 120 mm, bei den an der Vorderseite angebrachten Blinkleuchten mindestens 170 mm und vom Rand der Lichtaustrittsfläche des Scheinwerfers mindestens 100 mm betragen. Der untere Rand der Lichtaustrittsfläche von Blinkleuchten an Krafträdern muss mindestens 350 mm über der Fahrbahn liegen. Wird ein Beiwagen mitgeführt, so müssen die für die betreffende Seite vorgesehenen Blinkleuchten an der Außenseite des Beiwagens angebracht sein,
+  3. an Anhängernpaarweise angebrachte Blinkleuchten an der Rückseite. Beim Mitführen von zwei Anhängern genügen Blinkleuchten am letzten Anhänger, wenn die Anhänger hinter einer Zugmaschine mit einer durch die Bauart bestimmten Höchstgeschwindigkeit von nicht mehr als 25 km/h mitgeführt werden oder wenn sie für eine Höchstgeschwindigkeit von nicht mehr als 25 km/h in der durch § 58 vorgeschriebenen Weise gekennzeichnet sind,
+  4. an Kraftomnibussen, die für die Schülerbeförderung besonders eingesetzt sind,an der Rückseite zwei zusätzliche Blinkleuchten, die so hoch und so weit außen wie möglich angeordnet sein müssen,
+  5. an mehrspurigen Kraftfahrzeugen und Sattelanhängern – ausgenommen Arbeitsmaschinen, Stapler und land- oder forstwirtschaftliche Zugmaschinen und deren Anhänger – mit einem zulässigen Gesamtgewicht von mehr als 3,5 t an den Längsseiten im vorderen Drittel zusätzliche Blinkleuchten, deren Lichtstärke nach hinten mindestens 50 cd und höchstens 200 cd beträgt. Für diese Fahrzeuge ist die Anbringung zusätzlicher Fahrtrichtungsanzeiger nach Nummer 1 nicht erforderlich.
+
+(5) Fahrtrichtungsanzeiger sind nicht erforderlich an
+  1. einachsigen Zugmaschinen,
+  2. einachsigen Arbeitsmaschinen,
+  3. offenen Krankenfahrstühlen,
+  4. Leichtkrafträdern, Kleinkrafträdern und Fahrrädern mit Hilfsmotor,
+  5. folgenden Arten von Anhängern:
+  a) eisenbereiften Anhängern, die nur für land- oder forstwirtschaftliche Zwecke verwendet werden;
+  b) angehängten land- oder forstwirtschaftlichen Arbeitsgeräten, soweit sie die Blinkleuchten des ziehenden Fahrzeugs nicht verdecken;
+  c) einachsigen Anhängern hinter Krafträdern;
+  d) Sitzkarren (§ 3 Absatz 3 Satz 1 Nummer 2 Buchstabe i der Fahrzeug-Zulassungsverordnung).
+
+(6) Fahrtrichtungsanzeiger an Fahrzeugen, für die sie nicht vorgeschrieben sind, müssen den vorstehenden Vorschriften entsprechen.

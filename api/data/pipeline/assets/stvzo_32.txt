@@ -1,0 +1,111 @@
+§ 32 Abmessungen von Fahrzeugen und Fahrzeugkombinationen (Straßenverkehrs-Zulassungs-Ordnung (StVZO))
+
+(1) Bei Kraftfahrzeugen und Anhängern einschließlich mitgeführter austauschbarer Ladungsträger (§ 42 Absatz 3) darf die höchstzulässige Breite über alles – ausgenommen bei Schneeräumgeräten und Winterdienstfahrzeugen – folgende Maße nicht überschreiten:
+1.allgemein2,55 m,
+2.bei land- oder forstwirtschaftlichen Arbeitsgeräten, bei selbstfahrenden land- oder forstwirtschaftlichen Arbeitsmaschinen und bei Zugmaschinen und Sonderfahrzeugen mit auswechselbaren land- oder forstwirtschaftlichen Anbaugeräten, wenn sie für land- oder forstwirtschaftliche Zwecke gemäß § 6 Absatz 5 der Fahrerlaubnis-Verordnung eingesetzt werden
+3,00 m,
+3.bei Anhängern hinter Krafträdern1,00 m,
+4.bei festen oder abnehmbaren Aufbauten von klimatisierten Fahrzeugen, die für die Beförderung von Gütern in temperaturgeführtem Zustand ausgerüstet sind und deren Seitenwände einschließlich Wärmedämmung mindestens 45 mm dick sind
+2,60 m,
+5.bei Personenkraftwagen2,50 m,
+6.bei Fahrzeugen mit angebauten Geräten für die Straßenunterhaltung3,00 m.
+Die Fahrzeugbreite ist nach der ISO-Norm 612-1978, Definition Nummer 6.2 zu ermitteln. Abweichend von dieser Norm sind bei der Messung der Fahrzeugbreite die folgenden Einrichtungen nicht zu berücksichtigen:
+  1. Einrichtungen für indirekte Sicht,
+  2. der am Aufstandspunkt auf der Fahrbahnoberfläche liegende Teil der Ausbauchung der Reifenwände,
+  3. Reifenschadensanzeiger,
+  4. Reifendruckanzeiger,
+  5. lichttechnische Einrichtungen,
+  6. von Fahrzeugen beförderte klimatisierte Container oder Wechselaufbauten in einem Bereich von bis zu 5 cm über der nach Absatz 1 Satz 1 Nummer 1 allgemein zulässigen Breite von 2,55 m,
+  7. Ladebrücken, Hubladebühnen und vergleichbare Einrichtungen in nicht betriebsbereitem Zustand, die höchstens 10 mm seitlich des Fahrzeugs hervorragen und deren nach vorne oder nach hinten liegende Ecken mit einem Radius von mindestens 5 mm und deren Kanten mit einem Radius von mindestens 2,5 mm abgerundet sind,
+  8. einziehbare Spurführungseinrichtungen, die für die Verwendung in Spurbussystemen gedacht sind, in nicht eingezogener Stellung,
+  9. einziehbare Stufen, sofern betriebsbereit und bei Fahrzeugstillstand,
+  10. Sichthilfen und Ortungseinrichtungen einschließlich Radargeräten,
+  11. aerodynamische Luftleiteinrichtungen und Ausrüstungen, die gemäß Verordnung (EU) Nr. 1230/2012 der Kommission vom 12. Dezember 2012 zur Durchführung der Verordnung (EG) Nr. 661/2009 des Europäischen Parlaments und des Rates hinsichtlich der Anforderungen an die Typgenehmigung von Kraftfahrzeugen und Kraftfahrzeuganhängern bezüglich ihrer Massen und Abmessungen und zur Änderung der Richtlinie 2007/46/EG des Europäischen Parlaments und des Rates (ABl. L 353 vom 21.12.2012, S. 31; L 130 vom 15.5.2013, S. 60; L 28 vom 4.2.2016, S. 18), die zuletzt durch die Verordnung (EU) 2019/1892 vom 31. Oktober 2019 (ABl. L 291 vom 12.11.2019, S. 17) geändert worden ist, typgenehmigt sind, sofern die Fahrzeugbreite inklusive eines klimatisierten Aufbaus mit isolierten Wänden einschließlich der gemessenen vorstehenden Teile höchstens 2 600 mm beträgt, wobei die Einrichtungen und Ausrüstungen sowohl in der eingezogenen beziehungsweise eingeklappten Stellung als auch in der Gebrauchsstellung arretiert sein müssen,
+  12. Befestigungs- und Schutzeinrichtungen für Zollplomben,
+  13. Einrichtungen zur Sicherung der Plane und Schutzvorrichtungen hierfür, die bei einer Höhe von höchstens 2,0 m über dem Boden höchstens 20 mm und bei einer Höhe von mehr als 2,0 m über dem Boden höchstens 50 mm hervorragen dürfen und deren Kanten mit einem Radius von mindestens 2,5 mm abgerundet sind,
+  14. vorstehende flexible Teile eines Spritzschutzsystems gemäß Verordnung (EU) Nr. 109/2011 der Kommission vom 27. Januar 2011 zur Durchführung der Verordnung (EG) Nr. 661/2009 des Europäischen Parlaments und des Rates über die Typgenehmigung bestimmter Klassen von Kraftfahrzeugen und ihrer Anhänger hinsichtlich der Spritzschutzsysteme (ABl. L 34 vom 9.2.2011, S. 2; L 234 vom 10.9.2012, S. 48), die durch die Verordnung (EU) Nr. 519/2013 (ABl. L 158 vom 10.6.2013, S. 74) geändert worden ist,
+  15. flexible Radabdeckungen, die nicht unter Nummer 14 fallen,
+  16. Schneeketten,
+  17. Sicherheitsgeländer auf Fahrzeugtransportern, die für den Transport von mindestens zwei Fahrzeugen ausgelegt und gebaut sind und deren Sicherheitsgeländer sich mindestens 2,0 m und höchstens 3,70 m über dem Boden befinden und höchstens 50 mm vom äußersten Punkt der Fahrzeugseite hinausragen und wenn die Fahrzeugbreite höchstens 2 650 mm beträgt,
+  18. Antennen für die Kommunikation zwischen Fahrzeugen beziehungsweise zwischen Fahrzeugen und Infrastrukturen und
+  19. Schläuche der Reifendrucküberwachungssysteme, sofern sie an den beiden Seiten des Fahrzeugs höchstens 70 mm über die größte Breite des Fahrzeugs hinausragen. Gemessen wird bei geschlossenen Türen und Fenstern und bei Geradeausstellung der Räder.
+
+(2) Bei Kraftfahrzeugen, Fahrzeugkombinationen und Anhängern einschließlich mitgeführter austauschbarer Ladungsträger (§ 42 Absatz 3) darf die höchstzulässige Höhe über alles folgendes Maß nicht überschreiten:4,00 m.
+Die Fahrzeughöhe ist nach der ISO-Norm 612-1978, Definition Nummer 6.3 zu ermitteln. Abweichend von dieser Norm sind bei der Messung der Fahrzeughöhe die folgenden Einrichtungen nicht zu berücksichtigen:
+  1. Antennen für Rundfunk, Navigation, die Kommunikation zwischen Fahrzeugen beziehungsweise zwischen Fahrzeugen und Infrastrukturen und
+  2. Scheren- oder Stangenstromabnehmer in gehobener Stellung.
+Bei Fahrzeugen mit Achshubeinrichtung ist die Auswirkung dieser Einrichtung zu berücksichtigen.
+
+(3) Bei Kraftfahrzeugen und Anhängern einschließlich mitgeführter austauschbarer Ladungsträger und aller im Betrieb mitgeführter Ausrüstungsteile (§ 42 Absatz 3) darf die höchstzulässige Länge über alles folgende Maße nicht überschreiten:
+1.bei Kraftfahrzeugen und Anhängern
+– ausgenommen Kraftomnibusse und Sattelanhänger –
+12,00 m,
+2.bei zweiachsigen Kraftomnibussen
+– einschließlich abnehmbarer Zubehörteile –
+13,50 m,
+3.bei Kraftomnibussen mit mehr als zwei Achsen
+– einschließlich abnehmbarer Zubehörteile –
+15,00 m,
+4.bei Kraftomnibussen, die als Gelenkfahrzeug ausgebildet sind (Kraftfahrzeuge, deren Nutzfläche durch ein Gelenk unterteilt ist, bei denen der angelenkte Teil jedoch kein selbstständiges Fahrzeug darstellt)
+18,75 m.
+Abweichend von Satz 1 Nummer 1 darf die höchstzulässige Länge von 12,00 m überschritten werden, wenn die Überschreitung ausschließlich durch das verlängerte Führerhaus gemäß Verordnung (EU) Nr. 1230/2012 erfolgt.
+
+(4) Bei Fahrzeugkombinationen einschließlich mitgeführter austauschbarer Ladungsträger und aller im Betrieb mitgeführter Ausrüstungsteile (§ 42 Absatz 3) darf die höchstzulässige Länge, unter Beachtung der Vorschriften in Absatz 3 Nummer 1, folgende Maße nicht überschreiten:
+1.bei Sattelkraftfahrzeugen (Sattelzugmaschine mit Sattelanhänger) und Fahrzeugkombinationen (Zügen) nach Art eines Sattelkraftfahrzeugs
+– ausgenommen Sattelkraftfahrzeugen nach Nummer 2 –
+15,50 m,
+2.bei Sattelkraftfahrzeugen (Sattelzugmaschine mit Sattelanhänger), wenn die höchstzulässigen Teillängen des Sattelanhängers a)Achse Zugsattelzapfen bis zur hinteren Begrenzung 12,00 m und b)vorderer Überhangradius 2,04 m nicht überschritten werden,16,50 m,
+3.bei Zügen, ausgenommen Züge nach Nummer 4: a)Kraftfahrzeuge außer Zugmaschinen mit Anhängern18,00 m, b)Zugmaschinen mit Anhängern18,75 m,
+4.bei Zügen, die aus einem Lastkraftwagen und einem Anhänger zur Güterbeförderung bestehen,
+18,75 m.
+Dabei dürfen die höchstzulässigen Teillängen folgende Maße nicht überschreiten:
+a)größter Abstand zwischen dem vordersten äußeren Punkt der Ladefläche hinter dem Führerhaus des Lastkraftwagens und dem hintersten äußeren Punkt der Ladefläche des Anhängers der Fahrzeugkombination, abzüglich des Abstands zwischen der hinteren Begrenzung des Kraftfahrzeugs und der vorderen Begrenzung des Anhängers
+15,65 m
+und
+b)größter Abstand zwischen dem vordersten äußeren Punkt der Ladefläche hinter dem Führerhaus des Lastkraftwagens und dem hintersten äußeren Punkt der Ladefläche des Anhängers der Fahrzeugkombination
+16,40 m.
+Bei Fahrzeugen mit Aufbau – bei Lastkraftwagen jedoch ohne Führerhaus – gelten die Teillängen einschließlich Aufbau.
+
+(4a) Bei Fahrzeugkombinationen, die aus einem Kraftomnibus und einem Anhänger bestehen, beträgt die höchstzulässige Länge, unter Beachtung der Vorschriften in Absatz 3 Nummer 1 bis 3
+18,75 m.
+
+(4b) Abweichend von Absatz 4 darf die höchstzulässige Länge von Fahrzeugkombinationen überschritten werden, wenn die Überschreitung ausschließlich durch das verlängerte Führerhaus bei Kraftfahrzeugen nach Absatz 3 Satz 2 erfolgt.
+
+(4c) Bei Sattelkraftfahrzeugen nach § 34 Absatz 6 Nummer 6 mit einer höchstzulässigen Teillänge nach Absatz 4 Nummer 2 Buchstabe b darf die höchstzulässige Länge der Fahrzeugkombination und die höchstzulässige Teillänge nach Absatz 4 Nummer 2 Buchstabe a beim Transport eines Containers oder Wechselaufbaus von 45 Fuß Länge um 15 cm überschritten werden.
+
+(5) Die Länge oder Teillänge eines Einzelfahrzeugs oder einer Fahrzeugkombination – mit Ausnahme der in Absatz 7 genannten Fahrzeugkombinationen und deren Einzelfahrzeuge – ist die Länge, die bei voll nach vorn oder hinten ausgezogenen, ausgeschobenen oder ausgeklappten Ladestützen, Ladepritschen, Aufbauwänden oder Teilen davon einschließlich aller im Betrieb mitgeführter Ausrüstungsteile (§ 42 Absatz 3) gemessen wird; dabei müssen bei Fahrzeugkombinationen die Längsmittellinien des Kraftfahrzeugs und seines Anhängers bzw. seiner Anhänger eine gerade Linie bilden. Bei Fahrzeugkombinationen mit nicht selbsttätig längenveränderlichen Zugeinrichtungen ist dabei die Position zugrunde zu legen, in der § 32d (Kurvenlaufeigenschaften) ohne weiteres Tätigwerden des Fahrzeugführers oder anderer Personen erfüllt ist. Soweit selbsttätig längenveränderliche Zugeinrichtungen verwendet werden, müssen diese nach Beendigung der Kurvenfahrt die Ausgangslänge ohne Zeitverzug wiederherstellen.
+
+(6) Die Längen und Teillängen eines Einzelfahrzeugs oder einer Fahrzeugkombination sind nach der ISO-Norm 612-1978, Definition Nummer 6.1 zu ermitteln. Abweichend von dieser Norm sind bei der Messung der Länge oder Teillänge die folgenden Einrichtungen nicht zu berücksichtigen:
+  1. Einrichtungen für indirekte Sicht,
+  2. Wischer- und Wascheinrichtungen,
+  3. äußere Sonnenblenden,
+  4. Frontschutzsysteme, die gemäß Verordnung (EG) Nr. 78/2009 des Europäischen Parlaments und des Rates vom 14. Januar 2009 über die Typgenehmigung von Kraftfahrzeugen im Hinblick auf den Schutz von Fußgängern und anderen ungeschützten Verkehrsteilnehmern, zur Änderung der Richtlinie 2007/46/EG und zur Aufhebung der Richtlinien 2003/102/EG und 2005/66/EG (ABl. L 35 vom 4.2.2009, S. 1), die durch die Verordnung (EU) Nr. 517/2013 (ABl. L 158 vom 10.6.2013, S. 1) geändert worden ist, typgenehmigt sind,
+  5. Trittstufen und Handgriffe,
+  6. mechanische Verbindungseinrichtungen an Kraftfahrzeugen,
+  7. zusätzliche abnehmbare Verbindungseinrichtung an der Hinterseite eines Anhängers,
+  8. abnehmbare oder einklappbare Fahrradträger,
+  9. Hubladebühnen, Ladebrücken und vergleichbare Einrichtungen in nicht betriebsbereitem Zustand, die höchstens 300 mm hervorragen und die Ladekapazität des Fahrzeugs nicht erhöhen,
+  10. Sichthilfen und Ortungseinrichtungen einschließlich Radargeräten,
+  11. elastische Stoßdämpfer und vergleichbare Einrichtungen,
+  12. Befestigungs- und Schutzeinrichtungen für Zollplomben,
+  13. Einrichtungen zur Sicherung der Plane und Schutzvorrichtungen hierfür,
+  14. Längsanschläge für Wechselaufbauten,
+  15. Stangenstromabnehmer von Elektrofahrzeugen,
+  16. vordere oder hintere Kennzeichenschilder,
+  17. zulässige Leuchten gemäß der Begriffsbestimmung von Nummer 2 der Regelung Nr. 48 der Wirtschaftskommission der Vereinten Nationen für Europa (UNECE) – Einheitliche Bedingungen für die Genehmigung von Fahrzeugen hinsichtlich des Anbaus der Beleuchtungs- und Lichtsignaleinrichtungen (ABl. L 135 vom 23.5.2008, S. 1),
+  18. aerodynamische Luftleiteinrichtungen und Ausrüstungen, die gemäß Verordnung (EU) Nr. 1230/2012 typgenehmigt sind,
+  19. Antennen für die Kommunikation zwischen Fahrzeugen beziehungsweise zwischen Fahrzeugen und Infrastrukturen,
+  20. Luftansaugleitungen,
+  21. Stoßfängergummis und ähnliche Vorrichtungen und
+  22. bei anderen Fahrzeugen als Sattelkraftfahrzeugen Kühl- und andere Nebenaggregate, die sich vor der Ladefläche befinden. Dies gilt jedoch nur, wenn durch die genannten Einrichtungen die Ladefläche weder direkt noch indirekt verlängert wird. Einrichtungen, die bei Fahrzeugkombinationen hinten am Zugfahrzeug oder vorn am Anhänger angebracht sind, sind dagegen bei den Längen oder Teillängen von Fahrzeugkombinationen mit zu berücksichtigen; sie dürfen diesen Längen nicht zugeschlagen werden.
+
+(7) Bei Fahrzeugkombinationen nach Art von Zügen zum Transport von Fahrzeugen gelten hinsichtlich der Länge die Vorschriften des Absatzes 4 Nummer 4, bei Sattelkraftfahrzeugen zum Transport von Fahrzeugen gelten die Vorschriften des Absatzes 4 Nummer 2. Längenüberschreitungen durch Ladestützen zur zusätzlichen Sicherung und Stabilisierung des zulässigen Überhangs von Ladungen bleiben bei diesen Fahrzeugkombinationen und Sattelkraftfahrzeugen unberücksichtigt, sofern die Ladung auch über die Ladestützen hinausragt. Bei der Ermittlung der Teillängen bleiben Überfahrbrücken zwischen Lastkraftwagen und Anhänger in Fahrtstellung unberücksichtigt.
+
+(8) Auf die in den Absätzen 1 bis 4 genannten Maße dürfen keine Toleranzen gewährt werden.
+
+(9) Abweichend von den Absätzen 1 bis 8 dürfen Kraftfahrzeuge nach § 30a Absatz 3 folgende Maße nicht überschreiten:
+1.Breite:
+a)bei Krafträdern sowie dreirädrigen und vierrädrigen Kraftfahrzeugen2,00 m,
+b)bei zweirädrigen Kleinkrafträdern und Fahrrädern mit Hilfsmotor jedoch1,00 m,
+2.Höhe:2,50 m,
+3.Länge:4,00 m.

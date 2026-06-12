@@ -1,0 +1,7 @@
+§ 30b Berechnung des Hubraums (Straßenverkehrs-Zulassungs-Ordnung (StVZO))
+
+Der Hubraum ist wie folgt zu berechnen:
+  1. Für pi wird der Wert von 3,1416 eingesetzt.
+  2. Die Werte für Bohrung und Hub werden in Millimeter eingesetzt, wobei auf die erste Dezimalstelle hinter dem Komma auf- oder abzurunden ist.
+  3. Der Hubraum ist auf volle Kubikzentimeter auf- oder abzurunden.
+  4. Folgt der zu rundenden Stelle eine der Ziffern 0 bis 4, so ist abzurunden, folgt eine der Ziffern 5 bis 9, so ist aufzurunden.

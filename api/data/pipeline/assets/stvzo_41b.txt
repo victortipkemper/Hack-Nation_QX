@@ -1,0 +1,15 @@
+§ 41b Automatischer Blockierverhinderer (Straßenverkehrs-Zulassungs-Ordnung (StVZO))
+
+(1) Ein automatischer Blockierverhinderer ist der Teil einer Betriebsbremsanlage, der selbsttätig den Schlupf in der Drehrichtung des Rads an einem oder mehreren Rädern des Fahrzeugs während der Bremsung regelt.
+
+(2) Folgende Fahrzeuge mit einer durch die Bauart bestimmten Höchstgeschwindigkeit von mehr als 60 km/h müssen mit einem automatischen Blockierverhinderer ausgerüstet sein:
+  1. Lastkraftwagen und Sattelzugmaschinen mit einem zulässigen Gesamtgewicht von mehr als 3,5 t,
+  2. Anhänger mit einem zulässigen Gesamtgewicht von mehr als 3,5 t; dies gilt für Sattelanhänger nur dann, wenn das um die Aufliegelast verringerte zulässige Gesamtgewicht 3,5 t übersteigt,
+  3. Kraftomnibusse,
+  4. Zugmaschinen mit einem zulässigen Gesamtgewicht von mehr als 3,5 t. Andere Fahrzeuge, die hinsichtlich ihrer Baumerkmale des Fahrgestells den in den Nummern 1 bis 4 genannten Fahrzeugen gleichzusetzen sind, müssen ebenfalls mit einem automatischen Blockierverhinderer ausgerüstet sein.
+
+(3) Fahrzeuge mit einem automatischen Blockierverhinderer müssen den im Anhang zu dieser Vorschrift genannten Bestimmungen entsprechen.
+
+(4) Anhänger mit einem automatischen Blockierverhinderer, aber ohne automatisch-lastabhängige Bremskraftregeleinrichtung dürfen nur mit Kraftfahrzeugen verbunden werden, die die Funktion des automatischen Blockierverhinderers im Anhänger sicherstellen.
+
+(5) Absatz 2 gilt nicht für Anhänger mit Auflaufbremse sowie für Kraftfahrzeuge mit mehr als vier Achsen.

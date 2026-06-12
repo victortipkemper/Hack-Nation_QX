@@ -1,0 +1,86 @@
+§ 34 Achslast und Gesamtgewicht (Straßenverkehrs-Zulassungs-Ordnung (StVZO))
+
+(1) Die Achslast ist die Gesamtlast, die von den Rädern einer Achse oder einer Achsgruppe auf die Fahrbahn übertragen wird.
+
+(2) Die technisch zulässige Achslast ist die Achslast, die unter Berücksichtigung der Werkstoffbeanspruchung und nachstehender Vorschriften nicht überschritten werden darf:
+§ 36(Bereifung und Laufflächen);
+§ 41 Absatz 11(Bremsen an einachsigen Anhängern und zweiachsigen Anhängern mit einem Achsabstand von weniger als 1,0 m).
+Das technisch zulässige Gesamtgewicht ist das Gewicht, das unter Berücksichtigung der Werkstoffbeanspruchung und nachstehender Vorschriften nicht überschritten werden darf:
+§ 35(Motorleistung);
+§ 41 Absatz 10 und 18(Auflaufbremse);
+§ 41 Absatz 15 und 18(Dauerbremse).
+
+(3) Die zulässige Achslast ist die Achslast, die unter Berücksichtigung der Bestimmungen des Absatzes 2 Satz 1 und des Absatzes 4 nicht überschritten werden darf. Das zulässige Gesamtgewicht ist das Gewicht, das unter Berücksichtigung der Bestimmungen des Absatzes 2 Satz 2 und der Absätze 5 und 6 nicht überschritten werden darf. Die zulässige Achslast und das zulässige Gesamtgewicht sind beim Betrieb des Fahrzeugs und der Fahrzeugkombination einzuhalten.
+
+(4) Bei Kraftfahrzeugen und Anhängern mit Luftreifen oder den in § 36 Absatz 8 für zulässig erklärten Gummireifen – ausgenommen Straßenwalzen – darf die zulässige Achslast folgende Werte nicht übersteigen:
+1.Einzelachslast
+a)Einzelachsen10,00 t
+b)Einzelachsen (angetrieben)11,50 t;
+2.Doppelachslast von Kraftfahrzeugen unter Beachtung der Vorschriften für die Einzelachslast
+a)Achsabstand weniger als 1,0 m11,50 t
+b)Achsabstand 1,0 m bis weniger als 1,3 m16,00 t
+c)Achsabstand 1,3 m bis weniger als 1,8 m18,00 t
+d)Achsabstand 1,3 m bis weniger als 1,8 m, wenn die Antriebsachse mit Doppelbereifung und Luftfederung oder einer als gleichwertig anerkannten Federung nach Anlage XII ausgerüstet ist oder jede Antriebsachse mit Doppelbereifung ausgerüstet ist und dabei die höchstzulässige Achslast von 9,50 t je Achse nicht überschritten wird,19,00 t;
+3.Doppelachslast von Anhängern unter Beachtung der Vorschriften für die Einzelachslast
+a)Achsabstand weniger als 1,0 m11,00 t
+b)Achsabstand 1,0 m bis weniger als 1,3 m16,00 t
+c)Achsabstand 1,3 m bis weniger als 1,8 m18,00 t
+d)Achsabstand 1,8 m oder mehr20,00 t;
+4.Dreifachachslast unter Beachtung der Vorschriften für die Doppelachslast
+a)Achsabstände nicht mehr als 1,3 m21,00 t
+b)Achsabstände mehr als 1,3 m und nicht mehr als 1,4 m24,00 t.
+Sind Fahrzeuge mit anderen Reifen als den in Satz 1 genannten versehen, so darf die Achslast höchstens 4,00 t betragen.
+
+(5) Bei Kraftfahrzeugen und Anhängern – ausgenommen Sattelanhänger und Starrdeichselanhänger (einschließlich Zentralachsanhänger) – mit Luftreifen oder den in § 36 Absatz 8 für zulässig erklärten Gummireifen darf das zulässige Gesamtgewicht unter Beachtung der Vorschriften für die Achslasten folgende Werte nicht übersteigen:
+1.Fahrzeuge mit nicht mehr als zwei Achsen
+a)Kraftfahrzeuge – ausgenommen Kraftomnibusse – und Anhänger jeweils18,00 t b)Kraftomnibusse19,50 t;2.Fahrzeuge mit mehr als zwei Achsen – ausgenommen Kraftfahrzeuge nach Nummern 3 und 4 –
+a)Kraftfahrzeuge25,00 t
+b)Kraftfahrzeuge mit einer Doppelachslast nach Absatz 4 Nummer 2 Buchstabe d26,00 t
+c)Anhänger24,00 t
+d)Kraftomnibusse, die als Gelenkfahrzeuge gebaut sind28,00 t;
+3.Kraftfahrzeuge mit mehr als drei Achsen – ausgenommen Kraftfahrzeuge nach Nummer 4 –
+a)Kraftfahrzeuge mit zwei Doppelachsen, deren Mitten mindestens 4,0 m voneinander entfernt sind32,00 t
+b)Kraftfahrzeuge mit zwei gelenkten Achsen und mit einer Doppelachslast nach Absatz 4 Nummer 2 Buchstabe d und deren höchstzulässige Belastung, bezogen auf den Abstand zwischen den Mitten der vordersten und der hintersten Achse, 5,00 t je Meter nicht übersteigen darf, nicht mehr als32,00 t;
+4.Kraftfahrzeuge mit mehr als vier Achsen unter Beachtung der Vorschriften in Nummer 332,00 t.
+
+(5a) Abweichend von Absatz 5 gelten für die zulässigen Gewichte von Kraftfahrzeugen nach § 30a Absatz 3 die im Anhang zu dieser Vorschrift genannten Bestimmungen.
+
+(5b) Abweichend von Absatz 5 Nummer 1 Buchstabe a sowie Nummer 2 Buchstabe a, b und d darf das zulässige Gesamtgewicht des jeweiligen Kraftfahrzeugs unter Beachtung der Achslasten um bis zu 1,00 t überschritten werden, wenn es sich um ein Kraftfahrzeug mit alternativem Antrieb im Sinne der Artikel 1 und 2 der Richtlinie 96/53/EG des Rates vom 25. Juli 1996 zur Festlegung der höchstzulässigen Abmessungen für bestimmte Straßenfahrzeuge im innerstaatlichen und grenzüberschreitenden Verkehr in der Gemeinschaft sowie zur Festlegung der höchstzulässigen Gewichte im grenzüberschreitenden Verkehr (ABl. L 235 vom 17.9.1996, S. 59), die zuletzt durch die Verordnung (EU) 2019/1242 (ABl. L 198 vom 25.7.2019, S. 202) geändert worden ist, handelt und wenn das Mehrgewicht durch den alternativen Antrieb begründet ist. Abweichend von Absatz 5 Nummer 1 Buchstabe a sowie Nummer 2 Buchstabe a, b und d darf das zulässige Gesamtgewicht des jeweiligen Kraftfahrzeugs unter Beachtung der Achslasten um bis zu 2,00 t überschritten werden, wenn es sich um ein emissionsfreies Fahrzeug im Sinne der Artikel 1 und 2 der Richtlinie 96/53/EG handelt und wenn das Mehrgewicht durch die emissionsfreie Technologie begründet ist.
+
+(6) Bei Fahrzeugkombinationen (Züge und Sattelkraftfahrzeuge) darf das zulässige Gesamtgewicht unter Beachtung der Vorschriften für Achslasten, Anhängelasten und Einzelfahrzeuge folgende Werte nicht übersteigen:
+1.Fahrzeugkombinationen mit weniger als vier Achsen28,00 t;
+2.Züge mit vier Achsen
+zweiachsiges Kraftfahrzeug mit zweiachsigem Anhänger36,00 t;
+3.zweiachsige Sattelzugmaschine mit zweiachsigem Sattelanhänger
+a)bei einem Achsabstand des Sattelanhängers von 1,3 m und mehr36,00 t
+b)bei einem Achsabstand des Sattelanhängers von mehr als 1,8 m, wenn die Antriebsachse mit Doppelbereifung und Luftfederung oder einer als gleichwertig anerkannten Federung nach Anlage XII ausgerüstet ist,38,00 t;4.andere Fahrzeugkombinationen mit vier Achsen
+a)mit Kraftfahrzeug nach Absatz 5 Nummer 2 Buchstabe a35,00 t
+b)mit Kraftfahrzeug nach Absatz 5 Nummer 2 Buchstabe b36,00 t;
+5.Fahrzeugkombinationen mit mehr als vier Achsen oder mit Gleiskettenfahrzeugen40,00 t;
+6.Sattelkraftfahrzeug im Rahmen intermodaler Beförderungsvorgänge im Sinne des Artikels 2 der Richtlinie 96/53/EG, bestehend aus a)zweiachsigem Kraftfahrzeug mit dreiachsigem Sattelanhänger, das einen oder mehrere Container oder Wechselaufbauten mit einer maximalen Gesamtlänge von bis zu 45 Fuß befördert42,00 t, b)dreiachsigem Kraftfahrzeug mit zwei- oder dreiachsigem Sattelanhänger, das einen oder mehrere Container oder Wechselaufbauten mit einer maximalen Gesamtlänge von bis zu 45 Fuß befördert44,00 t. Bei intermodalen Beförderungsvorgängen mit Nutzung des Schiffsverkehrs gilt Satz 1 Nummer 6 nur, sofern die Streckenlänge des Vor- oder Nachlaufs auf der Straße nicht 150 km im Gebiet der Europäischen Union überschreitet.
+
+(6a) Abweichend von Absatz 6 darf das zulässige Gesamtgewicht der jeweiligen Fahrzeugkombinationen unter Beachtung der Achslasten um bis zu 1,00 t überschritten werden, wenn die Fahrzeugkombination ein Kraftfahrzeug gemäß Absatz 5b Satz 1 umfasst und wenn das Mehrgewicht durch den alternativen Antrieb begründet ist. Abweichend von Absatz 6 darf das zulässige Gesamtgewicht der jeweiligen Fahrzeugkombinationen unter Beachtung der Achslasten um bis zu 2,00 t überschritten werden, wenn die Fahrzeugkombination ein Kraftfahrzeug gemäß Absatz 5b Satz 2 umfasst und wenn das Mehrgewicht durch die emissionsfreie Technologie begründet ist.
+
+(7) Das nach Absatz 6 zulässige Gesamtgewicht errechnet sich
+  1. bei Zügen aus der Summe der zulässigen Gesamtgewichte des ziehenden Fahrzeugs und des Anhängers,
+  2. bei Zügen mit Starrdeichselanhängern (einschließlich Zentralachsanhängern) aus der Summe der zulässigen Gesamtgewichte des ziehenden Fahrzeugs und des Starrdeichselanhängers, vermindert um den jeweils höheren Wert
+  a) der zulässigen Stützlast des ziehenden Fahrzeugs oder
+  b) der zulässigen Stützlast des Starrdeichselanhängers, bei gleichen Werten um diesen Wert,
+  3. bei Sattelkraftfahrzeugen aus der Summe der zulässigen Gesamtgewichte der Sattelzugmaschine und des Sattelanhängers, vermindert um den jeweils höheren Wert
+  a) der zulässigen Sattellast der Sattelzugmaschine oder
+  b) der zulässigen Aufliegelast des Sattelanhängers, bei gleichen Werten um diesen Wert. Ergibt sich danach ein höherer Wert als
+28,00 t(Absatz 6 Nummer 1),
+36,00 t(Absatz 6 Nummer 2 und 3 Buchstabe a und Nummer 4 Buchstabe b),
+38,00 t(Absatz 6 Nummer 3 Buchstabe b),
+35,00 t(Absatz 6 Nummer 4 Buchstabe a),
+40,00 t(Absatz 6 Nummer 5) oder
+44,00 t(Absatz 6 Nummer 6),
+so gelten als zulässiges Gesamtgewicht 28,00 t, 36,00 t, 38,00 t, 35,00 t, 40,00 t bzw. 44,00 t.
+
+(8) Bei Lastkraftwagen, Sattelkraftfahrzeugen und Lastkraftwagenzügen darf das Gewicht auf der oder den Antriebsachsen im grenzüberschreitenden Verkehr nicht weniger als 25 Prozent des Gesamtgewichts des Fahrzeugs oder der Fahrzeugkombination betragen.
+
+(9) Der Abstand zwischen dem Mittelpunkt der letzten Achse eines Kraftfahrzeugs und dem Mittelpunkt der ersten Achse seines Anhängers muss mindestens 3,0 m, bei Sattelkraftfahrzeugen und bei land- und forstwirtschaftlichen Zügen sowie bei Zügen, die aus einem Zugfahrzeug und Anhänger-Arbeitsmaschinen bestehen, mindestens 2,5 m betragen. Dies gilt nicht für Züge, bei denen das zulässige Gesamtgewicht des Zugfahrzeugs nicht mehr als 7,50 t oder das des Anhängers nicht mehr als 3,50 t beträgt.
+
+(10) (weggefallen)
+
+(11) Für Hubachsen oder Lastverlagerungsachsen sind die im Anhang zu dieser Vorschrift genannten Bestimmungen anzuwenden.

@@ -1,0 +1,18 @@
+§ 53a Warndreieck, Warnleuchte, Warnblinkanlage, Warnweste (Straßenverkehrs-Zulassungs-Ordnung (StVZO))
+
+(1) Warndreiecke und Warnleuchten müssen tragbar, standsicher und so beschaffen sein, dass sie bei Gebrauch auf ausreichende Entfernung erkennbar sind. Warndreiecke müssen rückstrahlend sein; Warnleuchten müssen gelbes Blinklicht abstrahlen, von der Lichtanlage des Fahrzeugs unabhängig sein und eine ausreichende Brenndauer haben. Warnwesten müssen der Norm DIN EN 471:2003+A1:2007, Ausgabe März 2008 oder der Norm EN ISO 20471:2013 entsprechen. Die Warneinrichtungen müssen in betriebsfertigem Zustand sein.
+
+(2) In Kraftfahrzeugen mit Ausnahme von Krankenfahrstühlen, Krafträdern und einachsigen Zug- oder Arbeitsmaschinen müssen mindestens folgende Warneinrichtungen mitgeführt werden:
+  1. in Personenkraftwagen, land- oder forstwirtschaftlichen Zug- oder Arbeitsmaschinen sowie in anderen Kraftfahrzeugen mit einem zulässigen Gesamtgewicht von nicht mehr als 3,5 t:ein Warndreieck;
+  2. in Kraftfahrzeugen mit einem zulässigen Gesamtgewicht von mehr als 3,5 t:ein Warndreieck und getrennt davon eine Warnleuchte. Als Warnleuchte darf auch eine tragbare Blinkleuchte nach § 53b Absatz 5 Satz 7 mitgeführt werden;
+  3. in Personenkraftwagen, Lastkraftwagen, Zug- und Sattelzugmaschinen sowie Kraftomnibussen:
+eine Warnweste.
+
+(3) Warnleuchten, die mitgeführt werden, ohne dass sie nach Absatz 2 vorgeschrieben sind, dürfen abweichend von Absatz 1 von der Lichtanlage des Fahrzeugs abhängig, im Fahrzeug fest angebracht oder so beschaffen sein, dass sie bei Bedarf innen oder außen am Fahrzeug angebracht werden können. Sie müssen der Nummer 20 der Technischen Anforderungen an Fahrzeugteile bei der Bauartprüfung nach § 22a der Straßenverkehrs-Zulassungs-Ordnung (Verkehrsblatt 1973 S. 558) entsprechen.
+
+(4) Fahrzeuge (ausgenommen Kraftfahrzeuge nach § 30a Absatz 3 mit Ausnahme von dreirädrigen Kraftfahrzeugen), die mit Fahrtrichtungsanzeigern ausgerüstet sein müssen, müssen zusätzlich eine Warnblinkanlage haben. Sie muss wie folgt beschaffen sein:
+  1. Für die Schaltung muss im Kraftfahrzeug ein besonderer Schalter vorhanden sein.
+  2. Nach dem Einschalten müssen alle am Fahrzeug oder Zug vorhandenen Blinkleuchten gleichzeitig mit einer Frequenz von 1,5 Hz ± 0,5 Hz (90 Impulse ± 30 Impulse in der Minute) gelbes Blinklicht abstrahlen.
+  3. Dem Fahrzeugführer muss durch eine auffällige Kontrolleuchte nach § 39a angezeigt werden, dass das Warnblinklicht eingeschaltet ist.
+
+(5) Warnblinkanlagen an Fahrzeugen, für die sie nicht vorgeschrieben sind, müssen den Vorschriften des Absatzes 4 entsprechen.
