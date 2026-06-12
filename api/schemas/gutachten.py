@@ -71,6 +71,7 @@ class Gutachten(BaseModel):
     vehicle: VehicleData
     modification: ModificationData
     notes: Optional[str] = None
+    field_verifications: dict[str, bool] = Field(default_factory=dict)
 
 
 class CaseSummary(BaseModel):

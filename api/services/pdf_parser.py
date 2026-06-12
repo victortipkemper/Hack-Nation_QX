@@ -13,6 +13,7 @@ from schemas.gutachten import (
     VehicleData,
     WheelTireSpec,
 )
+from services.llm_extractor import extract_gutachten_with_llm
 
 TIRE_PATTERN = re.compile(r"(\d{3}/\d{2})\s*R(\d{2})")
 LI_SI_PATTERN = re.compile(r"(\d{2})([YWHVZ])")
@@ -216,6 +217,28 @@ def _parse_wheels(text: str) -> tuple[WheelTireSpec | None, WheelTireSpec | None
     return _wheel(0), _wheel(1) if len(tires) > 1 else _wheel(0)
 
 
+def _verify_dict(d: dict, text: str, prefix: str) -> dict[str, bool]:
+    import datetime
+    verifications = {}
+    for k, v in d.items():
+        key_path = f"{prefix}.{k}"
+        if isinstance(v, dict):
+            verifications.update(_verify_dict(v, text, key_path))
+        elif isinstance(v, datetime.date):
+            de_date = v.strftime("%d.%m.%Y")
+            verifications[key_path] = (de_date in text) or (str(v) in text)
+        elif v is not None:
+            str_val = str(v)
+            if isinstance(v, float):
+                if v.is_integer():
+                    str_val_int = str(int(v))
+                    verifications[key_path] = (str_val_int in text) or (str_val in text) or (str_val.replace('.', ',') in text)
+                else:
+                    verifications[key_path] = (str_val in text) or (str_val.replace('.', ',') in text)
+            else:
+                verifications[key_path] = str_val in text
+    return verifications
+
 def parse_gutachten_from_pdf(
     text: str, filename: str, upload_id: str
 ) -> Gutachten:
@@ -223,6 +246,18 @@ def parse_gutachten_from_pdf(
     vehicle = _parse_vehicle(text)
     wheels_front, wheels_rear = _parse_wheels(text)
     gutachten_type = _detect_gutachten_type(text)
+
+    modification = ModificationData(
+        modification_type="wheels_tires",
+        wheels_front=wheels_front,
+        wheels_rear=wheels_rear,
+        total_track_width_increase_mm=0,
+    )
+
+    llm_extracted = extract_gutachten_with_llm(text)
+    if llm_extracted:
+        vehicle = llm_extracted.vehicle
+        modification = llm_extracted.modification
 
     ga_match = GA_NR_PATTERN.search(text)
     gutachten_id = ga_match.group(1) if ga_match else upload_id
@@ -238,6 +273,10 @@ def parse_gutachten_from_pdf(
         r"(Technische Prüfstelle[^\n]+|TÜV[^\n]+|DEKRA[^\n]+)", text, re.I
     )
     authority = authority_match.group(1).strip() if authority_match else "Unbekannt"
+    
+    verifications = {}
+    verifications.update(_verify_dict(vehicle.model_dump(), text, "vehicle"))
+    verifications.update(_verify_dict(modification.model_dump(), text, "modification"))
 
     return Gutachten(
         gutachten_id=f"upload-{upload_id[:8]}",
@@ -246,11 +285,7 @@ def parse_gutachten_from_pdf(
         issuing_authority=authority,
         issue_date=issue_date,
         vehicle=vehicle,
-        modification=ModificationData(
-            modification_type="wheels_tires",
-            wheels_front=wheels_front,
-            wheels_rear=wheels_rear,
-            total_track_width_increase_mm=0,
-        ),
+        modification=modification,
         notes=f"Automatisch aus PDF extrahiert: {filename}",
+        field_verifications=verifications,
     )

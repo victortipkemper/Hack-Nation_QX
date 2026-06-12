@@ -65,6 +65,7 @@ export interface Gutachten {
   vehicle: VehicleData;
   modification: ModificationData;
   notes?: string | null;
+  field_verifications?: Record<string, boolean>;
 }
 
 export interface CaseSummary {
