@@ -27,6 +27,7 @@ interface WhiteBoxChecklistProps {
     step: WhiteBoxStep,
     decision: ExpertDecision
   ) => Promise<void>;
+  onRevokeReview?: (entryId: string) => Promise<void>;
 }
 
 function isErrorFinding(step: WhiteBoxStep): boolean {
@@ -73,6 +74,7 @@ function StepRow({
   selected,
   onInspect,
   onExpertReview,
+  onRevokeReview,
 }: {
   step: WhiteBoxStep;
   selected: boolean;
@@ -81,21 +83,29 @@ function StepRow({
     step: WhiteBoxStep,
     decision: ExpertDecision
   ) => Promise<void>;
+  onRevokeReview?: (entryId: string) => Promise<void>;
 }) {
   const errorFinding = isErrorFinding(step);
   const [open, setOpen] = useState(selected || errorFinding);
-  const [reviewState, setReviewState] = useState<
-    "idle" | "saving" | "rejected"
-  >("idle");
+  const [saving, setSaving] = useState(false);
 
   const handleReview = async (decision: ExpertDecision) => {
-    if (!onExpertReview || reviewState === "saving") return;
-    setReviewState("saving");
+    if (!onExpertReview || saving) return;
+    setSaving(true);
     try {
       await onExpertReview(step, decision);
-      setReviewState(decision === "reject" ? "rejected" : "idle");
-    } catch {
-      setReviewState("idle");
+    } finally {
+      setSaving(false);
+    }
+  };
+
+  const handleRevoke = async (entryId: string) => {
+    if (!onRevokeReview || saving) return;
+    setSaving(true);
+    try {
+      await onRevokeReview(entryId);
+    } finally {
+      setSaving(false);
     }
   };
 
@@ -139,6 +149,11 @@ function StepRow({
             {step.expert_override && (
               <span className="text-[10px] uppercase tracking-wide text-emerald-700 bg-emerald-50 border border-emerald-100 px-1.5 py-0.5 rounded">
                 Expertenwissen
+              </span>
+            )}
+            {step.expert_confirmed && (
+              <span className="text-[10px] uppercase tracking-wide text-red-700 bg-red-50 border border-red-100 px-1.5 py-0.5 rounded">
+                Bestätigt
               </span>
             )}
           </div>
@@ -210,21 +225,21 @@ function StepRow({
             </div>
           )}
 
-          {errorFinding && onExpertReview && reviewState !== "rejected" && (
+          {errorFinding && onExpertReview && !step.expert_confirmed && (
             <div className="flex items-center gap-2 flex-wrap pt-1">
               <span className="font-semibold text-slate-500">
                 Experten-Bewertung:
               </span>
               <button
                 type="button"
-                disabled={reviewState === "saving"}
+                disabled={saving}
                 onClick={(e) => {
                   e.stopPropagation();
                   void handleReview("approve");
                 }}
                 className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md border border-emerald-200 bg-emerald-50 text-emerald-800 font-medium hover:bg-emerald-100 disabled:opacity-50"
               >
-                {reviewState === "saving" ? (
+                {saving ? (
                   <Loader2 className="w-3.5 h-3.5 animate-spin" />
                 ) : (
                   <ThumbsUp className="w-3.5 h-3.5" />
@@ -233,7 +248,7 @@ function StepRow({
               </button>
               <button
                 type="button"
-                disabled={reviewState === "saving"}
+                disabled={saving}
                 onClick={(e) => {
                   e.stopPropagation();
                   void handleReview("reject");
@@ -246,18 +261,34 @@ function StepRow({
             </div>
           )}
 
-          {errorFinding && reviewState === "rejected" && (
-            <div className="flex items-center gap-1.5 pt-1 text-red-700">
+          {step.expert_confirmed && (
+            <div className="flex items-center gap-1.5 flex-wrap pt-1 text-red-700">
               <ThumbsDown className="w-3.5 h-3.5 shrink-0" />
               <span>
-                Beanstandung bestätigt — nicht in die Wissensdatenbank
-                übernommen.
+                Beanstandung durch Experten bestätigt
+                {step.expert_confirmed_id
+                  ? ` (Eintrag ${step.expert_confirmed_id})`
+                  : ""}
+                .
               </span>
+              {onRevokeReview && step.expert_confirmed_id && (
+                <button
+                  type="button"
+                  disabled={saving}
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    void handleRevoke(step.expert_confirmed_id!);
+                  }}
+                  className="underline decoration-dotted underline-offset-2 text-slate-500 hover:text-slate-700 disabled:opacity-50"
+                >
+                  Bewertung zurücknehmen
+                </button>
+              )}
             </div>
           )}
 
           {step.expert_override && (
-            <div className="flex items-center gap-1.5 pt-1 text-emerald-700">
+            <div className="flex items-center gap-1.5 flex-wrap pt-1 text-emerald-700">
               <ThumbsUp className="w-3.5 h-3.5 shrink-0" />
               <span>
                 Von einem Experten als zulässig bewertet
@@ -266,6 +297,19 @@ function StepRow({
                   : ""}
                 .
               </span>
+              {onRevokeReview && step.expert_override_id && (
+                <button
+                  type="button"
+                  disabled={saving}
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    void handleRevoke(step.expert_override_id!);
+                  }}
+                  className="underline decoration-dotted underline-offset-2 text-slate-500 hover:text-slate-700 disabled:opacity-50"
+                >
+                  Bewertung zurücknehmen
+                </button>
+              )}
             </div>
           )}
         </div>
@@ -280,6 +324,7 @@ export function WhiteBoxChecklist({
   selectedCheckId,
   onInspectCheck,
   onExpertReview,
+  onRevokeReview,
 }: WhiteBoxChecklistProps) {
   const [showInapplicable, setShowInapplicable] = useState(false);
 
@@ -371,6 +416,7 @@ export function WhiteBoxChecklist({
                   selected={selectedCheckId === step.check_id}
                   onInspect={onInspectCheck}
                   onExpertReview={onExpertReview}
+                  onRevokeReview={onRevokeReview}
                 />
               ))}
             </div>

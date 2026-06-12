@@ -1,4 +1,4 @@
-from typing import List, Optional
+from typing import List, Literal, Optional
 
 from pydantic import BaseModel
 
@@ -48,3 +48,32 @@ class ExpertProcedureResponse(BaseModel):
     nachpruefung_steps: List[ProcedureStepOut] = []
     documentation_checklist: List[str] = []
     practice_notes: List[str] = []
+
+
+class ExpertReviewRequest(BaseModel):
+    check_id: str
+    check_name: str = ""
+    evidence: str
+    decision: Literal["approve", "reject"]
+    note: str = ""
+    gutachten_id: str = ""
+    expert: str = ""
+
+
+class ExpertKnowledgeEntry(BaseModel):
+    entry_id: str
+    fingerprint: str
+    decision: Literal["approve", "reject"] = "approve"
+    check_id: str
+    check_name: str = ""
+    evidence: str
+    note: str = ""
+    gutachten_id: str = ""
+    expert: str = ""
+    created_at: str
+
+
+class ExpertReviewResponse(BaseModel):
+    decision: str
+    stored: bool
+    entry: Optional[ExpertKnowledgeEntry] = None

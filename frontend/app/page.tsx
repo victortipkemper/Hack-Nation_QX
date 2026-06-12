@@ -4,6 +4,7 @@ import { useCallback, useEffect, useMemo, useState } from "react";
 import { CaseSelector } from "@/components/CaseSelector";
 import { InspectorWorkspace } from "@/components/InspectorWorkspace";
 import {
+  deleteExpertKnowledge,
   fetchHealth,
   fetchUploadChecklist,
   submitExpertReview,
@@ -172,6 +173,27 @@ export default function HomePage() {
     [activeSessionId]
   );
 
+  const refreshSessionChecklist = useCallback(
+    async (sessionId: string, uploadId: string) => {
+      if (!uploadId || uploadId.startsWith("pending-")) return;
+      const checklist = await fetchUploadChecklist(uploadId);
+      const checklistExecution = resolveChecklistExecution(checklist);
+      if (!checklistExecution) return;
+      setSessions((prev) =>
+        prev.map((s) =>
+          s.id === sessionId
+            ? {
+                ...s,
+                checklistExecution,
+                result: testPlanFromChecklist(checklistExecution),
+              }
+            : s
+        )
+      );
+    },
+    []
+  );
+
   const handleExpertReview = useCallback(
     async (step: WhiteBoxStep, decision: ExpertDecision) => {
       const session = sessions.find((s) => s.id === activeSessionId);
@@ -185,30 +207,20 @@ export default function HomePage() {
         gutachten_id: session.checklistExecution?.gutachten_id ?? "",
       });
 
-      // Approval changes the verdict — re-run the checklist with the new knowledge
-      if (
-        decision === "approve" &&
-        session.uploadId &&
-        !session.uploadId.startsWith("pending-")
-      ) {
-        const checklist = await fetchUploadChecklist(session.uploadId);
-        const checklistExecution = resolveChecklistExecution(checklist);
-        if (checklistExecution) {
-          setSessions((prev) =>
-            prev.map((s) =>
-              s.id === session.id
-                ? {
-                    ...s,
-                    checklistExecution,
-                    result: testPlanFromChecklist(checklistExecution),
-                  }
-                : s
-            )
-          );
-        }
-      }
+      // Both decisions change the persisted state — re-run the checklist
+      await refreshSessionChecklist(session.id, session.uploadId);
     },
-    [sessions, activeSessionId]
+    [sessions, activeSessionId, refreshSessionChecklist]
+  );
+
+  const handleRevokeReview = useCallback(
+    async (entryId: string) => {
+      const session = sessions.find((s) => s.id === activeSessionId);
+      if (!session) return;
+      await deleteExpertKnowledge(entryId);
+      await refreshSessionChecklist(session.id, session.uploadId);
+    },
+    [sessions, activeSessionId, refreshSessionChecklist]
   );
 
   const handleInspectRule = useCallback((rule: RuleResult) => {
@@ -286,6 +298,7 @@ export default function HomePage() {
           workspaceTab={workspaceTab}
           onTabChange={setWorkspaceTab}
           onExpertReview={handleExpertReview}
+          onRevokeReview={handleRevokeReview}
         />
       </main>
     </div>

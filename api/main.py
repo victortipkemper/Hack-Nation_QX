@@ -15,7 +15,13 @@ from schemas.gutachten import CaseSummary, Gutachten
 from schemas.upload import UploadResponse
 from schemas.verdict import TestPlanResult
 from schemas.upload import UploadedDocument
-from schemas.expert import ExpertNachpruefungResponse, ExpertProcedureResponse
+from schemas.expert import (
+    ExpertKnowledgeEntry,
+    ExpertNachpruefungResponse,
+    ExpertProcedureResponse,
+    ExpertReviewRequest,
+    ExpertReviewResponse,
+)
 from schemas.whitebox import ChecklistExecution
 from data.golden_corpus import find_corpus_pdf, list_corpus_pdfs, extract_case_id, GOLDEN_VERDICTS
 from engine.checklist_engine import checklist_to_test_plan, execute_checklist
@@ -25,6 +31,7 @@ from services.corpus_evaluator import evaluate_full_corpus, evaluate_single_pdf
 from services.feature_extractor import extract_features
 from services.pdf_parser import extract_text_from_pdf
 from services.reference_documents import REFERENCE_RENDER_DIR, get_reference_document
+from services.expert_decisions import delete_entry, list_entries, record_decision
 from services.upload_service import UPLOADS_DIR, process_upload
 
 app = FastAPI(
@@ -180,7 +187,7 @@ def analyze_corpus_case_full(case_id: str):
     pdf_path = find_corpus_pdf(case_id)
     if pdf_path is None:
         raise HTTPException(status_code=404, detail=f"Corpus case '{case_id}' not found.")
-    return process_pdf_upload(pdf_path.read_bytes(), pdf_path.name)
+    return process_upload(pdf_path.read_bytes(), pdf_path.name)
 
 
 @app.post("/api/evaluate-corpus")
@@ -241,6 +248,45 @@ def get_merkblatt_751_pdf():
         media_type="application/pdf",
         filename="VdTUEV_Merkblatt_751.pdf",
     )
+
+
+@app.post("/api/expert-review", response_model=ExpertReviewResponse)
+def submit_expert_review(review: ExpertReviewRequest):
+    """
+    Expert verdict on a flagged finding — persisted by fingerprint.
+    approve → reusable override, future identical findings pass
+    automatically; reject → confirmed defect, the finding stays flagged
+    as expert-confirmed and the verdict becomes FAIL once every finding
+    on the document is confirmed.
+    """
+    entry = record_decision(
+        check_id=review.check_id,
+        check_name=review.check_name,
+        evidence=review.evidence,
+        decision=review.decision,
+        note=review.note,
+        gutachten_id=review.gutachten_id,
+        expert=review.expert,
+    )
+    return ExpertReviewResponse(
+        decision=review.decision,
+        stored=entry is not None,
+        entry=ExpertKnowledgeEntry(**entry) if entry else None,
+    )
+
+
+@app.get("/api/expert-knowledge", response_model=list[ExpertKnowledgeEntry])
+def get_expert_knowledge():
+    """List all saved expert decisions (overrides and confirmations)."""
+    return [ExpertKnowledgeEntry(**e) for e in list_entries()]
+
+
+@app.delete("/api/expert-knowledge/{entry_id}")
+def remove_expert_knowledge(entry_id: str):
+    """Withdraw a saved expert decision."""
+    if not delete_entry(entry_id):
+        raise HTTPException(status_code=404, detail=f"Entry '{entry_id}' not found.")
+    return {"deleted": entry_id}
 
 
 @app.get("/api/expert/procedures/{check_id}", response_model=ExpertProcedureResponse)

@@ -44,6 +44,15 @@ export async function submitExpertReview(
   return res.json();
 }
 
+export async function deleteExpertKnowledge(entryId: string): Promise<void> {
+  const res = await fetch(`${API_BASE}/api/expert-knowledge/${entryId}`, {
+    method: "DELETE",
+  });
+  if (!res.ok) {
+    throw new Error("Experten-Bewertung konnte nicht zurückgenommen werden");
+  }
+}
+
 export async function fetchExpertKnowledge(): Promise<ExpertKnowledgeEntry[]> {
   const res = await fetch(`${API_BASE}/api/expert-knowledge`, {
     cache: "no-store",

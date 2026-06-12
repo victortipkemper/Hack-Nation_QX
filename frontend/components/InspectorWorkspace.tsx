@@ -35,6 +35,7 @@ interface InspectorWorkspaceProps {
     step: WhiteBoxStep,
     decision: ExpertDecision
   ) => Promise<void>;
+  onRevokeReview?: (entryId: string) => Promise<void>;
 }
 
 export function InspectorWorkspace({
@@ -51,6 +52,7 @@ export function InspectorWorkspace({
   workspaceTab,
   onTabChange,
   onExpertReview,
+  onRevokeReview,
 }: InspectorWorkspaceProps) {
   const hasAnalysis = Boolean(checklistExecution || result);
   const showDocument =
@@ -185,6 +187,7 @@ export function InspectorWorkspace({
             selectedCheckId={inspectedRule?.rule_id}
             onInspectCheck={onInspectRule}
             onExpertReview={onExpertReview}
+            onRevokeReview={onRevokeReview}
           />
         </div>
       </div>
