@@ -117,6 +117,10 @@ def learn_from_exemplar(exemplar: dict[str, Any]) -> None:
     full_text = " ".join(p.get("text", "") for p in paragraphs[:30])
 
     per_key_anchors: dict[str, Counter[str]] = {}
+    # Several checks can share one exemplar_key (e.g. L1-ROUTE-001 and
+    # L1-DOC-001 → tga_documentation), so count pass/fail once per document.
+    per_key_passed: set[str] = set()
+    per_key_failed: set[str] = set()
 
     for step in steps:
         if not step.get("executed"):
@@ -134,19 +138,26 @@ def learn_from_exemplar(exemplar: dict[str, Any]) -> None:
             key_anchors[a] += 1
 
         if passed:
-            block["pass_count"] += 1
+            per_key_passed.add(exemplar_key)
             samples: list[str] = block["pass_evidence_samples"]
             sample = _trim_sample(evidence)
             if sample and sample not in samples:
                 samples.append(sample)
                 block["pass_evidence_samples"] = samples[-12:]
         elif step.get("flagged") or step.get("passed") is False:
-            block["fail_count"] += 1
+            per_key_failed.add(exemplar_key)
             samples = block["fail_evidence_samples"]
             sample = _trim_sample(evidence)
             if sample and sample not in samples:
                 samples.append(sample)
                 block["fail_evidence_samples"] = samples[-12:]
+
+    for exemplar_key in per_key_passed | per_key_failed:
+        block = _check_block(model, exemplar_key)
+        if exemplar_key in per_key_failed:
+            block["fail_count"] += 1
+        else:
+            block["pass_count"] += 1
 
     # Paragraph snippets linked to flagged rules
     for mapping in exemplar.get("training_labels", {}).get("paragraph_rule_mapping", []):
